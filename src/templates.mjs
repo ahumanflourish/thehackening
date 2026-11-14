@@ -490,6 +490,8 @@ ${body}
   };
   const np = site.pages.incidents;
   const current = incidents.filter((i) => i.kind === 'current').sort(byDateDesc);
+  // The lead story is the newest one shown by default, i.e. with confirmed or suspected AI involvement.
+  const leadStory = current.find((i) => ['confirmed', 'suspected'].includes(overall(i))) ?? current[0];
   const incidentsPage = layout({
     path: '/incidents/',
     cls: 'news',
@@ -501,15 +503,19 @@ ${body}
     <p>${esc(np.intro)}</p>
     <div class="filter" role="radiogroup" aria-label="${esc(np.filter_label)}">
       <span>${esc(np.filter_label)}</span>
-      <label class="pick" data-ai="all"><input type="radio" name="ai" id="ai-all" checked><span>${esc(np.filter_all)}</span></label>
+      <label class="pick" data-ai="ai"><input type="radio" name="ai" id="ai-f-ai" checked><span>${esc(np.filter_default)}</span></label>
       ${each(levels, (l) => `<label class="pick" data-ai="${l}"><input type="radio" name="ai" id="ai-f-${l}"><span><span class="ai ai-${l}"><i aria-hidden="true"></i></span>${esc(defs.ai_level[l].label)}</span></label>`)}
+      <label class="pick" data-ai="all"><input type="radio" name="ai" id="ai-all"><span>${esc(np.filter_all)}</span></label>
     </div>
+    <p class="filter-note">${esc(np.filter_note)}</p>
   </header>
   <div>
-    <div class="feed">${each(current, (i, n) => story(i, n === 0))}</div>
-    <h2 class="feed-h">${esc(np.precedent_title)}</h2>
-    <p>${esc(np.precedent_intro)}</p>
-    <div class="feed">${each(incidents.filter((i) => i.kind === 'precedent').sort(byDateDesc), (i) => story(i, false))}</div>
+    <div class="feed">${each(current, (i) => story(i, i === leadStory))}</div>
+    <div class="earlier">
+      <h2 class="feed-h">${esc(np.precedent_title)}</h2>
+      <p>${esc(np.precedent_intro)}</p>
+      <div class="feed">${each(incidents.filter((i) => i.kind === 'precedent').sort(byDateDesc), (i) => story(i, false))}</div>
+    </div>
   </div>
 </div>`,
   });

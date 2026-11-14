@@ -249,8 +249,10 @@ pages:
     badge: AI involvement
     developing: Still developing
     more: Sources and what to do
-    filter_label: Show events where AI involvement is
-    filter_all: Anything
+    filter_label: Show
+    filter_default: AI confirmed or suspected
+    filter_all: All events
+    filter_note: Many recent hacks and outages had nothing to do with AI. Choose "All events" to see those too.
     precedent_title: Earlier events
     precedent_intro: Older events that show how long outages last and how recovery goes.
   checklist:
