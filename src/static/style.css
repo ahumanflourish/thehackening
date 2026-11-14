@@ -485,6 +485,19 @@ button.badge:hover { border-color: var(--ink); }
 .g-main .sides { max-width: none; }
 .g-main .sides p { font-size: 1rem; }
 
+/* Plain pages (questions, basics, about, help wanted, notes, checklist) use the same
+   centred reading column as the guide articles. */
+.reading main > * { width: 100%; max-width: 56rem; margin-inline: auto; }
+.reading .page-head { padding-top: 3rem; }
+.reading .page-head h1 { font-size: clamp(2rem, 4vw, 3rem); }
+.reading .entry, .reading .check-group ul { max-width: none; }
+.reading .prose { max-width: 56rem; }
+.reading .prose p, .reading .prose li { max-width: none; }
+.reading main { font-size: 1.125rem; line-height: 1.6; }
+.reading .entry h2 { font-size: 1.5rem; }
+.reading .reasoning dd { font-size: 1.0625rem; }
+.reading .reasoning, .reading .evidence { max-width: none; }
+
 /* --------------------------------------- basics, questions, incidents */
 
 .label { font-weight: 600; background: var(--surface); }

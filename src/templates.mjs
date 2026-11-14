@@ -49,7 +49,7 @@ export function renderSite(ctx) {
 <link rel="stylesheet" href="/diagrams.css">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
-<body class="${cls}">
+<body class="${cls}${title ? ' reading' : ''}">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-head">
   <a class="wordmark" href="/"${when(path === '/', ' aria-current="page"')}>${esc(site.name)}</a>

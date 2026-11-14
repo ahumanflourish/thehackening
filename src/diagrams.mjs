@@ -34,8 +34,18 @@ export const DIAGRAM_TEXT = {
     ],
   },
   crypto: {
-    // a: four stages, the fork is a stage of its own.
+    // a: three stages, the fork happens as the money leaves.
     a: {
+      alt: 'A comparison of two ways money leaves your account. A bank transfer that takes days is slow enough that it can often be stopped, so the money can often come back. Crypto, wire transfers and instant payment apps can’t be pulled back once sent. If you sent the money yourself, nobody is required to refund you. If a thief sent it from your US payment app or bank account without you, report it at once, because federal rules can still require a refund. Crypto has no such rule.',
+      steps: [
+        { label: 'Money leaves your account', note: 'by slow bank transfer, or by crypto, wire or instant payment app' },
+        { label: 'Slow transfers can often be stopped', note: 'So it can often come back' },
+        { label: 'Instant payments can’t be pulled back', note: 'Gone. Sent it yourself? No refund.' },
+      ],
+    },
+  },
+    // b: four stages, the fork is a stage of its own.
+    b: {
       alt: 'A comparison of two ways money leaves your account. A bank transfer that takes days is slow enough that it can often be stopped, so the money can often come back. Crypto, wire transfers and instant payment apps can’t be pulled back once sent. If you sent the money yourself, nobody is required to refund you. If a thief sent it from your US payment app or bank account without you, report it at once, because federal rules can still require a refund. Crypto has no such rule.',
       steps: [
         { label: 'Money leaves your account' },
@@ -44,29 +54,9 @@ export const DIAGRAM_TEXT = {
         { label: 'Gone. Sent it yourself? No refund.', note: 'Crypto, wire transfers and instant payment apps can’t be pulled back' },
       ],
     },
-    // b: three stages, the fork happens as the money leaves.
-    b: {
-      alt: 'A comparison of two ways money leaves your account. A bank transfer that takes days is slow enough that it can often be stopped, so the money can often come back. Crypto, wire transfers and instant payment apps can’t be pulled back once sent. If you sent the money yourself, nobody is required to refund you. If a thief sent it from your US payment app or bank account without you, report it at once, because federal rules can still require a refund. Crypto has no such rule.',
-      steps: [
-        { label: 'Money leaves your account', note: 'by a slow route or an instant one' },
-        { label: 'Slow transfers can often be stopped', note: 'So it can often come back' },
-        { label: 'Instant payments can’t be pulled back', note: 'Gone. Sent it yourself? No refund.' },
-      ],
-    },
-  },
   infrastructure: {
-    // a: four stages, starting from what a home depends on.
+    // a: three stages, starting from the attack.
     a: {
-      alt: 'How it could happen: a home depends on water, power, the internet and deliveries, and the networks behind them run on software that is old and rarely updated. An attack on that software could cut them off at your home, though this is less likely than the other three threats. You would get by on what you had stored. The preparation is the same as for a storm, so it is cheap to cover.',
-      steps: [
-        { label: 'Water, power, internet and deliveries', note: 'Every home depends on them' },
-        { label: 'An attack on their old software', note: 'Less likely than the other three threats' },
-        { label: 'Your home could be cut off' },
-        { label: 'Get by on what you stored', note: 'Same preparation as for a storm' },
-      ],
-    },
-    // b: three stages, starting from the attack.
-    b: {
       alt: 'How it could happen: a home depends on water, power, the internet and deliveries, and the networks behind them run on software that is old and rarely updated. An attack on that software could cut them off at your home, though this is less likely than the other three threats. You would get by on what you had stored. The preparation is the same as for a storm, so it is cheap to cover.',
       steps: [
         { label: 'An attack on old software', note: 'It runs water, power, internet and deliveries' },
@@ -75,6 +65,16 @@ export const DIAGRAM_TEXT = {
       ],
     },
   },
+    // b: four stages, starting from what a home depends on.
+    b: {
+      alt: 'How it could happen: a home depends on water, power, the internet and deliveries, and the networks behind them run on software that is old and rarely updated. An attack on that software could cut them off at your home, though this is less likely than the other three threats. You would get by on what you had stored. The preparation is the same as for a storm, so it is cheap to cover.',
+      steps: [
+        { label: 'Water, power, internet and deliveries', note: 'Every home depends on them' },
+        { label: 'An attack on their old software', note: 'Less likely than the other three threats' },
+        { label: 'Your home could be cut off' },
+        { label: 'Get by on what you stored', note: 'Same preparation as for a storm' },
+      ],
+    },
 };
 
 // Which version is live on the site. Change 'a' to 'b' on one line to swap.
@@ -219,25 +219,6 @@ const LINES_B = [-48, -16, 16, 48];
 
 const ART_INFRASTRUCTURE = {
   a: [
-    // The four things a home is supplied with, each on its own line.
-    () => LINES_A.map((y, k) => path(K, `M-16 ${y}H${E}`) + up(-30, y, PIC[SERVICES[k]]())).join(''),
-    // All four lines pass through one system. It is attacked; past it they are dead.
-    () => {
-      let out = '';
-      LINES_A.forEach((y) => { out += path(K, `M${-E} ${y}H-14`) + path(K + THIN + DOTTED, `M14 ${y}H${E}`); });
-      return out + path(`${K} ${NODE}`, 'M-14 -52H14V52H-14Z') +
-        path(A, `M0 ${-E}V-55M-5 -60L0 -55L5 -60`) + dot(HIT, 0, 0, 6.5);
-    },
-    // The dead lines stop short of the home.
-    () => {
-      let out = '';
-      LINES_A.forEach((y) => { out += path(K + THIN + DOTTED, `M${-E} ${y}H-40`) + cross(-26, y, 5); });
-      return out + up(26, 0, house(22, 30)) + path(K + THIN + DOTTED, `M58 0H${E}`);
-    },
-    // The home, living on what is stored inside it.
-    () => path(K + THIN + DOTTED, `M${-E} 0H-58`) + stockedHome(4),
-  ],
-  b: [
     // The attack lands on one system; the four services hang off it.
     () => {
       let out = path(A, `M${-E} 0H-64`) + head(A, -64, 0);
@@ -251,12 +232,31 @@ const ART_INFRASTRUCTURE = {
     // The dead lines reach the home, which has its own store.
     () => LINES_B.map((y) => path(K + THIN + DOTTED, `M${-E} ${y}H-46`)).join('') + stockedHome(10),
   ],
+  b: [
+    // The four things a home is supplied with, each on its own line.
+    () => LINES_A.map((y, k) => path(K, `M-16 ${y}H${E}`) + up(-30, y, PIC[SERVICES[k]]())).join(''),
+    // All four lines pass through one system. It is attacked; past it they are dead.
+    () => {
+      let out = '';
+      LINES_A.forEach((y) => { out += path(K, `M${-E} ${y}H-14`) + path(K + THIN + DOTTED, `M14 ${y}H${E}`); });
+      return out + path(`${K} ${NODE}`, 'M-14 -50H14V50H-14Z') +
+        path(A, `M0 ${-E}V-53M-5 -58L0 -53L5 -58`) + dot(HIT, 0, 0, 6.5);
+    },
+    // The dead lines stop short of the home.
+    () => {
+      let out = '';
+      LINES_A.forEach((y) => { out += path(K + THIN + DOTTED, `M${-E} ${y}H-40`) + cross(-26, y, 5); });
+      return out + up(26, 0, house(22, 30)) + path(K + THIN + DOTTED, `M58 0H${E}`);
+    },
+    // The home, living on what is stored inside it.
+    () => path(K + THIN + DOTTED, `M${-E} 0H-58`) + stockedHome(4),
+  ],
 };
 
 // The payments comparison. Money leaves you on one line, which forks: the upper
 // route is slow (dotted) and meets a stopping point, where it turns round; the lower
 // route is instant (double arrowheads) and runs straight through to someone else.
-const SLOW = -28, FAST = 30, HOME = -52;
+const SLOW = -22, FAST = 34, HOME = -46;
 const fast = (x) => head(K, x, FAST) + head(K, x + 9, FAST);
 const fork = (x) => path(K + DOTTED, `M${x} 0L${x + 28} ${SLOW}H${E}`) + path(K, `M${x} 0L${x + 28} ${FAST}H${E}`);
 // The slow route stopped and turned back towards you; the instant route passes by.
@@ -271,13 +271,13 @@ const gone = () =>
 
 const ART_CRYPTO = {
   a: [
-    () => path(K, `M-46 0H${E}`) + diamond(`${K} ${NODE}`, -6, 0, 10) + head(K, 32, 0) + dot(SOLID, -46, 0, 8),
-    () => path(K, `M${-E} 0H-40`) + fork(-40) + fast(34),
+    () => path(K, 'M-52 0H0') + fork(0) + fast(52) + diamond(`${K} ${NODE}`, -24, 0, 10) + dot(SOLID, -52, 0, 8),
     stopped,
     gone,
   ],
   b: [
-    () => path(K, 'M-52 0H0') + fork(0) + fast(52) + diamond(`${K} ${NODE}`, -24, 0, 10) + dot(SOLID, -52, 0, 8),
+    () => path(K, `M-46 0H${E}`) + diamond(`${K} ${NODE}`, -6, 0, 10) + head(K, 32, 0) + dot(SOLID, -46, 0, 8),
+    () => path(K, `M${-E} 0H-40`) + fork(-40) + fast(34),
     stopped,
     gone,
   ],
