@@ -62,14 +62,19 @@ ${when(title, () => `<header class="page-head"><h1>${esc(title)}</h1>${when(intr
 ${body}
 </main>
 <footer class="site-foot">
-  <p class="notice">${md(site.notice)}</p>
-  ${when(site.never, () => `<p class="notice">${md(site.never)}</p>`)}
-  <div class="foot-links">
-    <ul>
-      ${each(site.footer_links, (l) => `<li><a href="${l.href}">${esc(l.label)}</a></li>`)}
-      <li><a href="/about/">About</a></li>
-      <li>${ext(site.repo_url, 'Source and data on GitHub')}</li>
-    </ul>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <a class="wordmark" href="/">${esc(site.name)}</a>
+      <p>${esc(site.footer_tagline)}</p>
+    </div>
+    ${each(site.footer_columns, (c, i) => `<nav aria-label="${esc(c.title)}">
+      <h2>${esc(c.title)}</h2>
+      <ul>${each(c.links, (l) => `<li><a href="${l.href}">${esc(l.label)}</a></li>`)}${when(i === site.footer_columns.length - 1, `<li>${ext(site.repo_url, 'Source on GitHub')}</li>`)}</ul>
+    </nav>`)}
+  </div>
+  <div class="foot-small">
+    <p class="notice">${md(site.notice)}</p>
+    ${when(site.never, () => `<p class="notice">${md(site.never)}</p>`)}
     <p>Content as of ${time(asOf)}</p>
   </div>
 </footer>

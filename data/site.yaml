@@ -41,10 +41,24 @@ nav:
   - { href: /contribute/, label: Help wanted }
   - { href: /about/, label: About }
 
-footer_links:
-  - { href: /checklist/, label: Printable checklist }
-  - { href: /basics/, label: Basic security guides }
-  - { href: /notes/, label: Research notes }
+# Footer: link columns, then the small print underneath.
+footer_tagline: A volunteer-run guide to getting ready for AI-driven hacking.
+footer_columns:
+  - title: Guide
+    links:
+      - { href: "/#threats", label: The four threats }
+      - { href: "/#advice", label: What to do }
+      - { href: /checklist/, label: Printable checklist }
+  - title: Reference
+    links:
+      - { href: /incidents/, label: Incidents }
+      - { href: /questions/, label: Open questions }
+      - { href: /basics/, label: Basic security guides }
+      - { href: /notes/, label: Research notes }
+  - title: Project
+    links:
+      - { href: /about/, label: About }
+      - { href: /contribute/, label: Help wanted }
 
 # The four threats, in display order.
 # tab = short tab label; mark = one-word column heading in the advice overview; reach = how it reaches an ordinary person;

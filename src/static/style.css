@@ -131,10 +131,17 @@ p { margin: 0 0 0.9rem; max-width: var(--measure); }
 
 .page-head { padding-block: 2.5rem 1.25rem; }
 .page-head .lede { color: var(--muted); }
-/* Footer: the two statements side by side, links in a third column, across the full page width. */
-.site-foot { border-top: 1px solid var(--rule); padding-block: 2rem 3rem; font-size: 0.875rem; line-height: 1.5; color: var(--muted); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; gap: 1.5rem var(--gutter); align-items: start; }
-.site-foot p { max-width: none; margin: 0; }
-.foot-links ul { list-style: none; margin: 0 0 0.75rem; padding: 0; display: grid; gap: 0.3rem; white-space: nowrap; }
+/* Footer: brand and link columns on a charcoal band, small print underneath. */
+.site-foot { margin-top: 0; padding-block: 3rem 2.5rem; font-size: 0.9063rem; line-height: 1.5; color: var(--plate-muted); background: var(--plate); box-shadow: 0 0 0 100vmax var(--plate); clip-path: inset(0 -100vmax); --ink: var(--plate-ink); --muted: var(--plate-muted); --rule: var(--plate-rule); --underline: var(--accent); }
+.foot-top { display: grid; grid-template-columns: minmax(16rem, 2fr) repeat(3, minmax(9rem, 1fr)); gap: 2rem var(--gutter); }
+.foot-brand .wordmark { color: var(--plate-ink); font-size: 1.25rem; }
+.foot-brand p { margin: 0.75rem 0 0; max-width: 22rem; }
+.site-foot h2 { font: 700 0.9375rem var(--display); color: var(--plate-ink); margin: 0 0 0.75rem; }
+.site-foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.45rem; }
+.site-foot nav a { color: var(--plate-muted); text-decoration: none; }
+.site-foot nav a:hover { color: var(--plate-ink); text-decoration: underline; text-decoration-color: var(--accent); }
+.foot-small { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--plate-rule); font-size: 0.8125rem; display: grid; gap: 0.6rem; }
+.foot-small p { margin: 0; max-width: none; color: var(--plate-muted); }
 .notice { color: var(--ink); }
 
 /* --------------------------------------------------------------- screens */
@@ -541,7 +548,9 @@ button.badge:hover { border-color: var(--ink); }
 @media (max-width: 60rem) {
   html:has(.home) { scroll-snap-type: none; }
   .screen { min-height: 0; }
-  .screen.cols, .site-foot { grid-template-columns: 1fr; }
+  .screen.cols { grid-template-columns: 1fr; }
+  .foot-top { grid-template-columns: 1fr 1fr; }
+  .foot-brand { grid-column: 1 / -1; }
   .g-next { grid-template-columns: 1fr; }
   .g-wrap { grid-template-columns: 1fr; gap: 1.5rem; }
   .g-nav { position: static; max-height: none; order: 2; }  /* the article first, the list of steps after it */
