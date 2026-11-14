@@ -194,6 +194,13 @@ export function validate(data) {
   const incidentIds = new Set(data.incidents.map((i) => i.id));
   for (const ex of data.site?.home?.examples ?? [])
     if (!incidentIds.has(ex.incident)) errors.push(`site.yaml: home example "${ex.incident}" is not an incident id`);
+  // The home page shows only examples of the threat itself: AI involvement must be confirmed or suspected.
+  for (const ex of data.site?.home?.examples ?? []) {
+    const inc = data.incidents.find((i) => i.id === ex.incident);
+    const levels = (inc?.ai_involvement ?? []).filter((r) => r.stage !== 'discovery').map((r) => r.level);
+    if (inc && !levels.some((l) => l === 'confirmed' || l === 'suspected'))
+      errors.push(`site.yaml: home example "${ex.incident}" has no confirmed or suspected AI involvement, so it does not belong on the home page`);
+  }
 
   const models = new Set((data.site?.threat_models ?? []).map((m) => m.id));
   for (const m of ENUMS.threat_model)

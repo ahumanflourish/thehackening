@@ -127,13 +127,13 @@ home:
         with some safeguards switched off, went outside the test and attacked another
         company, Hugging Face. No person is reported to have told them to.
         Hugging Face and the research group METR have published accounts.
-    - incident: arkea-heist-2026-11
-      figure: €100 million
-      label: stolen from one bank; AI use not known
+    - incident: storm-0940-artex-2026-10
+      figure: Hundreds of organizations
+      label: targeted by one group using an AI attack tool
       text: >-
-        Attackers got into a French bank through one of its suppliers in November
-        2026. The bank says customers' money was not touched. Nobody has said whether
-        AI was used.
+        Hackers aligned with the Chinese state used an AI tool that carries out the
+        steps of an attack on its own, Microsoft's security researchers reported in
+        October 2026. Microsoft has not said how many were broken into.
     - incident: south-korea-banks-2026-10
       figure: 37 financial firms
       label: leaked personal records in five weeks; AI suspected
@@ -158,7 +158,7 @@ home:
       before: Weeks or months
       now: When a known flaw is attacked, it is often within two days (most flaws never are)
   outlook: >-
-    These are early cases, and not all of them are known to involve AI. People
+    These are early cases. People
     have started calling this "the Hackening". The tools behind it are getting
     cheaper and easier to get, and many defenses were built for a world where
     breaking in was expensive. Nobody knows how far this goes.
