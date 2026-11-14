@@ -1,6 +1,6 @@
 # Research notes
 
-These are the maintainer's own notes, not recommendations. They are the background research behind the first version of the site, from October–November 2026, written by one person with an AI coding assistant and not checked by any professional. Written to be public: no personal financial details. The estimates are one person's judgment calls, not forecasts; read them as a rough ranking, not precise numbers. Where these notes and a step on the site differ, follow the step.
+These are background notes, not recommendations. They were compiled from community discussion and public reporting in October–November 2026, with the help of an AI agent, and have not been checked by a professional. The estimates are judgment calls, not forecasts; read them as a rough ranking, not precise numbers.
 
 ## How a hostile internet hits money
 
@@ -40,7 +40,7 @@ Gold only helps in a fifth case, a collapse of the dollar system, which is far l
 
 ## Scenario estimates (as of late Oct 2026)
 
-These are one person's guesses, not forecasts. The Manifold figures are from small markets that use play money, read in late October 2026; they move, and each market defines its event differently.
+These are rough guesses, not forecasts. The Manifold figures are from small markets that use play money, read in late October 2026; they move, and each market defines its event differently.
 
 | # | Scenario | Window | Estimate | Anchor |
 | --- | --- | --- | --- | --- |

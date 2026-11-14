@@ -50,3 +50,5 @@ The project's public notes list ideas that have not been built and may never be:
 ## Corrections and help
 
 If something here is wrong, out of date or unclear, please say so. See [Help wanted](/contribute/) for how to suggest a correction, add a source, or volunteer as a reviewer. All the content and the code that builds the site are public.
+
+The point of contact is Alex A: [ahumanflourish@gmail.com](mailto:ahumanflourish@gmail.com).

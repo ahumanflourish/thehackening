@@ -59,6 +59,7 @@ footer_columns:
     links:
       - { href: /about/, label: About }
       - { href: /contribute/, label: Help wanted }
+      - { href: "mailto:ahumanflourish@gmail.com", label: Contact }
 
 # The four threats, in display order.
 # tab = short tab label; mark = one-word column heading in the advice overview; reach = how it reaches an ordinary person;
@@ -299,9 +300,9 @@ pages:
     origin: Where this came from
   notes:
     title: Research notes
-    intro: Background notes behind the first version of this site.
-      They are not recommendations. The estimates are one person's judgment, not
-      forecasts; read them as a rough ranking, not precise numbers.
+    intro: Background notes compiled from community discussion and public reporting, behind
+      the first version of this site. They are not recommendations. The estimates are
+      judgment calls, not forecasts; read them as a rough ranking, not precise numbers.
 
 definitions:
   confidence:

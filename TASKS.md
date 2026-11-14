@@ -55,7 +55,7 @@ Every guide says "Checked by: Nobody yet". A review from someone who works in th
 ## Project
 
 - [ ] **Point thehackening.ai at the site.** Until then the address is thehackening.vercel.app.
-- [ ] **A better way for professional reviewers to get in touch.** Today the only route is a GitHub issue, which many security and banking professionals won't use. Options: a contact email address, or the submission form listed above.
+- [ ] **A better way for professional reviewers to get in touch.** There is now a contact email (ahumanflourish@gmail.com) alongside GitHub. Still wanted: the submission form listed above, so nobody has to write an email from scratch.
 - [ ] **Reach out to reviewers directly** if none come forward: a short email to a few people with the right background, linking the guides in their area and saying exactly what is being asked.
 - [ ] **Choose a licence.** The repository has none, so it is unclear whether others may reuse the text or the code, or on what terms contributions are accepted.
 - [ ] **Protect the publishing route.** Every change to the main branch goes live automatically. Require a review before merging, and protect the maintainer accounts on GitHub and the hosting service with a security key.
