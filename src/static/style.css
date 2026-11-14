@@ -69,13 +69,16 @@ html { -webkit-text-size-adjust: 100%; scroll-padding-top: var(--head); overflow
 /* Only the home page settles on its screens, and only on the one-viewport screens at the top.
    The long steps screen and everything after it scroll freely, so nothing pulls the reader
    about inside the table or back up from the footer. */
-html:has(.home) { scroll-snap-type: y proximity; }
+/* Touch screens only: with a mouse wheel, one notch at a time is pulled back to the top of
+   the screen it started on, so the next screen can't be reached by scrolling slowly. */
+@media (hover: none) and (pointer: coarse) { html:has(.home) { scroll-snap-type: y proximity; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
   font: 1.0625rem/1.55 var(--body);
+  overflow-wrap: break-word;
 }
 main, .site-head, .site-foot { max-width: var(--page); margin-inline: auto; padding-inline: clamp(1.25rem, 3vw, 3rem); }
 
@@ -120,9 +123,9 @@ p { margin: 0 0 0.9rem; max-width: var(--measure); }
 /* ---------------------------------------------------------------- chrome */
 
 .site-head { display: flex; align-items: center; gap: 0.25rem 2rem; font-size: 0.9375rem; }
-.wordmark { white-space: nowrap; font: 800 1.1875rem var(--display); font-stretch: 85%; text-decoration: none; margin-right: auto; display: inline-flex; align-items: center; gap: 0.55rem; }
+.wordmark { white-space: nowrap; font: 800 1.1875rem var(--display); font-stretch: 85%; text-decoration: none; margin-right: auto; display: inline-flex; align-items: center; align-self: stretch; gap: 0.55rem; }
 .wordmark::before { content: ""; width: 0.8rem; height: 0.8rem; background: var(--accent); border-radius: 50%; }
-.site-head nav { display: flex; gap: 0.2rem 1.4rem; overflow-x: auto; white-space: nowrap; }
+.site-head nav { display: flex; gap: 0.2rem 1.4rem; overflow-x: auto; white-space: nowrap; min-width: 0; }
 .site-head nav a { text-decoration: none; padding-block: 0.25rem; border-bottom: 2px solid transparent; color: var(--plate-ink); }
 .site-head nav a:hover, .site-head nav a[aria-current] { border-bottom-color: var(--accent); }
 
@@ -138,7 +141,7 @@ p { margin: 0 0 0.9rem; max-width: var(--measure); }
    a heading column on the left, content on the right. */
 .site-head { position: sticky; top: 0; z-index: 4; height: var(--head); }
 .screen {
-  min-height: calc(100svh - var(--head)); padding-block: clamp(2.5rem, 6vh, 5rem);
+  min-height: calc(100vh - var(--head)); min-height: calc(100svh - var(--head)); padding-block: clamp(2.5rem, 6vh, 5rem);
   display: grid; align-content: center; gap: 2rem var(--gutter);
 }
 .home .screen:not(.tall, .tall ~ .screen) { scroll-snap-align: start; }
@@ -157,7 +160,7 @@ p { margin: 0 0 0.9rem; max-width: var(--measure); }
 
 .hero { grid-template-rows: 1fr auto; align-content: stretch; background-image: url("/hero.svg"); background-repeat: no-repeat; background-position: right 0 top 0; background-size: auto 100%; }
 .hero-text { align-self: center; }
-.hero h1 { max-width: none; font-size: clamp(2.5rem, 6.5vw, 5rem); }
+.hero h1 { max-width: 10.5em; font-size: clamp(2.5rem, 5.6vw, 4.5rem); text-wrap: balance; }
 .subhead { font: 600 clamp(1.25rem, 2.4vw, 1.875rem)/1.2 var(--display); margin: 0.6rem 0 0; max-width: none; }
 .subhead::after { content: ""; display: block; width: 4.5rem; height: 6px; background: var(--accent); margin-top: 1.25rem; }
 .hero .lede { color: var(--muted); }
@@ -203,7 +206,9 @@ p { margin: 0 0 0.9rem; max-width: var(--measure); }
 .story.lead h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); max-width: 30ch; }
 .story h3 a { text-decoration-color: transparent; }
 .story h3 a:hover { text-decoration-color: var(--underline); }
-.story-sum { margin: 0; font-size: 0.9688rem; line-height: 1.45; color: var(--muted); max-width: 60rem; flex: 1; }
+/* The summary keeps its own three-line height; the spare room in a taller card goes under it,
+   so no half-cut fourth line shows below the ellipsis. */
+.story-sum { margin: 0 0 auto; font-size: 0.9688rem; line-height: 1.45; color: var(--muted); max-width: 60rem; flex: none; }
 .story-sum { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden; }
 .story:has(.more[open]) .story-sum { display: none; }
 .story-full { font-size: 0.9688rem; }
@@ -231,7 +236,8 @@ body:has(#ai-f-unknown:checked) .story:not([data-ai="unknown"]) { display: none;
 
 .story.has-tile { padding: 0; gap: 0; }
 .story-body { display: flex; flex-direction: column; gap: 0.55rem; padding: 1.15rem 1.4rem 1.25rem; flex: 1; min-width: 0; }
-.story.lead.has-tile { display: grid; grid-template-columns: minmax(0, 1fr) minmax(18rem, 30rem); }
+/* The text keeps a readable width first; the picture takes what is left, up to 30rem. */
+.story.lead.has-tile { display: grid; grid-template-columns: minmax(min(100%, 20rem), 1fr) minmax(0, 30rem); }
 .story.lead .story-body { padding: 1.75rem 1.9rem; grid-column: 1; grid-row: 1; }
 .story.lead .tile { grid-column: 2; grid-row: 1; }
 
@@ -364,11 +370,14 @@ body:has(#lv-3:checked) .action:not([data-tier="3"]) { display: none; }
 /* Badge, chip and label are one family: the same box whatever the element (button, link, span)
    and whatever the font size or line height of the text around it. */
 .badge, .chip, .label {
-  display: inline-flex; align-items: center; gap: var(--ui-gap); white-space: nowrap;
-  height: var(--ui-height); margin: 0; padding: 0 var(--ui-pad-x);
+  display: inline-flex; align-items: center; gap: var(--ui-gap);
+  min-height: var(--ui-height); max-width: 100%; margin: 0; padding: 0.2rem var(--ui-pad-x);
   border: 1px solid var(--rule); border-radius: var(--ui-radius);
-  font: 400 var(--ui-size)/1 var(--body); text-decoration: none;
+  font: 400 var(--ui-size)/1.2 var(--body); text-align: left; text-decoration: none;
 }
+/* One line and one height whenever the text fits; a longer value wraps inside its box
+   instead of running out of it. */
+.chip b { text-align: right; }
 .badges { display: flex; flex-wrap: wrap; gap: var(--ui-gap); align-items: center; }
 .badge { color: var(--muted); background: var(--bg); }
 .badge b, .chip b { color: var(--ink); font-weight: 650; }
@@ -385,6 +394,8 @@ button.badge:hover { border-color: var(--ink); }
 .gauge i.on { background: var(--ink); }
 
 .pop { width: min(26rem, calc(100vw - 2rem)); padding: 1.1rem 1.25rem; background: var(--surface); color: var(--ink); border: 1px solid var(--ink); border-top: 5px solid var(--accent); box-shadow: 0 12px 32px rgb(0 0 0 / 0.28); font-size: 0.9375rem; line-height: 1.45; }
+/* Never taller than the screen: scrolls inside, and leaves a strip above and below to tap to close. */
+.pop { max-height: calc(100vh - 6rem); max-height: calc(100dvh - 6rem); overflow-y: auto; overscroll-behavior: contain; }
 .pop::backdrop { background: rgb(0 0 0 / 0.25); }
 .pop p { margin-bottom: 0.6rem; }
 .pop-title { font: 700 1.0625rem var(--display); display: flex; align-items: center; gap: 0.5rem; }
@@ -416,7 +427,7 @@ button.badge:hover { border-color: var(--ink); }
 .g-wrap { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--gutter); align-items: start; padding-block: 3rem 5rem; }
 .g-main { width: 100%; max-width: 56rem; margin-inline: auto; font-size: 1.1875rem; line-height: 1.65; }
 /* The list of steps: a side panel the reader can fold away. */
-.g-nav { position: sticky; top: calc(var(--head) + 1.5rem); max-height: calc(100svh - var(--head) - 3rem); overflow-y: auto; font-size: 0.9063rem; }
+.g-nav { position: sticky; top: calc(var(--head) + 1.5rem); max-height: calc(100vh - var(--head) - 3rem); max-height: calc(100svh - var(--head) - 3rem); overflow-y: auto; font-size: 0.9063rem; }
 .g-nav[open] { width: 19rem; }
 .g-nav summary { cursor: pointer; width: fit-content; padding: var(--ctl-pad); border: 1px solid var(--rule); background: var(--surface); font: 650 var(--ctl-size)/var(--ctl-line) var(--body); }
 .g-nav summary:hover { border-color: var(--ink); }
@@ -519,7 +530,7 @@ button.badge:hover { border-color: var(--ink); }
   .screen.cols { grid-template-columns: 1fr; }
   .g-next { grid-template-columns: 1fr; }
   .g-wrap { grid-template-columns: 1fr; gap: 1.5rem; }
-  .g-nav { position: static; max-height: none; }
+  .g-nav { position: static; max-height: none; order: 2; }  /* the article first, the list of steps after it */
   .g-nav[open] { width: auto; }
   .screen.tall .screen-head { position: static; }
   .tablist, .filter { flex-direction: row; flex-wrap: wrap; }
@@ -541,9 +552,40 @@ button.badge:hover { border-color: var(--ink); }
   .hero { background-image: none; animation: none !important; }
   .site-head nav a:not([href^="/#threats"]):not([href^="/#advice"]):not([href="/incidents/"]) { display: none; }
 }
+/* Phones: the header is two short rows (name, then links) so no link is cut off at the edge. */
+@media (max-width: 36rem) {
+  :root { --head: 4.75rem; }
+  .site-head { flex-wrap: wrap; align-content: stretch; gap: 0; }
+  .wordmark { flex: 0 0 100%; height: 2.25rem; margin: 0; padding-top: 0.35rem; }
+  .site-head nav { flex: 0 0 100%; height: 2.5rem; }
+  .site-head nav a { display: flex; align-items: center; padding-block: 0; border-bottom-width: 3px; }
+}
 @media (max-width: 30rem) {
   .reach-list { grid-template-columns: 1fr; }
   .tab span { padding: 0.6rem 0.75rem; font-size: 0.9375rem; }
+  .panel { padding: 1.25rem 1rem; }
+  .story-body, .story.lead .story-body { padding-inline: 1rem; }
+}
+/* Touch: controls and stand-alone links get a finger-sized target (about 40px) and room between them. */
+@media (max-width: 60rem), (pointer: coarse) {
+  :root { --ctl-pad: 0.5rem 0.75rem; }
+  .more summary { padding-block: 0.55rem; }
+  .go, .why, .byline a, .ex-meta a, .g-nav p a, .step-link a { display: inline-block; padding-block: 0.55rem; }
+  .ex-meta, .byline { row-gap: 0; }
+  .sources li, .g-main .sources li { padding-block: 0.5rem; }
+  .g-nav li a { padding-block: 0.65rem; }
+  /* Badges keep their size; the tappable area grows around them. */
+  button.badge, a.badge { position: relative; }
+  button.badge::after, a.badge::after { content: ""; position: absolute; inset: -0.4rem -0.1rem; }
+}
+/* Browsers without :has() can't run the tabs and filters, so show everything and hide the switches. */
+@supports not selector(:has(a)) {
+  .tablist, .levels, .filter { display: none; }
+  .panel { display: grid; visibility: visible; grid-area: auto; margin-bottom: 1rem; }
+}
+/* Browsers without popover would show every pop-up open at once and unstyled: lay them out as plain notes. */
+@supports not selector(:popover-open) {
+  .pop { flex-basis: 100%; width: auto; max-height: none; box-shadow: none; border-color: var(--rule); }
 }
 
 /* ----------------------------------------------------------------- print */
