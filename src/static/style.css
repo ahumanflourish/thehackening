@@ -131,8 +131,10 @@ p { margin: 0 0 0.9rem; max-width: var(--measure); }
 
 .page-head { padding-block: 2.5rem 1.25rem; }
 .page-head .lede { color: var(--muted); }
-.site-foot { border-top: 1px solid var(--rule); padding-block: 1.5rem 3rem; font-size: 0.875rem; color: var(--muted); }
-.site-foot p { max-width: 54rem; }
+/* Footer: the two statements side by side, links in a third column, across the full page width. */
+.site-foot { border-top: 1px solid var(--rule); padding-block: 2rem 3rem; font-size: 0.875rem; line-height: 1.5; color: var(--muted); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; gap: 1.5rem var(--gutter); align-items: start; }
+.site-foot p { max-width: none; margin: 0; }
+.foot-links ul { list-style: none; margin: 0 0 0.75rem; padding: 0; display: grid; gap: 0.3rem; white-space: nowrap; }
 .notice { color: var(--ink); }
 
 /* --------------------------------------------------------------- screens */
@@ -539,7 +541,7 @@ button.badge:hover { border-color: var(--ink); }
 @media (max-width: 60rem) {
   html:has(.home) { scroll-snap-type: none; }
   .screen { min-height: 0; }
-  .screen.cols { grid-template-columns: 1fr; }
+  .screen.cols, .site-foot { grid-template-columns: 1fr; }
   .g-next { grid-template-columns: 1fr; }
   .g-wrap { grid-template-columns: 1fr; gap: 1.5rem; }
   .g-nav { position: static; max-height: none; order: 2; }  /* the article first, the list of steps after it */

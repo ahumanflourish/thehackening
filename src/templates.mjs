@@ -64,9 +64,14 @@ ${body}
 <footer class="site-foot">
   <p class="notice">${md(site.notice)}</p>
   ${when(site.never, () => `<p class="notice">${md(site.never)}</p>`)}
-  <p>Content as of ${time(asOf)}. Built ${time(builtOn)}.
-    ${each(site.footer_links, (l) => `<a href="${l.href}">${esc(l.label)}</a>. `)}
-    ${ext(site.repo_url, 'Source and data on GitHub')}.</p>
+  <div class="foot-links">
+    <ul>
+      ${each(site.footer_links, (l) => `<li><a href="${l.href}">${esc(l.label)}</a></li>`)}
+      <li><a href="/about/">About</a></li>
+      <li>${ext(site.repo_url, 'Source and data on GitHub')}</li>
+    </ul>
+    <p>Content as of ${time(asOf)}</p>
+  </div>
 </footer>
 </body>
 </html>
