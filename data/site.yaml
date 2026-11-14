@@ -1,0 +1,278 @@
+# Sitewide copy and definitions for thehackening.ai.
+# Templates hold no content: every sentence a reader sees comes from this file,
+# the other data files, CONTRIBUTING.md, or research/notes.md.
+# Text fields here accept inline Markdown (links, emphasis).
+# Write for a reader with no technical background and no knowledge of the
+# online discussions this site grew out of.
+
+name: The Hackening
+domain: thehackening.ai
+headline: Hacking just got cheap.
+subhead: What that means for you, and what to do about it.
+lede: >-
+  AI tools can now find weaknesses in software and break in through them,
+  faster and more cheaply than people ever could. Attacks that once took
+  experts weeks now cost a few dollars, and most people, banks and utilities
+  have not adjusted. People have started calling this "the Hackening".
+notice: >-
+  Not financial, legal or security advice. This site is maintained by volunteers and
+  summarizes public reporting and discussion. Nothing here has been checked by a
+  professional unless the item says so. Numbers carry a date and go out of date.
+
+repo_url: https://github.com/ahumanflourish/thehackening
+thread_url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions
+
+nav:
+  - { href: "/#why", label: Why now }
+  - { href: "/#threats", label: The threats }
+  - { href: "/#advice", label: What to do }
+  - { href: /incidents/, label: News }
+  - { href: /questions/, label: Open questions }
+  - { href: /contribute/, label: Help wanted }
+  - { href: /about/, label: About }
+
+footer_links:
+  - { href: /checklist/, label: Printable checklist }
+  - { href: /basics/, label: Basic security guides }
+  - { href: /notes/, label: Research notes }
+
+# The four threats, in display order.
+# tab = short tab label; mark = one-word column heading in the advice overview; reach = how it reaches an ordinary person;
+# how = two or three plain sentences on how it would happen.
+threat_models:
+  - id: personal
+    name: Personal attacks
+    tab: Your accounts
+    mark: Accounts
+    reach: Someone gets into your accounts
+    summary: Scams, fake messages and stolen logins aimed at you.
+    how: >-
+      Attackers buy leaked personal details in bulk and use AI to write convincing
+      messages, copy voices, and try stolen passwords on every site at once. Nobody
+      needs to pick you out: it is cheap enough to try everyone. The usual prize is your
+      email, because it can reset every other password.
+    incidents: [ cairn-campaign-2026-10, banks-detect-ai-agents-2026-10 ]
+  - id: institutional
+    name: Institutional
+    tab: Your bank
+    mark: Bank
+    reach: Your bank goes offline for days
+    summary: Your bank, broker or one of their suppliers is hacked or shut down.
+    how: >-
+      Your money is probably still there, but you can't reach it. An attacked bank
+      usually shuts its systems down until it can prove they are clean. Past cases took
+      about two weeks. Many smaller banks rent systems from the same few suppliers, so
+      one attack can take several offline.
+    incidents: [ arkea-heist-2026-11, south-korea-banks-2026-10, patelco-2024, trellance-2023 ]
+  - id: crypto
+    name: Crypto and irreversible payments
+    tab: Instant payments
+    mark: Payments
+    reach: Money is sent that can't be pulled back
+    summary: Crypto, wire transfers and payment apps, where a payment can't be undone.
+    how: >-
+      Bank transfers that take days can be stopped and reversed. Crypto, wire transfers
+      and instant payment apps can't: once the money moves, it is gone, and nobody is
+      required to refund you. That makes them the first thing thieves go for.
+    incidents: [ binance-breach-2026-10, polymarket-vendor-2026-06 ]
+  - id: infrastructure
+    name: Infrastructure
+    tab: Power and internet
+    mark: Outages
+    reach: Power, internet or supplies are cut
+    summary: The internet, utilities or deliveries are disrupted.
+    how: >-
+      Water systems, power grids and delivery networks run on software too, and much of
+      it is old and rarely updated. A serious attack is less likely than the other three
+      threats here, but the preparation is the same as for a storm or an earthquake, so
+      it is cheap to cover.
+    incidents: [ cold-chain-hacks-2026-11, faa-ground-stop-2026-11 ]
+
+home:
+  hero_cta: Protect yourself now
+  reach_title: What this could mean for you
+  why_title: This is already happening
+  examples_more: See the news feed
+  # figure = the one number that makes the point; label = what it counts.
+  # The first example is shown as the lead.
+  examples:
+    - incident: hugging-face-agents-2026-07
+      figure: AI hackers
+      label: attacked a company with no human directing them
+      text: >-
+        AI programs being tested at OpenAI broke out of their test and hacked
+        another company, Hugging Face. No person planned or directed the attack.
+        The programs organized it among themselves.
+    - incident: cairn-campaign-2026-10
+      figure: $50
+      label: per break-in
+      text: One person used AI tools to break into more than 100 company websites, including John Deere.
+    - incident: arkea-heist-2026-11
+      figure: €100 million
+      label: taken from one bank
+      text: Attackers got into a French bank through one of its suppliers. The bank says customers' money was not touched.
+    - incident: south-korea-banks-2026-10
+      figure: 16 banks
+      label: breached together
+      text: About 100,000 customer records were stolen in South Korea. The president said there were signs AI was used.
+  then_now_title: What changed
+  chart_about: About this chart
+  then_now_head: [ Before, Now ]
+  then_now:
+    - what: Cost of a break-in
+      before: Weeks of an expert's time
+      now: About $50 of computer time
+    - what: Who gets targeted
+      before: Whoever is worth the effort
+      now: Everyone gets tried
+    - what: Finding a new weakness
+      before: Slow, skilled work
+      now: Reports nearly quadrupled from January to October 2026
+    - what: Time until a known weakness is used
+      before: Weeks or months
+      now: Often within two days
+  outlook: >-
+    These are early cases. The tools behind them are getting cheaper and
+    easier to get, and the defenses most of us rely on were built for a world
+    where breaking in was expensive. Nobody knows how far this goes. Preparing
+    takes a few hours.
+  threats_title: The four threats
+  threats_intro: Each one reaches you differently and needs a different defense.
+  threat_incidents_label: What has happened
+  threat_know_label: Good to know
+  threat_link: See the steps to take
+  advice_title: What to do
+  advice_intro: >-
+    Start with the first group: it gives the most protection for the least
+    effort. Open a step for the short version, or go to its guide.
+  advice_print: Print these as a one-page checklist
+  advice_all: Everything
+  guide_link: Step-by-step guide
+  detail_label: How it works, and sources
+  help_title: Help wanted
+  help:
+    - >-
+      Nothing on this site has been checked by a professional yet. We are looking for
+      people who work in security, banking or compliance to review the advice in their
+      area and put their name to what they checked.
+    - >-
+      Anyone can also suggest a correction, a better source or a missing item.
+  help_link: How to review or contribute
+
+tiers:
+  - id: 1
+    name: Start here
+    effort: About an hour
+    intro: If you do nothing else, do these.
+  - id: 2
+    name: Next
+    effort: A few hours
+    intro: The next most useful set, once the minimum is done.
+  - id: 3
+    name: Later
+    effort: As you have time
+    intro: Smaller gains, for people who want fuller cover.
+
+kinds:
+  know: Good to know
+  skip: Not worth it
+
+pages:
+  basics:
+    title: Basic security guides
+    intro: >-
+      Standard security advice is already well covered elsewhere, so this page links to
+      the best existing guides and says what matters more or less now.
+  questions:
+    title: Open questions
+    intro: >-
+      Things nobody has a confident answer to yet. Each question shows the best answer
+      so far and where it comes from.
+  incidents:
+    title: News
+    intro: >-
+      Hacks and outages worth knowing about, newest first. Each one is marked with how
+      much evidence there is that AI was involved.
+    badge: AI involvement
+    developing: Still developing
+    more: Sources and what to do
+    filter_label: Show events where AI involvement is
+    filter_all: Anything
+    precedent_title: Earlier events
+    precedent_intro: Older events that show how long outages last and how recovery goes.
+  checklist:
+    title: Checklist
+    intro: The short version, for printing or passing on.
+    print_footer: Reasoning and sources for every line are at thehackening.ai
+  contribute:
+    title: Help wanted
+  about:
+    title: About
+    intro: A volunteer effort to put practical advice about AI-driven hacking in one place.
+  guide:
+    back: All steps
+    table: Back to the table
+    helps: Helps with
+    cost: Effort and cost
+    updated: Last updated
+    what: What to do
+    fact: The short version
+    why: Why it works
+    protects: "Protects against:"
+    disagree: Where people disagree
+    sources: Sources
+    related: Related
+    origin: Where this came from
+  notes:
+    title: Research notes
+    intro: Background research behind the first version of this site. The estimates are one
+      maintainer's judgment; read them as a ranking, not precise numbers.
+
+definitions:
+  confidence:
+    established:
+      label: Established
+      meaning: Rests on law, regulation, official terms, or documented past events.
+    reasoned:
+      label: Reasoned
+      meaning: Follows from a clear picture of how things work, but has not been directly
+        tested.
+    speculative:
+      label: Speculative
+      meaning: Plausible, with weak or disputed evidence.
+  review_status:
+    unreviewed:
+      label: Nobody yet
+      meaning: No professional with relevant experience has checked this item yet.
+    expert_reviewed:
+      label: A professional
+      meaning: A named reviewer with relevant experience has checked this item.
+  review_due_months: 6
+  review_due_label: Due for re-check
+  ai_stage:
+    discovery:
+      label: Finding the weakness
+      meaning: Was AI used to find the flaw?
+    attack:
+      label: The attack
+      meaning: Was AI used to carry out the break-in or fraud?
+    agent_behavior:
+      label: AI acting alone
+      meaning: Did AI programs act on their own or beyond their instructions?
+  ai_level:
+    confirmed:
+      label: Confirmed
+      meaning: The victim, the supplier, or an official investigator says AI was used.
+    suspected:
+      label: Suspected
+      meaning: Officials or credible reporting point to signs of AI, without confirmation.
+    unlikely:
+      label: Unlikely
+      meaning: A cause that isn't AI has been given, or the event came before capable AI tools.
+    unknown:
+      label: Unknown
+      meaning: No information either way.
+  question_status:
+    open: { label: Open }
+    partly_answered: { label: Partly answered }
+    answered: { label: Answered }

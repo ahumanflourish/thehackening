@@ -1,0 +1,1194 @@
+# Advice items for thehackening.ai
+# Schema and rating definitions: see CONTRIBUTING.md.
+# kind: action (goes in a tier) | know (a fact, shown under its threat) | skip (considered and rejected).
+# time and money are badge values: keep them to two words at most; the longer story goes in cost.
+# rank = position in the list, 1 first: order by protection gained per hour spent.
+# tier: 1 = the minimum, 2 = a weekend, 3 = going further. covers = every threat the item helps with.
+# short = the one plain line everyone reads; why = the fuller mechanism, shown on demand.
+# Every seed item is unreviewed. Paraphrase thread comments; link to them.
+
+# ---------------------------------------------------------------- personal
+
+- id: know-the-authorized-line
+  threat_model: personal
+  title: US banks must refund theft, not payments you made yourself
+  kind: know
+  covers: [ personal ]
+  short: >-
+    If a thief moves your money the bank must repay it, but usually not if a scammer
+    tricks you into sending it.
+  advice: >-
+    Report any payment you didn't make to your bank or credit union promptly: US federal
+    rules then require a refund. If a scammer tricks you into pressing send yourself,
+    the payment counts as approved and those rules don't apply.
+  why: >-
+    US Regulation E calls an electronic transfer you didn't make "unauthorized", even if
+    you were careless or tricked into giving up your password. Report within 60 days of
+    the statement showing it and you owe nothing. With a lost card, report within 2
+    business days and you owe at most $50. The bank must investigate within 10 business
+    days or credit you meanwhile, and must prove you approved it.
+  protects_against: Someone using your stolen login to take your money
+  cost: None; this is knowledge, not an action
+  confidence: established
+  confidence_note: Applies to consumer bank and credit union accounts, not business
+    accounts or brokerages.
+  review_status: unreviewed
+  sources:
+    - title: Regulation E training, Michigan Credit Union League
+      url: https://www.mcun.coop/wp-content/uploads/2025/07/Regulation-E_Session_2.pdf
+    - title: Error Resolution Under Regulation E, Consumer Compliance Outlook
+      url: https://www.consumercomplianceoutlook.org/articles/2025/third-issue-2025/error-resolution-under-regulation-e-examiner-insights-and-common-violations
+    - title: What Is Regulation E?, Chargeback.io
+      url: https://www.chargeback.io/es/blog/regulation-e-glossary
+  thread_refs:
+    - author: RHollerith
+      url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/BPqcsafhHTjKgkDGz
+      note: Worried a ~$400 unauthorized withdrawal would need small-claims court to recover;
+        Reg E means the bank owes the refund.
+  checklist: true
+  checklist_text: If money leaves your account that you didn't send, tell your bank the
+    same day, and never send money to someone who contacted you first.
+  updated: 2026-11-13
+
+- id: dont-delegate-money-access
+  threat_model: personal
+  title: Keep AI tools and apps out of your money accounts
+  kind: action
+  tier: 2
+  rank: 8
+  time: 30 min
+  money: "Free"
+  covers: [ personal, crypto ]
+  short: >-
+    If something you gave access to moves your money, you usually can't get it refunded.
+  advice: >-
+    Keep AI assistants, budgeting apps and other connected tools out of any account that
+    can send or transfer money. View-only access is safer, but check what each
+    connection can actually do.
+  why: >-
+    A loss caused by someone you gave access to generally counts as authorized, so
+    refund promises don't cover it. The broker Fidelity's Customer Protection Guarantee
+    says this explicitly, and Regulation E, the US bank refund rule, has a similar
+    exception. Major US banks have also found outside AI agents they hadn't approved
+    inside customer accounts, some doing more than users asked, and are restricting
+    their access.
+  protects_against: Losing your right to a refund; AI tools misbehaving or being taken over
+  cost: Some convenience
+  confidence: reasoned
+  confidence_note: The broker's terms are clear; whether the bank rule's exception covers
+    AI agents hasn't been tested.
+  review_status: unreviewed
+  sources:
+    - title: Fidelity Customer Protection Guarantee
+      url: https://www.fidelity.com/security/customer-protection-guarantee
+    - title: US banks have detected unvetted AI agents accessing customer bank accounts,
+        TechRadar
+      url: https://www.techradar.com/pro/security/us-banks-have-detected-unvetted-ai-agents-accessing-customer-bank-accounts
+  thread_refs:
+    - author: Alexander (maintainer)
+      url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/LtpgcFZKY7yusQedF
+  checklist: true
+  checklist_text: Don't connect AI assistants or budgeting apps to accounts that can move money.
+  steps:
+    - do: "List every account that can send or transfer money: bank, credit union, brokerage and payment apps."
+    - do: Sign in to each one by typing its address or opening its own app, not by following a link.
+    - do: Find the list of connected apps and remove any AI assistant, budgeting app or tool you don't need.
+      detail: "Look in Settings or Security for \"Connected apps\", \"Linked apps\" or \"Third-party access\". If you can't find it, call the number on your card and ask."
+    - do: For each connection you keep, check that it can only view the account, not move money.
+      detail: The connection's entry usually lists what it is allowed to do. If you can't confirm it is view-only, remove it.
+    - do: In each AI assistant you use, open its settings and disconnect any bank, brokerage or payment account.
+    - do: Change the password on any money account whose password you ever typed into another app or tool.
+      detail: Type the new password only into the institution's own site or app.
+  updated: 2026-11-13
+
+- id: be-a-normal-case
+  threat_model: personal
+  title: Banks refund ordinary fraud faster than unusual cases
+  kind: know
+  covers: [ personal, institutional ]
+  short: >-
+    Banks refund common kinds of fraud by routine; unusual setups get slow, case-by-case
+    review.
+  advice: >-
+    Keep your money in standard accounts at standard banks and pay through standard
+    channels. Then if something goes wrong, it looks like the cases your bank handles
+    every day.
+  why: >-
+    Unusual cases, such as malware picked up while coding with AI or an AI agent you set
+    up yourself, are harder to explain and more likely to be treated as approved by you.
+    The broker Fidelity pays only if it decides a loss happened "through no fault of
+    your own." Losses that hit many customers of a big institution at once get shared
+    out; unusual setups don't. Customers of finance apps built on the intermediary
+    Synapse had money frozen for about six months, and some recovered pennies on the
+    dollar.
+  protects_against: Slow or refused refunds
+  confidence: reasoned
+  review_status: unreviewed
+  sources:
+    - title: Fidelity Customer Protection Guarantee
+      url: https://www.fidelity.com/security/customer-protection-guarantee
+    - title: Thousands of Americans see their savings vanish in Synapse fintech crisis, NBC
+        News
+      url: https://www.nbcnews.com/business/consumer/-no-money-thousands-americans-see-savings-vanish-synapse-fintech-crisi-rcna181419
+  thread_refs:
+    - author: Alexander (maintainer)
+      url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/LtpgcFZKY7yusQedF
+  checklist: false
+  updated: 2026-11-13
+
+- id: uneven-hygiene
+  threat_model: personal
+  title: Check what you've installed and connected, not just your passwords
+  kind: action
+  tier: 3
+  rank: 15
+  time: 1 hour
+  money: "Free"
+  covers: [ personal, crypto ]
+  short: >-
+    Strong passwords don't help if a browser add-on or AI tool you installed can act as
+    you once you're logged in.
+  advice: >-
+    Go through every AI tool connected to your email or money accounts, and every
+    browser extension, app and code package you installed without checking it. Review
+    these as carefully as your passwords.
+  why: >-
+    Attackers use the weakest way in. Once you log in, your browser keeps you logged in
+    so you aren't asked again. A malicious extension or code package can steal that
+    logged-in state, which skips your password and any extra login code entirely. Many
+    technical people have strong passwords and extra login codes but also connect AI
+    agents to email and financial accounts and install unchecked tools.
+  protects_against: Malicious add-ons and tools acting as you; AI agents being taken over
+  cost: An hour of auditing
+  confidence: speculative
+  confidence_note: This is a guess about where technical people's gaps are; nobody has measured it.
+  review_status: unreviewed
+  thread_refs:
+    - author: Alexander (maintainer)
+      url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/LtpgcFZKY7yusQedF
+  checklist: false
+  steps:
+    - do: Open your email account's list of connected apps and remove any you don't recognise or no longer use.
+      detail: For Gmail, the link below shows how. Other email providers list connected apps under their Security or Privacy settings.
+      url: https://support.google.com/accounts/answer/13533235
+      link: "Google: manage connected apps"
+    - do: Check each money account for connected apps and tools in the same way.
+      detail: "Look in Settings or Security for \"Connected apps\" or \"Third-party access\"."
+    - do: Open each AI tool you use, see which accounts it is connected to, and disconnect any it doesn't need.
+    - do: Open your browser's list of extensions (small add-on programs) and remove any you don't use or can't identify.
+      detail: "In Chrome: the three-dot menu, then Extensions. In Safari: Settings, then Extensions. Other browsers have a similar menu."
+      url: https://support.google.com/chrome_webstore/answer/2664769
+      link: "Chrome: manage extensions"
+    - do: Go through the apps on your phone and computer and delete those you don't use or don't remember installing.
+    - do: If you write code, list the packages and tools you installed without checking and uninstall those you no longer need.
+      detail: A code package is ready-made code downloaded from the internet. If you don't write code, skip this step.
+    - do: For anything you removed that looked suspicious, change that account's password and sign out of all devices.
+      detail: "Most accounts have a \"Sign out everywhere\" or \"Log out of all devices\" button under Security."
+  updated: 2026-11-13
+
+- id: strong-login-and-number-lock
+  threat_model: personal
+  title: Replace text-message login codes and lock your phone number
+  kind: action
+  tier: 1
+  rank: 1
+  time: 1 hour
+  money: "$0–50"
+  covers: [ personal ]
+  short: >-
+    Text-message codes can be stolen by taking over your phone number, and your email
+    can reset every other account.
+  advice: >-
+    On your email and money accounts, replace text-message codes with a passkey, a
+    hardware security key or an authenticator app. Ask your phone carrier for a number
+    lock, also called a port-out PIN.
+  why: >-
+    In a SIM swap, an attacker gets your number moved to their own phone and receives
+    your text codes. A number lock makes the carrier ask for a PIN before moving your
+    number. Passkeys, security keys and authenticator apps don't depend on your phone
+    number, so taking over the number doesn't help. Some banks don't offer authenticator
+    apps but do accept USB security keys.
+  protects_against: Someone taking over your phone number or tricking you out of a login code
+  cost: About an hour; ~$50 per hardware key
+  confidence: established
+  review_status: unreviewed
+  sources:
+    - title: The Hackening (Peter Wildeford's list), Zvi
+      url: https://www.lesswrong.com/posts/iqgZaJMnmyDCYfnuC/the-hackening-1
+  thread_refs:
+    - author: Terence Coelho
+      url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/EMkqX2trSffWznaXv
+      note: Banks often don't allow authenticator apps but do accept YubiKeys.
+  checklist: true
+  checklist_text: Put a passkey or security key on your email and bank logins, and ask
+    your carrier for a number lock.
+  steps:
+    - do: "Add a passkey to your email account: a login that uses your phone or fingerprint instead of a code."
+      detail: For Gmail, follow the link below. Reach your account by typing its address yourself, not from a link in a message.
+      url: https://support.google.com/accounts/answer/13548313
+      link: "Google: sign in with a passkey"
+    - do: If your email is Outlook or Hotmail, add the passkey in your Microsoft account instead.
+      detail: "Sign in, open the security options, choose \"Add a new way to sign in or verify\", then \"Face, Fingerprint, PIN, or Security Key\"."
+      url: https://support.microsoft.com/en-us/accounts-billing/security/create-save-passkey
+      link: "Microsoft: create a passkey"
+    - do: Do the same on each bank and money account, then switch off text-message codes where the account allows.
+      detail: If there is no passkey option, choose a security key (a small USB device, about $50) or an authenticator app (a phone app that shows login codes). Save any backup codes on paper.
+    - do: In the US, if your carrier is Verizon, turn on Number Lock in the My Verizon app.
+      detail: Open the app, find Number Lock, and switch it on for each phone number. It is free.
+      url: https://www.verizon.com/support/knowledge-base-309293/
+      link: "Verizon: turn on Number Lock"
+    - do: If your carrier is AT&T, turn on Wireless Account Lock in the AT&T app.
+      detail: "Open the app, tap the person icon, choose \"Wireless account lock\" and swipe to lock. It is free."
+      url: https://www.att.com/support/article/wireless/000102016/
+      link: "AT&T: Wireless Account Lock"
+    - do: If your carrier is T-Mobile, turn on SIM Protection and Port Out Protection.
+      detail: "In the T-Life app: Manage, the gear icon, Security, then SIM Protection. The help page below covers both features. Both are free."
+      url: https://www.t-mobile.com/support/plans-features/help-with-t-mobile-account-fraud
+      link: "T-Mobile: protect your account"
+    - do: On any other carrier, call the number on your bill and ask for a number lock or port-out PIN.
+      detail: "Say: \"Please lock my number so it can't be moved without my PIN.\" Never give that PIN to anyone who calls or messages you."
+  updated: 2026-11-13
+
+- id: freeze-everything
+  threat_model: personal
+  title: Freeze your credit and get an IRS Identity Protection PIN
+  kind: action
+  tier: 1
+  rank: 2
+  time: 1 hour
+  money: "Free"
+  covers: [ personal ]
+  short: >-
+    Your details have probably leaked; a freeze stops them being used to open accounts
+    in your name.
+  advice: >-
+    Freeze your credit at Equifax, Experian and TransUnion, plus Innovis and ChexSystems
+    (which blocks new bank accounts opened in your name). Get an IRS Identity Protection
+    PIN and create your my Social Security account before someone else does.
+  why: >-
+    Assume your personal details have already leaked: the US saw a record 3,322 data
+    compromises in 2025. Most lenders check your credit file before opening an account.
+    A freeze blocks that check, so a thief holding your details is usually turned down.
+    The IRS PIN is a number needed to file a tax return in your name, which makes it
+    much harder for a thief to file first.
+  protects_against: Someone opening accounts or filing taxes in your name
+  cost: About an hour; free
+  confidence: established
+  review_status: unreviewed
+  sources:
+    - title: The Hackening (Peter Wildeford's list), Zvi
+      url: https://www.lesswrong.com/posts/iqgZaJMnmyDCYfnuC/the-hackening-1
+    - title: Identity Theft Statistics for 2026, Swif
+      url: https://www.swif.ai/blog/identity-theft-statistics
+  checklist: true
+  checklist_text: Freeze your credit at Equifax, Experian, TransUnion, Innovis and
+    ChexSystems, and get an IRS Identity Protection PIN.
+  steps:
+    - do: In the US, create your my Social Security account, typing the address yourself rather than following a link.
+      detail: "Do this first: signing up includes an identity check, and a credit freeze can sometimes get in its way. You'll need an email address and photo ID."
+      url: https://www.ssa.gov/myaccount/
+      link: my Social Security
+    - do: Get an IRS Identity Protection PIN through your IRS online account.
+      detail: It is a six-digit number that changes every year. The online tool closes from mid-November to mid-January; if it is closed, set a reminder to return.
+      url: https://www.irs.gov/identity-theft-fraud-scams/get-an-identity-protection-pin
+      link: "IRS: get an IP PIN"
+    - do: Freeze your credit at Equifax.
+      detail: You create a free account and confirm your identity. The freeze is free, and you can lift it when you apply for credit yourself. Write each login down on paper.
+      url: https://www.equifax.com/personal/credit-report-services/credit-freeze/
+      link: Equifax freeze page
+    - do: Freeze your credit at Experian.
+      url: https://www.experian.com/help/credit-freeze/
+      link: Experian freeze page
+    - do: Freeze your credit at TransUnion.
+      url: https://www.transunion.com/credit-freeze
+      link: TransUnion freeze page
+    - do: Freeze your credit file at Innovis, a smaller credit bureau.
+      detail: Use the online request form on this page, or call 1-866-712-4546.
+      url: https://www.innovis.com/personal/securityFreeze
+      link: Innovis freeze page
+    - do: Place a freeze at ChexSystems, which blocks new bank accounts opened in your name.
+      detail: You'll receive a PIN by mail or in your online account. Keep it with your important papers; you need it to lift the freeze.
+      url: https://www.chexsystems.com/security-freeze/place-freeze
+      link: ChexSystems freeze page
+  updated: 2026-11-13
+
+- id: alerts-and-fast-reporting
+  threat_model: personal
+  title: Turn on alerts and report anything odd immediately
+  kind: action
+  tier: 1
+  rank: 4
+  time: 10 min
+  money: "Free"
+  covers: [ personal, institutional ]
+  short: >-
+    Your right to a refund depends on reporting quickly, and you can't report what you
+    haven't noticed.
+  advice: >-
+    Turn on alerts for logins, transfers and profile changes on every financial account,
+    and report anything unexpected the same day.
+  why: >-
+    Refund rules reward speed. In the US, protection under Regulation E, the rule
+    covering bank-account transfers, depends on reporting within 60 days of the
+    statement. The brokerage Fidelity's guarantee likewise doesn't apply if you don't
+    report unauthorized activity promptly. Alerts tell you the day something happens,
+    instead of weeks later on a statement.
+  protects_against: Losing refund rights by noticing too late
+  cost: Ten minutes
+  confidence: established
+  review_status: unreviewed
+  sources:
+    - title: Fidelity Customer Protection Guarantee
+      url: https://www.fidelity.com/security/customer-protection-guarantee
+    - title: Error Resolution Under Regulation E, Consumer Compliance Outlook
+      url: https://www.consumercomplianceoutlook.org/articles/2025/third-issue-2025/error-resolution-under-regulation-e-examiner-insights-and-common-violations
+  checklist: true
+  checklist_text: Turn on login, transfer and profile-change alerts on every money account.
+  steps:
+    - do: Sign in to each financial account by typing its address or opening its own app.
+    - do: Open the alerts or notifications settings.
+      detail: Usually under Settings, Profile or Security. If you can't find them, call the number on the back of your card and ask.
+    - do: Turn on alerts for logins, for transfers and withdrawals, and for changes to your profile.
+      detail: Profile changes means a new password, phone number, email or address. Set money alerts to the lowest amount offered.
+    - do: Choose how alerts reach you (app notification, email or text) and pick one you look at every day.
+    - do: Save each institution's fraud phone number, from the back of your card or a statement, in your contacts.
+    - do: If an alert shows something you didn't do, call that saved number the same day and report it.
+      detail: Don't use a phone number or link inside the alert itself. Note the date, the time and the name of the person you spoke to.
+  updated: 2026-11-13
+
+- id: spend-on-credit-cards
+  threat_model: personal
+  title: Spend on credit cards rather than debit cards
+  kind: action
+  tier: 1
+  rank: 5
+  time: No time
+  money: "Free"
+  covers: [ personal ]
+  short: >-
+    A fraudulent credit card charge spends the bank's money while it's disputed; a debit
+    charge empties your account.
+  advice: Use credit cards for day-to-day spending and pay them off from a bank account.
+  why: >-
+    US federal law caps your liability for unauthorized credit card charges at $50, and
+    issuers usually waive even that. A fraudulent charge spends the bank's money while
+    it's disputed, not yours; a fraudulent debit charge empties your account until it's
+    resolved.
+  protects_against: Card fraud draining your cash
+  cost: None if you pay in full
+  confidence: established
+  review_status: unreviewed
+  sources:
+    - title: Regulation Z, 12 CFR 1026.12(b), liability of cardholder for unauthorized use,
+        CFPB
+      url: https://www.consumerfinance.gov/rules-policy/regulations/1026/12/
+    - title: 15 U.S.C. 1643, liability of holder of credit card, Cornell Legal Information
+        Institute
+      url: https://www.law.cornell.edu/uscode/text/15/1643
+    - title: How do I get my money back after an unauthorized transaction from my bank
+        account?, CFPB
+      url: https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-my-money-back-after-i-discovered-an-unauthorized-transaction-or-money-missing-from-my-bank-account-en-1017/
+  checklist: false
+  steps:
+    - do: Pick a credit card you already have to use for everyday spending.
+      detail: If you don't have one, ask your own bank or credit union what it offers.
+    - do: Set the card to pay its full balance automatically each month from your bank account.
+      detail: "In the card's site or app, look for AutoPay and choose \"statement balance\" or \"pay in full\"."
+    - do: Swap your debit card for the credit card in shops, online stores, subscriptions and your phone's wallet.
+    - do: Keep your debit card for withdrawing cash only.
+    - do: Look over the card's charges each week and report any you don't recognise by calling the number on the card.
+  updated: 2026-11-13
+
+- id: shrink-patch-lag
+  threat_model: personal
+  title: Turn on automatic updates and retire devices that can't update
+  kind: action
+  tier: 1
+  rank: 3
+  time: 10 min
+  money: "Free"
+  covers: [ personal ]
+  short: >-
+    Updates reveal the flaws they fix, and attackers now strike within days at devices
+    that haven't updated.
+  advice: >-
+    Turn on automatic updates, restart regularly so they install, and replace or unplug
+    old routers, phones and cameras that no longer receive updates.
+  why: >-
+    An update fixes a flaw, but publishing it also shows attackers where the flaw was.
+    Most attacks on flaws now start that way, within days. The security firm CrowdStrike
+    found that for flaws with public demonstration code, 88% of attacks came within 48
+    hours of release. Devices that no longer get updates keep every flaw for good.
+  protects_against: Attacks on flaws an update would have fixed
+  cost: Minimal; occasional device replacement
+  confidence: established
+  review_status: unreviewed
+  sources:
+    - title: AI Vulnerability Management 2026 Guide, NeuralTrust
+      url: https://neuraltrust.ai/blog/ai-vulnerability-management
+    - title: The Hackening, Zvi
+      url: https://www.lesswrong.com/posts/iqgZaJMnmyDCYfnuC/the-hackening-1
+  thread_refs:
+    - author: Claude Fable
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=dG5MWY4ee9TSFDm2R
+      note: Ranks shrinking patch lag first by expected value.
+  checklist: true
+  checklist_text: Turn on automatic updates everywhere and replace devices that no longer get them.
+  steps:
+    - do: On an iPhone or iPad, turn on automatic updates.
+      detail: Open Settings, then General, then Software Update, then Automatic Updates, and switch everything on.
+      url: https://support.apple.com/en-us/118575
+      link: "Apple: update your iPhone or iPad"
+    - do: On an Android phone, check for updates and install any that are waiting.
+      detail: Open Settings, then System, then Software update. The wording varies by phone maker.
+      url: https://support.google.com/android/answer/7680439
+      link: "Google: update Android"
+    - do: On a Windows computer, open Windows Update and install everything offered.
+      detail: Open Start, then Settings, then Windows Update.
+      url: https://support.microsoft.com/en-us/windows/deployment/updates-lifecycle/install-windows-updates
+      link: "Microsoft: install Windows updates"
+    - do: On a Mac, turn on automatic updates.
+      detail: Open the Apple menu, then System Settings, then General, then Software Update.
+      url: https://support.apple.com/en-us/108382
+      link: "Apple: update macOS"
+    - do: Restart every phone and computer at least once a week.
+      detail: Many updates only finish installing when the device restarts.
+    - do: Look up your router, cameras and other connected devices on their makers' websites to see if they still get updates.
+      detail: "Search for the model number printed on the device plus \"end of support\". If its app offers automatic updates, turn them on."
+    - do: Replace or unplug any device that no longer gets updates.
+      detail: If your internet company supplied the router, call and ask for a current model.
+  updated: 2026-11-13
+
+# ----------------------------------------------------------- institutional
+
+- id: spending-money-on-separate-rails
+  threat_model: institutional
+  title: Split your spending money across two or three unrelated banks
+  kind: action
+  tier: 2
+  rank: 9
+  time: 2 hours
+  money: "Free"
+  covers: [ institutional ]
+  short: >-
+    Many small banks rent the same systems, so one attack can take several offline at
+    once.
+  advice: >-
+    Keep long-term savings in one well-defended place. Split about a month of spending
+    money across institutions that don't share systems: for example a large bank, a
+    credit union, and a cash account at a brokerage (investment firm).
+  why: >-
+    Theft and lost access call for opposite setups: fewer accounts against theft, more
+    independent accounts against being locked out. Credit unions and small banks mostly
+    rent their main software from a few suppliers, so one break-in takes many offline. A
+    2023 ransom attack on one supplier caused outages at about 60 credit unions. The US
+    credit union regulator's chair said over 60% of incidents reported to it involve
+    outside suppliers.
+  protects_against: One bank or its supplier going down
+  cost: Managing an extra account
+  confidence: reasoned
+  confidence_note: The shared-supplier outages are documented; the split we recommend is
+    our reasoning from them.
+  review_status: unreviewed
+  sides:
+    for: Thane Ruthenis suggests spreading money across very different providers, including
+      other countries and crypto.
+    against: Foreign accounts and crypto bring transfers that can't be reversed and less
+      help getting money back. For a bank outage, that matters more than the extra
+      spread.
+    synthesis: Spread spending money across banks in your own country that run on different
+      systems. Keep savings in one well-defended place.
+  sources:
+    - title: 60 credit unions facing outages due to ransomware attack, Cybersecurity Dive
+      url: https://www.cybersecuritydive.com/news/credit-unions-outages-ransomware/701442/
+    - title: Credit Union & Community Bank Cyber Incident Report 2026, BlueRadius
+      url: https://blueradius.io/credit-union-cyber-incident-report-2026
+  thread_refs:
+    - author: Thane Ruthenis
+      url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/4bAkyL8jgkmpoCFkc
+      note: Diversify across providers with different vulnerability profiles.
+    - author: Eoin Cassidy
+      url: https://www.lesswrong.com/posts/wJunGnpY3qACWSvnh/on-open-weights-mythos-capabilities
+      note: Spread cash and assets across multiple institutions.
+  checklist: true
+  checklist_text: Keep a month of spending money split between two or three different
+    banks or credit unions.
+  steps:
+    - do: Work out roughly what you spend in a month.
+      detail: "Add up last month's payments from your statements: rent or mortgage, bills, food, transport."
+    - do: "List where you bank now and note what kind each is: large bank, credit union or brokerage."
+    - do: Pick one or two more institutions of a different kind, so you have two or three in total.
+      detail: "For example: a large national bank, a local credit union, and a cash account at a brokerage (an investment firm)."
+    - do: Open the new accounts at a branch, or online by typing the institution's address yourself.
+      detail: Expect to show ID. Ask about monthly fees before you sign.
+    - do: Split about one month of spending money across the accounts.
+    - do: Leave your long-term savings in one well-defended place; don't split those.
+  updated: 2026-11-13
+
+- id: link-accounts-in-advance
+  threat_model: institutional
+  title: Link your accounts to each other before you need to
+  kind: action
+  tier: 2
+  rank: 10
+  time: 1 hour
+  money: "Free"
+  covers: [ institutional ]
+  short: >-
+    A second account only helps if you can already spend from it, and you can't set that
+    up during an outage.
+  advice: >-
+    Get a debit card for the cash account at your brokerage (investment firm). Add a
+    second bank as a backup payment source for your credit cards. Consider having your
+    paycheck paid into two institutions.
+  why: >-
+    Extra accounts are only useful if money can leave them. You need a card to spend
+    from the backup, and a way to pay bills and move money between accounts. Both have
+    to be in place beforehand, because you can't set them up during an outage.
+  protects_against: Being stuck when one institution is down
+  cost: An hour
+  confidence: reasoned
+  review_status: unreviewed
+  checklist: true
+  checklist_text: Make sure you can spend from and pay bills out of at least two separate accounts.
+  steps:
+    - do: Ask your brokerage (investment firm) for a debit card on its cash account.
+      detail: "Call the number on your statement, or look under \"Cards\" or \"Cash management\" on its site. Ask whether there is a fee."
+    - do: When the card arrives, activate it and make one small purchase to check it works.
+    - do: In each credit card account, add a second bank account as a payment source.
+      detail: "Look under Payments for \"Add bank account\". Enter the account details only on the card company's own site or app."
+    - do: Link your accounts at different institutions to each other so you can move money between them.
+      detail: "Look under Transfers for \"External accounts\" or \"Link account\". Confirming the link usually takes a few days."
+    - do: Ask your employer's payroll office about paying your paycheck into two institutions.
+      detail: This one is optional. Ask for the direct deposit form.
+    - do: "Test the setup: pay one bill from the backup account and move a small amount between accounts."
+  updated: 2026-11-13
+
+- id: cash-sized-to-outages
+  threat_model: institutional
+  title: Keep about two to three weeks of essentials in cash
+  kind: action
+  tier: 1
+  rank: 7
+  time: 30 min
+  money: "No interest"
+  covers: [ institutional, infrastructure ]
+  short: >-
+    Past bank outages from attacks lasted about two weeks, and food, fuel and medicine
+    can't wait that long.
+  advice: >-
+    Keep enough cash at home for two to three weeks of things that can't wait: food,
+    gas, medicine. Use mostly $20 bills and smaller, stored somewhere fire-resistant and
+    out of sight.
+  why: >-
+    Ransom attacks took Patelco Credit Union and CDK Global offline for about two weeks
+    each in 2024. If many banks are hit at once, repairs queue up; three to six weeks is
+    a guess, not a precedent. In mass outages bills are usually deferred quickly; food,
+    gas and medicine can't wait. Renters and homeowners insurance typically pays only
+    about $200 for stolen cash, so holding much more adds uninsured risk.
+  protects_against: Payment systems or your banks being down
+  cost: Uninsured cash earning nothing
+  confidence: established
+  confidence_note: Two-week outages have happened; how long an outage across many banks
+    would last is a guess.
+  review_status: unreviewed
+  sides:
+    for: RHollerith keeps about four weeks of expenses in cash; hadad calls physical cash
+      "semi-reasonable" as a hedge.
+    against: Kabir Kumar suggests only a few days of water; larger cash amounts are
+      uninsured against theft and fire.
+    synthesis: Hold enough cash for essentials through a two-week outage plus a margin, not
+      enough to cover all your expenses.
+  sources:
+    - title: Patelco restores most banking services weeks after ransomware attack, KQED
+      url: https://www.kqed.org/news/11994012/patelco-restores-most-banking-services-weeks-after-massive-ransomware-attack
+    - title: CDK says substantially all car dealerships restored after hack, Bloomberg
+      url: https://www.bloomberg.com/news/articles/2024-07-02/cdk-says-substantially-all-car-dealership-systems-back-online-after-hack
+    - title: Does renters insurance cover stolen cash?, Policygenius
+      url: https://www.policygenius.com/renters-insurance/does-renters-insurance-cover-stolen-cash/
+  thread_refs:
+    - author: RHollerith
+      url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/BPqcsafhHTjKgkDGz
+      note: About four weeks of expenses in cash.
+  checklist: true
+  checklist_text: Keep two to three weeks of essentials in cash at home, mostly $20s and smaller.
+  steps:
+    - do: Add up what your household spends in two to three weeks on food, gas and medicine.
+    - do: Withdraw that amount at a bank branch and ask for $20 bills and smaller.
+      detail: For a larger sum, phone the branch first so they have it ready.
+    - do: Store the cash at home in a fire-resistant box or pouch, out of sight.
+    - do: Don't mention the cash to anyone outside your household.
+    - do: Replace anything you spend from it as soon as you can.
+  updated: 2026-11-13
+
+- id: act-on-early-signals
+  threat_model: institutional
+  title: When other banks are attacked, withdraw cash that day
+  kind: action
+  tier: 3
+  rank: 16
+  time: On the day
+  money: "Free"
+  covers: [ institutional ]
+  short: >-
+    Once your own bank is down you can't withdraw from it, and withdrawal limits can
+    appear overnight.
+  advice: >-
+    If the news shows an attack hitting several banks, or a supplier many banks share,
+    withdraw extra cash that day from one of your banks that is unaffected. Go to a
+    branch rather than an ATM.
+  why: >-
+    Withdrawal limits can appear overnight once people rush to pull money out. In 2015,
+    after a three-week bank closure, Greece capped withdrawals at €60 a day, and the cap
+    lasted more than three years. That was a debt crisis, not a cyberattack. After the
+    2026 AI-assisted breaches of South Korean banks, an OECD incident tracker reported
+    large withdrawals within a week, though that entry is an AI-generated summary.
+  protects_against: Being unable to get cash once everyone rushes to withdraw
+  cost: None until triggered
+  confidence: reasoned
+  review_status: unreviewed
+  sources:
+    - title: After 3 years, Greece ends limits on bank cash withdrawals, Fox Business/AP
+      url: https://www.foxbusiness.com/markets/after-3-years-greece-ends-limits-on-bank-cash-withdrawals
+    - title: AI-Driven Bank Hacking Causes Massive Deposit Withdrawals in South Korea, OECD AI
+        Incidents Monitor
+      url: https://oecd.ai/en/incidents/2026-10-10-83a3
+  checklist: true
+  checklist_text: If the news reports an attack on several banks, withdraw extra cash that
+    day from a bank that's still working.
+  steps:
+    - do: "Now: write down the nearest branch address and opening hours for each of your banks."
+    - do: "Now: ask each bank how much cash you can withdraw at a branch in one day."
+    - do: "Now: decide how much extra cash you would withdraw, so you don't have to decide in a hurry."
+    - do: "On the day: when news reports an attack on several banks, check which of your banks still work."
+      detail: This includes an attack on a supplier many banks share. Try signing in to each bank by typing its address. Rely on established news outlets, not messages or social media posts.
+    - do: That same day, go to a branch of an unaffected bank with your ID and withdraw the amount.
+      detail: Go inside to a teller rather than using an ATM.
+    - do: Take the cash straight home and store it with your other emergency cash.
+    - do: "Ignore any call, text or email telling you to move money to a \"safe account\"."
+      detail: Never send money because someone contacted you. If unsure, hang up and call the number on the back of your card.
+  updated: 2026-11-13
+
+- id: offline-statements
+  threat_model: institutional
+  title: Keep offline copies of your official monthly statements
+  kind: action
+  tier: 2
+  rank: 12
+  time: Monthly
+  money: "Free"
+  covers: [ institutional ]
+  short: >-
+    If a bank's records are damaged, its own statements are the best proof of what you
+    had.
+  advice: >-
+    Save each official monthly statement PDF somewhere offline, and print the most
+    recent ones for each account.
+  why: >-
+    If a bank's records are damaged, someone must rebuild who owns what, and a statement
+    the bank issued is stronger evidence than your screenshot. The industry's backup is
+    less certain: Sheltered Harbor, the standard for nightly offline copies of customer
+    accounts (about 69% of US retail bank and brokerage accounts by 2018), plans to wind
+    down and move the standard to industry group FS-ISAC, without saying whether
+    independent certification continues.
+  protects_against: A bank losing or damaging its records
+  cost: A few minutes a month
+  confidence: reasoned
+  review_status: unreviewed
+  sides:
+    for: Thane Ruthenis and hadad both suggest keeping statements; Julian Bradshaw suggests
+      hard drives over SSDs for long-term offline storage.
+    against: hadad notes a plain printout may need notarizing to carry much weight as proof.
+    synthesis: Keep the bank's own PDFs plus printouts. Notarize them only if banks actually
+      start losing records.
+  sources:
+    - title: Sheltered Harbor announces planned wind-down, FS-ISAC
+      url: https://www.fsisac.com/who-we-are/sheltered-harbor
+    - title: FS-ISAC congressional testimony, 2018
+      url: https://www.fsisac.com/hubfs/Resources/FS-ISAC-Testimony_BillNelson-2018-FIN.pdf
+  thread_refs:
+    - author: Thane Ruthenis
+      url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/4bAkyL8jgkmpoCFkc
+      note: Printed statements refreshed monthly.
+    - author: hadad
+      url: https://www.lesswrong.com/posts/wJunGnpY3qACWSvnh/on-open-weights-mythos-capabilities
+      note: Paper records may need to be certified or notarized.
+  checklist: true
+  checklist_text: Save each monthly bank statement offline and print the latest ones.
+  steps:
+    - do: Sign in to each account by typing its address or opening its own app.
+    - do: Download the latest official monthly statement as a PDF.
+      detail: "Look under \"Statements\" or \"Documents\". Download the statement itself, not a screenshot or a list of transactions."
+    - do: Save the PDF to a USB stick or external drive, then unplug it.
+      detail: Make one folder per account and name each file by month, such as 2026-10.
+    - do: Print the most recent statement for each account.
+    - do: Keep the printouts and the drive together somewhere safe at home, such as with your important papers.
+    - do: Set a monthly reminder to do this again.
+  updated: 2026-11-13
+
+- id: insurance-covers-failure-not-hacks
+  threat_model: institutional
+  title: Deposit insurance covers a failed bank, not a drained account
+  kind: know
+  covers: [ institutional ]
+  short: >-
+    If a thief empties your account, deposit insurance pays nothing; separate refund
+    rules decide whether you get the money back.
+  advice: >-
+    Don't choose a bank or broker for its deposit insurance as protection against
+    hacking. Against hacking, what protects you is the refund rules and your broker's
+    guarantee.
+  why: >-
+    US deposit insurance (FDIC for banks, NCUA for credit unions) pays only when the
+    institution fails. SIPC covers a failed broker, and hacking losses only if the hack
+    forces the firm to close. The funds are sized for scattered failures, not many at
+    once: SIPC's fund targets $5 billion plus a $2.5 billion Treasury credit line, and
+    the FDIC fund is estimated at $157.4 billion against roughly $11 trillion in insured
+    deposits. If many institutions fail together, the real backstop is political.
+  protects_against: Counting on insurance that will not pay
+  cost: None
+  confidence: established
+  confidence_note: The coverage rules and fund sizes are documented; that politicians
+    would decide the outcome of a mass failure is our reasoning.
+  review_status: unreviewed
+  sources:
+    - title: SIPC insurance, what it does and doesn't protect, NerdWallet
+      url: https://www.nerdwallet.com/investing/learn/sipc-insurance-what-it-does-and-does-not-protect
+    - title: The SIPC Fund
+      url: https://www.sipc.org/about-sipc/the-sipc-fund
+    - title: On Open-Weights Mythos Capabilities, hadad
+      url: https://www.lesswrong.com/posts/wJunGnpY3qACWSvnh/on-open-weights-mythos-capabilities
+  thread_refs:
+    - author: Kabir Kumar
+      url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/qAsxh6nxRAPEZs359
+      note: Suggested picking a well-insured bank; insurance doesn't cover hacks.
+  checklist: false
+  updated: 2026-11-13
+
+- id: move-deadline-money-early
+  threat_model: institutional
+  title: Move money for large deadlines a week or two early
+  kind: action
+  tier: 3
+  rank: 17
+  time: No time
+  money: "Free"
+  covers: [ institutional, personal ]
+  short: >-
+    Fraud checks and outages can hold up large honest payments, so money sent on the due
+    date may arrive late.
+  advice: >-
+    For any large payment with a deadline (a house purchase, a large tuition or event
+    payment), move the money where it needs to be a week or two before it's due.
+  why: >-
+    Banks hold large transfers to check for fraud, and new restrictions slow honest
+    payments too. Sending early leaves time for a hold to clear. House purchases also
+    run through small title and escrow companies, the kind of poorly defended business
+    attackers target, and diverting the buyer's payment to a thief's account is an
+    established scam.
+  protects_against: Missed deadlines from holds or outages; payments diverted to a thief
+  cost: None
+  confidence: reasoned
+  review_status: unreviewed
+  checklist: false
+  steps:
+    - do: Write down each large payment you have coming up that has a deadline, with its due date.
+      detail: For example a house purchase, tuition, or a large event payment.
+    - do: Ask the recipient for the payment instructions at least two weeks before the due date.
+    - do: Confirm the account details by phoning the recipient on a number you looked up yourself.
+      detail: Don't use a phone number from the email or message that contained the instructions. Treat any last-minute change of bank details as a scam until confirmed this way.
+    - do: Ask your bank how long a transfer of that size takes and whether it could be limited or held.
+      detail: "Ask: \"Is there a daily limit, and could this payment be held for review?\""
+    - do: Send the money one to two weeks before it is due.
+    - do: Check with the recipient that the money arrived.
+  updated: 2026-11-13
+
+- id: big-bank-or-credit-union
+  threat_model: institutional
+  title: "Big bank or credit union: which is safer is disputed"
+  kind: know
+  covers: [ institutional ]
+  short: >-
+    Big banks have stronger defenses but attract more attacks, and people who know the
+    field disagree on which matters more.
+  advice: "This is disputed, with no clear winner. A reasonable middle course: keep
+    accounts at both kinds, since they tend to fail at different times, and keep
+    long-term savings at a large, well-defended institution."
+  why: >-
+    Large banks can put far more into defense: Bank of America put about 4,000 people on
+    fixing flaws found by the newest AI models, and in a 2026 survey 85% of banks felt
+    prepared for a cyberattack versus 72% of credit unions. But large banks are bigger
+    targets, and credit unions run on different systems, so they tend to fail at
+    different times.
+  protects_against: Choosing one institution type for the wrong reason
+  confidence: speculative
+  review_status: unreviewed
+  sides:
+    for: Grendel1209, who works at a threat-intelligence company, recommends switching to a
+      top-5 bank; Mitchell_Porter expects big institutions in defensive programs to be
+      safest from direct hacking.
+    against: hadad judges big and regional banks roughly equally risky, since bigger targets
+      have only slightly better security.
+    synthesis: Hold accounts at both kinds, since they fail differently. Keep long-term
+      savings at a large, well-defended institution.
+  sources:
+    - title: G7 to war-game AI cyberattacks on banks, Insurance Business
+      url: https://www.insurancebusinessmag.com/us/news/industry-news/g7-to-wargame-ai-cyberattacks-on-banks-as-regulators-sound-systemic-alarm-593896.aspx
+    - title: The Credit Union Cyber Reckoning, CU Today
+      url: https://www.cutoday.info/THE-tude/The-Credit-Union-Cyber-Reckoning-Part-One-The-Locks-We-Have-And-Why-They-Look-Alike
+  thread_refs:
+    - author: Grendel1209
+      url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/NGfGhPs7zD9EbLygc
+      note: Recommends a top-5 bank.
+    - author: hadad
+      url: https://www.lesswrong.com/posts/wJunGnpY3qACWSvnh/on-open-weights-mythos-capabilities
+      note: Big and regional banks roughly equally risky.
+  checklist: false
+  updated: 2026-11-13
+
+# ---------------------------------------------------------------- crypto
+
+- id: avoid-self-custody-savings
+  threat_model: crypto
+  title: Don't keep real savings in crypto you hold yourself
+  kind: action
+  tier: 2
+  rank: 14
+  time: No time
+  money: "Free"
+  covers: [ crypto ]
+  short: >-
+    Crypto transfers can't be reversed and nobody refunds them.
+  advice: >-
+    If you hold crypto, keep it to an amount you could lose entirely. Don't count on it
+    as protection against a wave of hacking.
+  why: >-
+    A crypto transfer is final: nobody can cancel it or refund you. If
+    internet-connected devices can be broken into, you are a weaker defender than the
+    security team at a large company that holds crypto for its customers. Insurers that
+    cover crypto theft would likely fail if many people claimed at once. In 2026,
+    tampered supplier code on Polymarket's website drained about $3 million from users'
+    wallets.
+  protects_against: Theft that can't be undone
+  cost: Forgoing crypto as a diversifier
+  confidence: reasoned
+  review_status: unreviewed
+  sides:
+    for: Thane Ruthenis lists crypto as one way to spread money across separate systems.
+    against: "Kabir Kumar and hadad both judge crypto unsafe: it is broken into often and
+      losses aren't refunded."
+    synthesis: Spread your money across institutions that have refund rules instead.
+  sources:
+    - title: On Open-Weights Mythos Capabilities, hadad
+      url: https://www.lesswrong.com/posts/wJunGnpY3qACWSvnh/on-open-weights-mythos-capabilities
+    - title: Polymarket hit by cyberattack, user funds stolen, TechRadar
+      url: https://www.techradar.com/pro/security/prediction-market-giant-polymarket-hit-by-cyberattack-with-company-confirming-user-funds-stolen-here-is-what-we-know
+  thread_refs:
+    - author: Thane Ruthenis
+      url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/4bAkyL8jgkmpoCFkc
+    - author: Kabir Kumar
+      url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/8sHq6Zp9yYZWEeeAc
+  checklist: false
+  steps:
+    - do: Add up the value of all the crypto you hold yourself, in wallets on your own devices.
+      detail: "\"Hold yourself\" means you, not a company, control the wallet."
+    - do: Decide the amount you could lose entirely without it hurting.
+    - do: If you hold more than that, sell the excess and move the money to a bank or brokerage account.
+      detail: Start the sale yourself in the wallet or exchange you already use, never through a link or a person who contacted you.
+    - do: Plan your emergency money without counting any crypto.
+    - do: "Never type your wallet's recovery phrase into a website or give it to anyone, including \"support\" staff."
+      detail: The recovery phrase is the list of words that restores your wallet. Anyone who has it can take everything.
+  updated: 2026-11-13
+
+- id: slow-money-is-safer
+  threat_model: crypto
+  title: Keep most of your money where it moves slowly
+  kind: action
+  tier: 1
+  rank: 6
+  time: 15 min
+  money: "Free"
+  covers: [ crypto, personal ]
+  short: >-
+    Money that takes days to move can be stopped and returned if someone steals it.
+  advice: >-
+    Keep the bulk of your money in places where withdrawals take days and can be
+    reversed, and keep instant payment balances (Zelle, Venmo, Cash App, wires, crypto)
+    small.
+  why: >-
+    Thieves go for money that moves instantly and can't be pulled back. A transfer that
+    takes days gives your alerts and the institution's fraud team time to stop it. Money
+    in a payment app may also be held by a middleman company, not a bank. When one such
+    company, Synapse, went bankrupt in 2024, customers were locked out for about six
+    months.
+  protects_against: Theft that is too fast to stop
+  cost: Slower access to the bulk of your money
+  confidence: reasoned
+  review_status: unreviewed
+  checklist: true
+  checklist_text: Keep balances in instant-payment apps small.
+  steps:
+    - do: Open each payment app you use, such as Venmo or Cash App, and check the balance sitting in it.
+    - do: Transfer all but a small amount from each app to your bank account.
+    - do: Turn off any setting that pays your wages into the app or tops it up automatically.
+    - do: Keep most of your money in a savings or brokerage account where withdrawals take days.
+      detail: Don't connect that account to Zelle or to a payment app.
+  updated: 2026-11-13
+
+- id: gold-is-the-wrong-hedge
+  threat_model: crypto
+  title: Gold won't help much in a hack or outage
+  kind: skip
+  covers: [ crypto, institutional ]
+  short: >-
+    Gold only helps if the dollar itself fails, and you can't buy groceries with it
+    during an outage.
+  advice: >-
+    Don't buy gold as protection against hacks or outages. It only helps if the dollar
+    system itself fails.
+  why: >-
+    You can't buy groceries with a gold coin during an outage. Dealers sell gold for
+    well above what they pay to buy it back, so you lose money on each trade. Insurance
+    on things kept at home typically covers only about $200 of cash, and the same limit
+    applies to gold. A gold fund is not physical gold: it is another digital record at
+    an institution.
+  protects_against: Money spent on the wrong protection
+  confidence: reasoned
+  review_status: unreviewed
+  sides:
+    for: hadad suggests keeping some share of savings in something physical could make
+      sense.
+    against: Gold doesn't help with the failures most likely in the next two years.
+    synthesis: Reconsider only if financial records stay corrupted for weeks or withdrawal
+      limits appear in the US.
+  sources:
+    - title: Does renters insurance cover stolen cash?, Policygenius
+      url: https://www.policygenius.com/renters-insurance/does-renters-insurance-cover-stolen-cash/
+  checklist: false
+  updated: 2026-11-13
+
+# --------------------------------------------------------- infrastructure
+
+- id: water-food-medications
+  threat_model: infrastructure
+  title: Store about two weeks of water, food and medications
+  kind: action
+  tier: 2
+  rank: 13
+  time: 3 hours
+  money: "~$300"
+  covers: [ infrastructure ]
+  short: >-
+    If water or deliveries are cut, you can stay home, and the same supplies cover
+    storms and earthquakes.
+  advice: >-
+    Keep about two weeks of water, shelf-stable food, and daily medications, plus a
+    first-aid kit.
+  why: >-
+    Two weeks is the Red Cross figure for staying at home in an emergency, and storms
+    and earthquakes justify it even if no attack comes. Water and sewer systems are
+    split among many separate operators and are especially vulnerable to cyberattacks.
+    Most preparedness guides plan for three to seven days. Whether that is enough for
+    this situation is an open question.
+  protects_against: Water, power or deliveries being cut
+  cost: A few hundred dollars and storage space
+  confidence: established
+  confidence_note: This is standard emergency advice; how many days an attack would call
+    for is not known.
+  review_status: unreviewed
+  sources:
+    - title: Survival kit supplies (3-day supply for evacuation, 2-week supply for home),
+        American Red Cross
+      url: https://www.redcross.org/get-help/how-to-prepare-for-emergencies/survival-kit-supplies.html
+    - title: America's sewer systems are surprisingly vulnerable to cyber attacks, FAI
+      url: https://www.thefai.org/posts/america-s-sewer-systems-are-surprisingly-vulnerable-to-cyber-attacks
+  thread_refs:
+    - author: Elizabeth
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=HeNoSTDPZfvFvMZyz
+      note: Asks whether 3–7 days is enough, and how much extra to keep for neighbors.
+    - author: Elizabeth
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=QCB2oBMeHhCJegRbv
+      note: Daily medications and a first-aid kit; discusses further medical options.
+    - author: Jenna_Parr
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=zFkuBT3jGmnvjQWdg
+      note: Water and sewer systems are vulnerable and fragmented.
+    - author: Claude Fable
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=dG5MWY4ee9TSFDm2R
+      note: Cites the Red Cross two-week at-home figure.
+  checklist: true
+  checklist_text: Keep about two weeks of water, food and daily medications, plus a first-aid kit.
+  steps:
+    - do: Count the people in your home.
+    - do: "Store one gallon of water per person per day: 14 gallons each for two weeks."
+      detail: Sealed store-bought bottles or jugs are simplest. Keep them somewhere cool and dark.
+      url: https://www.redcross.org/get-help/how-to-prepare-for-emergencies/survival-kit-supplies.html
+      link: Red Cross supply list
+    - do: Buy two weeks of food that keeps without a fridge and needs little cooking.
+      detail: Canned beans, fish and vegetables, rice, pasta, peanut butter, cereal bars. Choose things you already eat, and add a hand-operated can opener.
+    - do: Ask your doctor or pharmacist how to keep two extra weeks of your daily medications.
+      detail: "Ask: \"Can I get an early refill or a longer supply, so I have a reserve?\""
+    - do: Buy a first-aid kit and keep it with the supplies.
+    - do: Write today's date on everything and store it together.
+    - do: Set a reminder every six months to use up and replace the oldest food, water and medications.
+  updated: 2026-11-13
+
+- id: offline-backups
+  threat_model: infrastructure
+  title: Keep a backup of important files on an unplugged drive
+  kind: action
+  tier: 2
+  rank: 11
+  time: 1 hour
+  money: "$60"
+  covers: [ infrastructure, personal ]
+  short: >-
+    An attack or a locked account can take your computer and your online files at the
+    same time.
+  advice: >-
+    Copy important files, key documents and your account recovery codes (the backup
+    codes that let you log in without your phone) to an external drive. Keep it
+    unplugged.
+  why: >-
+    Ransomware is an attack that locks your files and demands payment. It, or losing
+    access to an account, can take your computer and your online files at once. A drive
+    that isn't plugged in can't be reached over the internet, so it survives both. Use a
+    hard drive, not a solid-state drive (SSD): hard drives hold data longer without
+    power.
+  protects_against: Losing your files to an attack, a lockout or an outage
+  cost: A drive and an hour
+  confidence: established
+  review_status: unreviewed
+  sources:
+    - title: "#StopRansomware Guide (maintain offline, encrypted backups of critical data),
+        CISA"
+      url: https://www.cisa.gov/stopransomware/ransomware-guide
+  thread_refs:
+    - author: Julian Bradshaw
+      url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/Pw4QBAurnykG3zwp7
+      note: Use HDD rather than SSD for offline backups.
+    - author: Gurkenglas
+      url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/rxHRpDWEDfWE2Xdmw
+      note: Back up what you don't want to lose; delete what you don't want leaked.
+  checklist: true
+  checklist_text: Back up important files and recovery codes to a drive you keep unplugged.
+  steps:
+    - do: "Buy an external hard drive: the kind labelled HDD, not SSD."
+      detail: Expect to pay about $60.
+    - do: Plug it into your computer and copy your important files onto it.
+      detail: Photos, documents, and anything you couldn't replace.
+    - do: Scan or photograph your key documents and copy those too.
+      detail: IDs, passports, birth certificates, insurance policies, property papers.
+    - do: Download the recovery codes for your email and other main accounts and copy them to the drive.
+      detail: "Look in each account's security settings for \"backup codes\" or \"recovery codes\". The link shows how for Google. Never send these codes to anyone."
+      url: https://support.google.com/accounts/answer/1187538
+      link: "Google: backup codes"
+    - do: Eject the drive, unplug it, and keep it somewhere safe at home.
+    - do: Set a monthly reminder to plug it in, copy anything new, and unplug it again.
+  updated: 2026-11-13
+
+- id: offline-maps-and-addresses
+  threat_model: infrastructure
+  title: Keep offline maps and a written list of key addresses
+  kind: action
+  tier: 3
+  rank: 18
+  time: 1 hour
+  money: "Free"
+  covers: [ infrastructure ]
+  short: >-
+    If phones and the internet are down, you can't look up where anyone is.
+  advice: >-
+    Keep maps that work without the internet, and a written list of addresses: family
+    and friends you'd want to reach, people who could help you, your bank branches, and
+    the nearest community organizations.
+  why: >-
+    If phones and the internet are down, you can't look up an address or a route. Most
+    of what you'd need in an emergency is specific to you: where your people live and
+    where your bank's branches are. General survival guides won't have it, so you have
+    to write it down beforehand.
+  protects_against: Being cut off from people and help
+  cost: An hour
+  confidence: reasoned
+  review_status: unreviewed
+  thread_refs:
+    - author: AnnaSalamon
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=pDfo3jPjFbEo6GzRJ
+      note: Offline maps and addresses; people without local community might note the nearest
+        LDS church to volunteer with.
+  checklist: true
+  checklist_text: Keep paper maps and a written list of addresses for family, friends and
+    your bank branches.
+  steps:
+    - do: Download your area in Google Maps so it works without the internet.
+      detail: In the app, tap your profile picture, then Offline maps. Include the areas where your family and friends live.
+      url: https://support.google.com/maps/answer/6291838
+      link: "Google Maps: offline maps"
+    - do: If you use an iPhone, download the same areas in Apple Maps.
+      url: https://support.apple.com/en-us/105084
+      link: "Apple Maps: offline maps"
+    - do: Buy a paper road map of your region.
+    - do: Write on paper the addresses of family and friends you'd want to reach, and of people who could help you.
+    - do: Add the addresses of your bank branches and the nearest community organizations.
+      detail: For example a library, a community center or a place of worship.
+    - do: Make a second copy of the list; keep one at home and one in your bag or car.
+    - do: Switch your phone to airplane mode and check the downloaded maps still open.
+  updated: 2026-11-13
+
+- id: offline-reference-library
+  threat_model: infrastructure
+  title: Download first-aid and survival manuals to read offline
+  kind: action
+  tier: 3
+  rank: 19
+  time: 1 hour
+  money: "Free"
+  covers: [ infrastructure ]
+  short: >-
+    First-aid and repair manuals are free to download now and unreachable in an outage.
+  advice: >-
+    Download a collection of survival and first-aid manuals to an e-reader or laptop. An
+    offline AI chatbot built for emergencies (a "survival LLM") is optional.
+  why: >-
+    A "survival LLM" is a small AI chatbot that runs on your own device and searches a
+    limited set of manuals. Most of its value is the manuals themselves, which you can
+    download for free. Most of what you'll need is also specific to you (accounts,
+    contacts, medications), so your own records matter more than a general-purpose
+    chatbot.
+  protects_against: Not being able to look things up
+  cost: Free to a few hundred dollars
+  confidence: reasoned
+  review_status: unreviewed
+  sources:
+    - title: Survival LLM, Brangus
+      url: https://www.brangus.io/survival-llm
+    - title: Project N.O.M.A.D. (offline survival computer)
+      url: https://github.com/Crosstalk-Solutions/project-nomad
+    - title: Homesteading and survival manuals library, Internet Archive
+      url: https://archive.org/details/homesteading-survival-manuals/Full-First-Aid-Manual-FM-2111/
+  thread_refs:
+    - author: Elizabeth
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=NLA7sR9nfjiisGCex
+      note: Unsure when she'd actually use a survival LLM.
+    - author: eukaryote
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=tKbc2zayH3mrFmv9J
+      note: Vouches broadly for the survival library (Where There Is No Doctor, Foxfire,
+        military and Red Cross texts).
+    - author: Brendan Long
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=zBhs9bduESRzFjXDa
+      note: Any laptop with local model weights works.
+  checklist: false
+  steps:
+    - do: Choose an e-reader or laptop to hold the manuals, and keep its charger with it.
+    - do: Open the Internet Archive's free collection of survival manuals.
+      url: https://archive.org/details/homesteading-survival-manuals
+      link: Internet Archive manuals library
+    - do: Download a first-aid manual first, as a PDF.
+      detail: "On a book's page, look for \"Download options\" and choose PDF."
+    - do: Download a few more manuals on the topics you'd most likely need, such as repairs.
+    - do: Add a document of your own listing your contacts, your medications and which accounts you hold.
+      detail: Write down which accounts exist and where, not their passwords.
+    - do: Turn off the device's Wi-Fi and open each file to check it works offline.
+    - do: "Optional: add an offline AI chatbot built for emergencies, which searches manuals on your own device."
+      url: https://www.brangus.io/survival-llm
+      link: Survival LLM, Brangus
+  updated: 2026-11-13

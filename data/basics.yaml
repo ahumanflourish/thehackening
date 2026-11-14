@@ -1,0 +1,48 @@
+# Basic security hygiene: link out to existing guides; don't rewrite them.
+# commentary = what matters more or less under the new threat model.
+
+- id: wildeford-list
+  title: Peter Wildeford's personal security checklist
+  url: https://www.lesswrong.com/posts/iqgZaJMnmyDCYfnuC/the-hackening-1
+  what_it_covers: A password manager, login codes that don't come by text message,
+    automatic updates with weekly restarts, a credit freeze, an IRS Identity Protection
+    PIN, and a PIN that stops your phone number being moved to another carrier.
+  commentary: >-
+    The shortest good list. Zvi, who quotes it in the linked post, recommends about this
+    much effort. The phone-number PIN and non-text login codes matter more now: AI makes
+    phone-number theft and scam messages nearly free to attempt in bulk.
+
+- id: eff-ssd
+  title: Surveillance Self-Defense, Electronic Frontier Foundation
+  url: https://ssd.eff.org
+  what_it_covers: In-depth guides to passwords, login codes, securing your devices, and
+    working out which risks apply to you.
+  commentary: >-
+    More depth than most people need. Its best part is the method for working out which
+    risks apply to you, which is the right way to approach this situation. Recommended
+    by commenter sudo-nym.
+
+- id: credit-freeze-guide
+  title: Credit freezes and fraud alerts, FTC
+  url: https://consumer.ftc.gov/articles/what-know-about-credit-freezes-fraud-alerts
+  what_it_covers: How to freeze and unfreeze your credit at the three main US credit
+    bureaus, so nobody can open new credit in your name.
+  commentary: >-
+    Freeze Innovis and ChexSystems too; most guides only cover the big three. Assume
+    your data has already leaked.
+
+- id: irs-ip-pin
+  title: Get an Identity Protection PIN, IRS
+  url: https://www.irs.gov/identity-theft-fraud-scams/get-an-identity-protection-pin
+  what_it_covers: A six-digit PIN that blocks others from filing taxes in your name.
+  commentary: Cheap and permanent. Few steps here protect you this much for so little time.
+
+- id: what-the-basics-miss
+  title: What the standard lists miss (this site's commentary)
+  url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/LtpgcFZKY7yusQedF
+  what_it_covers: Risks the usual checklists leave out, from a question by John Wentworth.
+  commentary: >-
+    The standard lists protect you from being personally targeted. They don't cover
+    letting AI assistants or apps into your money accounts, which can cost you your
+    right to a refund; installing unchecked software; or losing access when institutions
+    go down.

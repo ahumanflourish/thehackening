@@ -1,0 +1,17 @@
+{
+  "name": "thehackening",
+  "private": true,
+  "type": "module",
+  "description": "Static resource site on Hackening threat models, generated from data files.",
+  "scripts": {
+    "build": "node build/build.mjs",
+    "validate": "node build/build.mjs --validate-only",
+    "check-links": "node build/check-links.mjs",
+    "serve": "npx --yes serve dist"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "marked": "^14.1.4",
+    "yaml": "^2.6.1"
+  }
+}

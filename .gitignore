@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.vercel/
+*.zip
+*:Zone.Identifier
+link-report.json
+design/
+HANDOFF.md

@@ -1,0 +1,54 @@
+# Charts drawn at build time from the numbers below. One series per chart.
+
+- id: chrome-fixes
+  title: Security fixes in Google Chrome, per month
+  takeaway: >-
+    For years Chrome shipped a few dozen security fixes a month. In spring 2026
+    that jumped more than tenfold and has stayed there.
+  unit: fixes
+  note: >-
+    Most of these flaws were found and fixed by Google itself, which says the
+    rise comes from using AI to search its own code. More flaws found is not
+    the same as more attacks, but the same tools are available to attackers.
+  as_of: 2026-11-11
+  source:
+    title: Chrome Releases blog, every desktop stable update, counted by month
+    url: https://chromereleases.googleblog.com/
+  also:
+    title: Stronger with every update, Chrome Security Team (the original chart)
+    url: https://blog.google/security/chrome-stronger-with-every-update/
+  points:
+      - { month: 2024-01, value: 37 }
+      - { month: 2024-02, value: 23 }
+      - { month: 2024-03, value: 25 }
+      - { month: 2024-04, value: 37 }
+      - { month: 2024-05, value: 31 }
+      - { month: 2024-06, value: 32 }
+      - { month: 2024-07, value: 37 }
+      - { month: 2024-08, value: 47 }
+      - { month: 2024-09, value: 24 }
+      - { month: 2024-10, value: 30 }
+      - { month: 2024-11, value: 17 }
+      - { month: 2024-12, value: 12 }
+      - { month: 2025-01, value: 25 }
+      - { month: 2025-02, value: 21 }
+      - { month: 2025-03, value: 23 }
+      - { month: 2025-04, value: 28 }
+      - { month: 2025-05, value: 17 }
+      - { month: 2025-06, value: 20 }
+      - { month: 2025-07, value: 13 }
+      - { month: 2025-08, value: 21 }
+      - { month: 2025-09, value: 46 }
+      - { month: 2025-10, value: 30 }
+      - { month: 2025-11, value: 8 }
+      - { month: 2025-12, value: 18 }
+      - { month: 2026-01, value: 13 }
+      - { month: 2026-02, value: 20 }
+      - { month: 2026-03, value: 95 }
+      - { month: 2026-04, value: 140 }
+      - { month: 2026-05, value: 372 }
+      - { month: 2026-06, value: 996 }
+      - { month: 2026-07, value: 436 }
+      - { month: 2026-08, value: 395 }
+      - { month: 2026-09, value: 466 }
+      - { month: 2026-10, value: 732 }
