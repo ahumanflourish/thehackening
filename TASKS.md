@@ -48,6 +48,7 @@ Every guide says "Checked by: Nobody yet". A review from someone who works in th
 ## Site features (not built)
 
 - [ ] **A checklist readers can work through.** Tick off steps, come back later, see progress, get notified when a step changes. Sign-in conflicts with the current design (no accounts, no scripts, no database), and a record of which protections someone has *not* set up is sensitive. Options: ticks saved only in the reader's own browser; email or RSS notifications with no login; or full accounts through a hosted sign-in provider on a separate subdomain.
+- [ ] **Automated incident updates.** A scheduled AI agent (for example a Claude scheduled task) that checks the news on a regular schedule for new hacks and outages and for updates to entries marked "Still developing", then drafts the changes to `data/incidents.yaml` with sources. It must open a pull request for a person to review and never publish on its own: every change to the main branch goes live, and the AI-involvement ratings need a human check against the site's definitions.
 - [ ] **A form for submitting a question or correction,** for people who don't use GitHub.
 - [ ] **Search-engine basics:** a sitemap, and step-by-step markup on the guides so the steps can appear in search results.
 - [ ] **Affiliate links, proceeds donated** (deferred). Only for the few steps that involve buying something; needs a plain disclosure, a non-affiliate link alongside, and a rule that it never affects what is recommended.
