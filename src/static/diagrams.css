@@ -17,6 +17,8 @@
 .dgm-node { fill: var(--well); }
 .dgm-solid { fill: var(--ink); }
 .dgm-hit { fill: var(--accent); }
+/* A patch of background behind a picture that sits on a line. */
+.dgm-blank { stroke: none; }
 
 /* ---------------------------------------------- stacked (phones, narrow) */
 
@@ -30,16 +32,6 @@
 .dgm-label { margin: 0; max-width: 22rem; display: grid; gap: 0.2rem; font: 0.875rem/1.35 var(--body); }
 .dgm-label b { font: 650 1.0625rem/1.2 var(--display); text-wrap: balance; }
 .dgm-note { color: var(--muted); text-wrap: pretty; }
-
-/* The comparison: the two paths side by side, each stage level with its opposite. */
-.dgm-lanes { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(7, auto); gap: 0 0.75rem; }
-.dgm-lane { display: grid; grid-row: 1 / -1; grid-template-rows: subgrid; }
-.dgm-lane-name { margin: 0; max-width: none; padding: 0.5rem 0 0.6rem; border-top: 3px solid var(--ink); font: 700 1rem/1.2 var(--display); text-wrap: balance; }
-.dgm-lane .dgm-flow { grid-row: 2 / -1; grid-template-rows: subgrid; }
-.dgm-lane .dgm-step { grid-row: span 2; grid-template-rows: subgrid; grid-template-columns: minmax(0, 1fr); gap: 0; align-items: start; }
-.dgm-lane .dgm-art { width: 100%; height: 7.5rem; }
-.dgm-lane .dgm-label { padding: 0.5rem 0.25rem 1rem; text-align: center; }
-.dgm-lane .dgm-label b { font-size: 1rem; }
 
 /* Very narrow (small phones): a smaller picture leaves the words room to wrap. */
 @container (max-width: 18rem) {
@@ -56,15 +48,6 @@
   .dgm-art { width: 100%; height: 9.5rem; }
   .dgm-turn, .dgm-upright { transform: none; }
   .dgm-label { padding: 0.75rem 0.75rem 0; margin-inline: auto; max-width: 17rem; text-align: center; }
-
-  .dgm-lanes { grid-template-columns: 1fr; grid-template-rows: none; gap: 1.5rem; }
-  .dgm-lane { grid-row: auto; grid-template-rows: none; grid-template-columns: 11rem minmax(0, 1fr); gap: 0 1.5rem; }
-  .dgm-lane-name { align-self: start; padding: 0.6rem 0 0; font-size: 1.0625rem; }
-  .dgm-lane .dgm-flow { grid-row: auto; grid-template-rows: none; }
-  .dgm-lane .dgm-step { grid-row: auto; grid-template-rows: auto 1fr; }
-  .dgm-lane .dgm-art { height: 8.5rem; }
-  .dgm-lane .dgm-label { padding: 0.6rem 0.75rem 0; }
-  .dgm-lane .dgm-label b { font-size: 1.0625rem; }
 }
 
 /* ----------------------------------------------------------------- print */

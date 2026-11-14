@@ -41,11 +41,10 @@
     says its online PIN system is offline from 16 Nov 2026 until mid-January 2027.
 
 - id: what-the-basics-miss
-  title: What the standard lists miss (this site's commentary)
+  title: What the standard lists miss
   url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/EAifqfeEHYQ6QJscX
-  what_it_covers: Risks the usual checklists leave out. This is a public comment by this
-    site's maintainer (posting as Alex A), written in reply to a question from John
-    Wentworth.
+  what_it_covers: Risks the usual checklists leave out. A public comment by Alex A,
+    written in reply to a question from John Wentworth.
   commentary: >-
     The standard lists mainly stop bulk attacks that try the same trick on everyone.
     They don't cover
