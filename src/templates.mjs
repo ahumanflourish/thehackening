@@ -117,14 +117,14 @@ ${body}
     ${when(a.sides, '<span class="badge flag">Disputed</span>')}
     ${when(a.needs_source, '<a class="badge flag" href="/contribute/">Needs a source</a>')}
     ${when(reviewDue(a), `<span class="badge flag">${esc(defs.review_due_label)}</span>`)}
-    <div class="pop" popover id="ev-${a.id}">
+    <div class="pop" popover id="ev-${a.id}"><button type="button" class="pop-close" popovertarget="ev-${a.id}" popovertargetaction="hide" aria-label="Close">&times;</button>
       <p class="pop-title">${gauge(a.confidence)}Evidence: ${esc(conf.label)}</p>
       <p>${esc(conf.meaning)}</p>
       ${when(a.confidence_note, `<p>${esc(a.confidence_note)}</p>`)}
       ${when(a.sources?.length, () => `<h5>Sources</h5>${sourceList(a.sources)}`)}
       <p class="pop-foot">Updated ${time(a.updated)}</p>
     </div>
-    <div class="pop" popover id="rv-${a.id}">
+    <div class="pop" popover id="rv-${a.id}"><button type="button" class="pop-close" popovertarget="rv-${a.id}" popovertargetaction="hide" aria-label="Close">&times;</button>
       <p class="pop-title">Checked by: ${esc(rev.label)}</p>
       <p>${esc(rev.meaning)}</p>
       ${each(a.reviews, (r) => `<p>${esc(r.name)} (${r.profile ? ext(r.profile, esc(r.background)) : esc(r.background)}), ${time(r.date)}. Checked: ${esc(r.scope)}</p>`)}
@@ -323,14 +323,11 @@ ${body}
     <h1>${esc(site.headline)}</h1>
     <p class="subhead">${esc(site.subhead)}</p>
     <p class="lede">${md(site.lede)}</p>
-    <a class="cta" href="#advice">${esc(h.hero_cta)}</a>
+    <p class="cta-row">
+      <a class="cta" href="#advice">${esc(h.hero_cta)}</a>
+      <a class="cta cta-2" href="#threats">${esc(h.hero_cta2)}</a>
+    </p>
     ${when(h.byline, () => `<p class="byline"><span>${esc(h.byline)}</span><span>Updated ${time(asOf)}</span><a href="/about/">About</a></p>`)}
-  </div>
-  <div class="hero-reach">
-    <h2>${esc(h.reach_title)}</h2>
-    <ol class="reach-list">
-      ${each(site.threat_models, (m) => `<li><a href="#threats"><strong>${esc(m.reach)}</strong><span>${esc(m.summary)}</span></a></li>`)}
-    </ol>
   </div>
 </section>
 
@@ -465,7 +462,7 @@ ${body}
   <div class="badges">
     <button type="button" class="badge" popovertarget="ai-${i.id}"><span class="ai ai-${lvl}"><i aria-hidden="true"></i></span>${esc(np.badge)} <b>${esc(defs.ai_level[lvl].label)}</b></button>
     ${when(i.needs_research, () => `<a class="badge flag" href="/contribute/">${esc(np.developing)}</a>`)}
-    <div class="pop" popover id="ai-${i.id}">
+    <div class="pop" popover id="ai-${i.id}"><button type="button" class="pop-close" popovertarget="ai-${i.id}" popovertargetaction="hide" aria-label="Close">&times;</button>
       <p class="pop-title">${esc(np.badge)}: ${esc(defs.ai_level[lvl].label)}</p>
       <p>${esc(defs.ai_level[lvl].meaning)}</p>
       <table class="ai-table"><tbody>

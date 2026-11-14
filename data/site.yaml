@@ -103,7 +103,8 @@ threat_models:
     incidents: [ cold-chain-hacks-2026-11 ]
 
 home:
-  hero_cta: See the steps
+  hero_cta: See the guide
+  hero_cta2: Understand the threats
   byline: A volunteer-run guide
   reach_title: What this could mean for you
   why_title: What has happened so far

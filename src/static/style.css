@@ -158,13 +158,16 @@ p { margin: 0 0 0.9rem; max-width: var(--measure); }
 
 /* ------------------------------------------------------------------ hero */
 
-.hero { grid-template-rows: 1fr auto; align-content: stretch; background-image: url("/hero.svg"); background-repeat: no-repeat; background-position: right 0 top 0; background-size: auto 100%; }
+.hero { align-content: center; background-image: url("/hero.svg"); background-repeat: no-repeat; background-position: right 0 top 0; background-size: auto 100%; }
 .hero-text { align-self: center; }
 .hero h1 { max-width: 10.5em; font-size: clamp(2.5rem, 5.6vw, 4.5rem); text-wrap: balance; }
 .subhead { font: 600 clamp(1.25rem, 2.4vw, 1.875rem)/1.2 var(--display); margin: 0.6rem 0 0; max-width: none; }
 .subhead::after { content: ""; display: block; width: 4.5rem; height: 6px; background: var(--accent); margin-top: 1.25rem; }
 .hero .lede { color: var(--muted); }
-.cta { display: inline-block; margin-top: 1.5rem; padding: 0.8rem 1.3rem; background: var(--accent); color: var(--on-accent); font: 700 1.0625rem var(--display); text-decoration: none; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.75rem 0 0; max-width: none; }
+.cta { display: inline-block; padding: 0.8rem 1.3rem; background: var(--accent); color: var(--on-accent); border: 2px solid var(--accent); font: 700 1.0625rem var(--display); text-decoration: none; }
+.cta-2 { background: none; color: var(--ink); border-color: var(--muted); }
+.cta-2:hover { background: none !important; border-color: var(--ink); }
 .byline { display: flex; flex-wrap: wrap; gap: 0.2rem 1.25rem; margin: 1.25rem 0 0; font-size: 0.875rem; color: var(--muted); }
 .cta:hover { background: var(--plate-ink); }
 .hero-reach h2 { font-size: 1.125rem; font-weight: 650; color: var(--muted); margin-bottom: 0.75rem; }
@@ -195,7 +198,8 @@ p { margin: 0 0 0.9rem; max-width: var(--measure); }
 
 .news .screen { min-height: 0; padding-top: 3rem; }
 .news h1 { font-size: clamp(2rem, 4vw, 2.75rem); margin-bottom: 0.75rem; }
-.feed { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+/* dense: when the full-width lead story is not the first one shown, the cell before it is filled rather than left empty. */
+.feed { display: grid; grid-template-columns: 1fr 1fr; grid-auto-flow: dense; gap: 1rem; }
 .feed-h { margin-top: 3.5rem !important; }
 .filter-note { font-size: 0.875rem; color: var(--muted); margin-top: 1rem; }
 .story { display: flex; flex-direction: column; gap: 0.55rem; padding: 1.25rem 1.4rem; background: var(--surface); border: 1px solid var(--rule); }
@@ -213,7 +217,7 @@ p { margin: 0 0 0.9rem; max-width: var(--measure); }
 .story:has(.more[open]) .story-sum { display: none; }
 .story-full { font-size: 0.9688rem; }
 .story.lead .story-sum { font-size: 1.0625rem; max-width: 46rem; }
-.pop .ai-table th { width: 9rem; }
+.pop .ai-table th { width: min(9rem, 38%); }
 .pop .note { color: var(--muted); font-size: 0.8438rem; }
 /* By default the feed shows events where AI involvement is confirmed or suspected. */
 body:has(#ai-f-ai:checked) .story:not([data-ai="confirmed"]):not([data-ai="suspected"]),
@@ -396,6 +400,10 @@ button.badge:hover { border-color: var(--ink); }
 .pop { width: min(26rem, calc(100vw - 2rem)); padding: 1.1rem 1.25rem; background: var(--surface); color: var(--ink); border: 1px solid var(--ink); border-top: 5px solid var(--accent); box-shadow: 0 12px 32px rgb(0 0 0 / 0.28); font-size: 0.9375rem; line-height: 1.45; }
 /* Never taller than the screen: scrolls inside, and leaves a strip above and below to tap to close. */
 .pop { max-height: calc(100vh - 6rem); max-height: calc(100dvh - 6rem); overflow-y: auto; overscroll-behavior: contain; }
+/* A close button that stays in the corner while the pop-up scrolls. Tapping outside also closes it,
+   but that tap also lands on whatever is underneath, which on a phone may be a link. */
+.pop-close { float: right; position: sticky; top: 0; width: 2.5rem; height: 2.5rem; margin: -0.6rem -0.75rem 0.25rem 0.5rem; padding: 0; border: 0; background: var(--surface); color: var(--ink); font: 400 1.75rem/1 var(--body); cursor: pointer; }
+.pop-close:hover { color: var(--underline); }
 .pop::backdrop { background: rgb(0 0 0 / 0.25); }
 .pop p { margin-bottom: 0.6rem; }
 .pop-title { font: 700 1.0625rem var(--display); display: flex; align-items: center; gap: 0.5rem; }
@@ -587,6 +595,7 @@ button.badge:hover { border-color: var(--ink); }
 /* Browsers without popover would show every pop-up open at once and unstyled: lay them out as plain notes. */
 @supports not selector(:popover-open) {
   .pop { flex-basis: 100%; width: auto; max-height: none; box-shadow: none; border-color: var(--rule); }
+  .pop-close { display: none; }
 }
 
 /* ----------------------------------------------------------------- print */
