@@ -27,6 +27,17 @@ Every guide says "Checked by: Nobody yet". A review from someone who works in th
 - [ ] **Readers outside the United States.** Most refund and deposit-protection rules described are US rules. Say what differs elsewhere, or link to equivalents.
 - [ ] **Shorten the text you see before opening a guide.** A few titles and cost badges are long ("Possible interest" wraps onto two lines).
 
+## Guides for contributors and for AI assistants
+
+- [ ] **A better guide for people who want to contribute.** The current Help wanted page explains the rules but not the workflow. Wanted: a short walk-through of one real change from start to finish (fix a fact, add a source, add an incident), with screenshots of the GitHub steps for people who have never used it.
+- [ ] **A contributing guide an AI agent can follow.** A file in the repository (for example `AGENTS.md`) that a contributor can hand to their own AI coding assistant: how the data files are laid out, the copy rules, the rating definitions, how to run the checks, and what must never be done (invent a figure, change a step link to an unapproved site, credit a reviewer who has not asked).
+- [ ] **The guides in a form an AI assistant can walk a reader through.** A plain-text version of the steps and guides that someone can give to an assistant such as Claude, so it can take them through the checklist one step at a time, answer questions and keep track of what is done. It must be written so the assistant coaches and never operates: it should not ask for passwords, codes or account numbers, and should not be connected to money accounts, in line with the site's own advice on AI tools.
+
+## Editorial
+
+- [ ] **A person reviews all the copy and signs off on accuracy.** The text was drafted with an AI assistant and checked by automated audits. A careful human read of every page, against its sources, has not been done.
+- [ ] **Test alternative wording for the home page opening** (later). Comparing versions properly needs visitor measurement, which the site deliberately does not have; any approach must not add tracking.
+
 ## Design and testing
 
 - [ ] **Test on different screen sizes.** Phones, tablets and very wide monitors, in light and dark, with tabs, expanders and pop-ups open; plus keyboard use and printing. A first attempt was abandoned because the design changed underneath it.
@@ -46,4 +57,7 @@ Every guide says "Checked by: Nobody yet". A review from someone who works in th
 - [ ] **Point thehackening.ai at the site.** Until then the address is thehackening.vercel.app.
 - [ ] **A better way for professional reviewers to get in touch.** Today the only route is a GitHub issue, which many security and banking professionals won't use. Options: a contact email address, or the submission form listed above.
 - [ ] **Reach out to reviewers directly** if none come forward: a short email to a few people with the right background, linking the guides in their area and saying exactly what is being asked.
+- [ ] **Choose a licence.** The repository has none, so it is unclear whether others may reuse the text or the code, or on what terms contributions are accepted.
+- [ ] **Protect the publishing route.** Every change to the main branch goes live automatically. Require a review before merging, and protect the maintainer accounts on GitHub and the hosting service with a security key.
+- [ ] **A public change log.** A dated list of what changed on the site and why, so returning readers and reviewers can see corrections.
 - [ ] **Co-maintainers.** People willing to merge changes and keep Incidents and Open questions current.
