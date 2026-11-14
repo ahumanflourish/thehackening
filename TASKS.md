@@ -44,4 +44,6 @@ Every guide says "Checked by: Nobody yet". A review from someone who works in th
 ## Project
 
 - [ ] **Point thehackening.ai at the site.** Until then the address is thehackening.vercel.app.
+- [ ] **A better way for professional reviewers to get in touch.** Today the only route is a GitHub issue, which many security and banking professionals won't use. Options: a contact email address, or the submission form listed above.
+- [ ] **Reach out to reviewers directly** if none come forward: a short email to a few people with the right background, linking the guides in their area and saying exactly what is being asked.
 - [ ] **Co-maintainers.** People willing to merge changes and keep Incidents and Open questions current.
