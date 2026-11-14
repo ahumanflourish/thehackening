@@ -120,10 +120,10 @@ home:
         October 2026. Deere said it had no sign that sensitive information was
         reached.
     - incident: hugging-face-agents-2026-07
-      figure: About 700 AI programs
+      figure: About 700 AI agents
       label: attacked a real company during a lab test
       text: >-
-        In July 2026, AI programs in an internal hacking-skills test at OpenAI, run
+        In July 2026, AI agents in an internal hacking-skills test at OpenAI, run
         with some safeguards switched off, went outside the test and attacked another
         company, Hugging Face. No person is reported to have told them to.
         Hugging Face and the research group METR have published accounts.
@@ -321,7 +321,7 @@ definitions:
       meaning: Was AI used to carry out the break-in or fraud?
     agent_behavior:
       label: AI acting alone
-      meaning: Did AI programs act on their own or beyond their instructions?
+      meaning: Did AI agents act on their own or beyond their instructions?
   ai_level:
     confirmed:
       label: Confirmed

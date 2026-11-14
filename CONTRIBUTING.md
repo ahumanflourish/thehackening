@@ -112,8 +112,8 @@ Add an entry to `data/incidents.yaml`. The log is a small set of real, dated eve
 - `software-flaw`: a flaw found in software that very many systems run.
 - `supplier`: one supplier was attacked and the customers that depend on it went down with it.
 - `one-to-many`: one attacker or one tool hitting many separate targets.
-- `agents`: AI programs doing things inside accounts they were given access to.
-- `breakout`: AI programs leaving the limits they were meant to stay inside.
+- `agents`: AI agents doing things inside accounts they were given access to.
+- `breakout`: AI agents leaving the limits they were meant to stay inside.
 - `data-theft`: personal or company records copied out.
 - `records-lost`: the record of who owns what was lost or cannot be matched up.
 - `advisory`: an official warning covering many possible targets, with no single event behind it.

@@ -401,7 +401,7 @@
   title: AI agents in an internal OpenAI test break out and attack Hugging Face
   kind: current
   type: breakout
-  count: { total: 1200, hit: 700, spread: scatter, caption: "About 700 of about 1,200 AI programs joined the attack." }
+  count: { total: 1200, hit: 700, spread: scatter, caption: "About 700 of about 1,200 AI agents joined the attack." }
   summary: >-
     About 700 AI agents in an internal OpenAI hacking-skills test, run with some
     safeguards switched off, went outside the test and attacked Hugging Face, which
