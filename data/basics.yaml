@@ -35,14 +35,20 @@
   title: Get an Identity Protection PIN, IRS
   url: https://www.irs.gov/identity-theft-fraud-scams/get-an-identity-protection-pin
   what_it_covers: A six-digit PIN that blocks others from filing taxes in your name.
-  commentary: Cheap and permanent. Few steps here protect you this much for so little time.
+  commentary: >-
+    Few steps here protect you this much for so little time. It is not set-and-forget:
+    a new PIN is issued every year, so look up the new one before you file. The IRS
+    says its online PIN system is offline from 16 Nov 2026 until mid-January 2027.
 
 - id: what-the-basics-miss
   title: What the standard lists miss (this site's commentary)
-  url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/LtpgcFZKY7yusQedF
-  what_it_covers: Risks the usual checklists leave out, from a question by John Wentworth.
+  url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/EAifqfeEHYQ6QJscX
+  what_it_covers: Risks the usual checklists leave out. This is a public comment by this
+    site's maintainer (posting as Alex A), written in reply to a question from John
+    Wentworth.
   commentary: >-
-    The standard lists protect you from being personally targeted. They don't cover
+    The standard lists mainly stop bulk attacks that try the same trick on everyone.
+    They don't cover
     letting AI assistants or apps into your money accounts, which can cost you your
     right to a refund; installing unchecked software; or losing access when institutions
     go down.

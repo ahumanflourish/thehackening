@@ -4,12 +4,15 @@
   "type": "module",
   "description": "Static resource site on Hackening threat models, generated from data files.",
   "scripts": {
-    "build": "node build/build.mjs",
+    "build": "node build/build.mjs && node build/test.mjs",
     "validate": "node build/build.mjs --validate-only",
     "check-links": "node build/check-links.mjs",
-    "serve": "npx --yes serve dist"
+    "serve": "npx --yes serve dist",
+    "test": "node build/build.mjs && node build/test.mjs"
   },
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
     "marked": "^14.1.4",
     "yaml": "^2.6.1"

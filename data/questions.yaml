@@ -1,5 +1,8 @@
 # Open questions for thehackening.ai
 # status: open | partly_answered | answered
+# Say whose view or estimate each answer gives. Prediction-market figures need a date,
+# the number of participants, and "play money" where that applies.
+# Do not credit an AI-generated comment as an asker or as support for an estimate.
 
 - id: what-can-it-shut-down
   question: Could AI-driven hacking shut down gas, electricity, water, roads, trucking or
@@ -9,10 +12,12 @@
       url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=vrWadZoutdakXX9vn
   status: open
   current_best_answer: >-
-    Water and sewer systems look most exposed, because they are split among many small,
-    underfunded operators. Traders on the prediction site Manifold put about 8–9% on a
-    major US blackout caused by hacking by 2027. Metaculus forecasters put about 10% on
-    one caused by an attack aimed at AI systems before 2028.
+    Nobody knows. Water and sewer systems look unusually exposed, because they are split
+    among thousands of small operators that must each find and fix their own flaws. On
+    Manifold, a prediction site that uses play money, a market with about 40
+    participants put about 6% on a major US blackout caused by a cyberattack before 1
+    January 2027 (as of 14 Nov 2026). A market that small is a rough signal, not a
+    forecast.
   sources:
     - title: America's sewer systems are surprisingly vulnerable to cyber attacks, FAI
       url: https://www.thefai.org/posts/america-s-sewer-systems-are-surprisingly-vulnerable-to-cyber-attacks
@@ -29,10 +34,10 @@
       url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=fxLENPKfmFhbm2kTA
   status: open
   current_best_answer: >-
-    No good answer yet. Traders on the prediction site Manifold put about 45% on a
-    worldwide internet disruption of two hours or more before 2028, though that figure
-    counts accidents too. They put 14% on an outage cutting off a quarter of internet
-    users for 24 hours before 2030.
+    No good answer yet. On Manifold, a prediction site that uses play money, a market
+    with about 35 participants put about 44% on a massive internet outage of two hours
+    or more before 2028 (as of 14 Nov 2026). That market also counts accidents, and it
+    counts a large outage confined to China, so it says little about attacks.
   sources:
     - title: Will there be a massive internet outage before 2028?, Manifold
       url: https://manifold.markets/Plant/will-there-be-a-massive-internet-ou
@@ -46,9 +51,10 @@
       url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=HeNoSTDPZfvFvMZyz
   status: partly_answered
   current_best_answer: >-
-    Most guides plan for three to seven days; the Red Cross figure for staying at home
-    is about two weeks. When a single financial institution has been hacked, the outage
-    has run about two weeks. Nobody has answered how much to keep for neighbors.
+    Most guides plan for three to seven days; the Red Cross figure for water and food
+    when staying at home is about two weeks. In the best-known hack of a single
+    financial institution, a California credit union in 2024, online banking was out
+    for about two weeks. Nobody has answered how much to keep for neighbors.
   related_advice: [ water-food-medications, cash-sized-to-outages ]
 
 - id: when-use-survival-llm
@@ -59,25 +65,25 @@
       url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=NLA7sR9nfjiisGCex
   status: partly_answered
   current_best_answer: >-
-    Probably rarely. The useful part is the offline reference library it searches, which
-    is free on its own. Most of what you'd need is specific to your situation and has to
-    be prepared in advance.
+    Probably rarely, in the view of the two people who have discussed it here; neither
+    has tried one in an emergency. The useful part is the offline reference library it
+    searches, which is free on its own. Most of what you'd need is specific to your
+    situation and has to be prepared in advance.
   related_advice: [ offline-reference-library ]
 
 - id: who-wants-long-outages
   question: Does anyone able to cause long outages actually want them?
-  asked_by:
-    - author: Claude Fable
-      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=dG5MWY4ee9TSFDm2R
   status: open
   current_best_answer: >-
-    Probably not criminals. They get paid through extortion and theft, which favors
-    stealing data and short outages. Lasting damage to infrastructure probably needs a
-    government, someone who wants destruction for its own sake, or AI programs running
-    outside anyone's control.
+    Nobody knows. One commenter, Jenna_Parr, sorts attackers into three groups:
+    criminals, who want money and so favor theft, extortion and ransoms; states and
+    people who want destruction for its own sake; and AI programs that no longer answer
+    to anyone. On that view, lasting damage is more likely to come from the last two.
+    But criminals have caused long outages too: ransomware kept one US credit union's
+    online banking down for about two weeks in 2024.
   sources:
-    - title: On Open-Weights Mythos Capabilities (see JennaS's comment), hadad
-      url: https://www.lesswrong.com/posts/wJunGnpY3qACWSvnh/on-open-weights-mythos-capabilities
+    - title: Comment by Jenna_Parr on "On Open-Weights Mythos Capabilities"
+      url: https://www.lesswrong.com/posts/wJunGnpY3qACWSvnh/on-open-weights-mythos-capabilities?commentId=vCphKJzz7xodJwEg7
 
 - id: do-defenders-have-the-advantage
   question: If attackers and defenders have equally capable AI, don't defenders win, since
@@ -87,15 +93,22 @@
       url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/rcQREbEgBpiuFBnnQ
   status: partly_answered
   current_best_answer: >-
-    Not automatically. Finding flaws isn't the slow part; installing fixes is. Defenders
-    found the PHP2Shell flaw on August 1, yet attackers were using it by October 17.
-    CrowdStrike, a security firm, found that 88% of attacks using published attack code
-    came within 48 hours of its release. Vitalik Buterin thinks defense may win
-    eventually, but the transition is hard.
+    Not automatically, and people who follow this disagree. Finding a flaw first isn't
+    enough. Defenders found the PHP2Shell flaw on August 1, yet attackers were using it
+    by October 17, four days before a fix was released. The writer Zvi called that "an
+    update against defenders being advantaged". Grendel1209, who works in
+    cybersecurity, expects freely downloadable AI models to favor attackers. Vitalik
+    Buterin predicts defense wins in the end, "but the transition will be hard".
+    CrowdStrike, a security firm, reported that in the first half of 2026, for flaws
+    with public demonstration code, 88% of the attacks it observed came within 48 hours
+    of that code's release.
   sources:
     - title: The Hackening, Zvi
       url: https://www.lesswrong.com/posts/iqgZaJMnmyDCYfnuC/the-hackening-1
-    - title: AI Vulnerability Management 2026 Guide, NeuralTrust
+    - title: Comment by Grendel1209
+      url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/NGfGhPs7zD9EbLygc
+    - title: AI Vulnerability Management 2026 Guide, NeuralTrust (reports the CrowdStrike
+        figure)
       url: https://neuraltrust.ai/blog/ai-vulnerability-management
   related_advice: [ shrink-patch-lag ]
 
@@ -104,12 +117,15 @@
     money go, and couldn't the government block large transfers?
   asked_by:
     - author: cousin_it
-      url: https://www.lesswrong.com/posts/wJunGnpY3qACWSvnh/on-open-weights-mythos-capabilities
+      url: https://www.lesswrong.com/posts/wJunGnpY3qACWSvnh/on-open-weights-mythos-capabilities?commentId=png7tkGbgJhuytooJ
   status: open
   current_best_answer: >-
-    So far, attacks on banks have mostly stolen data, not moved money. The likelier way
-    for many banks to fail together is customers losing access: a supplier or central
-    computer system that many banks share goes down, as in the 2023 Trellance attack.
+    Nobody has a clear picture. Most reported attacks on banks so far have leaked data,
+    but money has been moved too: about €100 million was stolen from the French bank
+    Crédit Mutuel Arkéa in November 2026, out of the bank's own account. Another way
+    many banks could fail together is customers losing access when a supplier that many
+    banks share goes down, as in the 2023 Trellance attack. Whether a government could
+    block very large transfers has not been answered.
   related_advice: [ spending-money-on-separate-rails, insurance-covers-failure-not-hacks ]
 
 - id: spiral-or-muddle-through
@@ -120,27 +136,35 @@
       url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/4bAkyL8jgkmpoCFkc
   status: open
   current_best_answer: >-
-    Most likely we muddle through. This site's maintainer puts the chance of a
-    months-long, hard-to-reverse breakdown of online finance at about 1–3% over 18
-    months. Claude Fable's most likely guess is similar: a grinding year or two of
-    repeated break-ins and outages lasting hours to days.
+    Nobody knows. Thane Ruthenis, who asked, was unsure: it "seems possible"
+    there will be a spiral, "or maybe not". This site's maintainer guesses the chance of
+    a months-long, hard-to-reverse breakdown of online finance at about 1–3% over 18
+    months (a guess made in late October 2026). That is one person's judgment, not a
+    forecast. The reasoning: past attacks on financial firms caused outages of days to
+    weeks followed by recovery, and banks keep offline backups of account records.
+    Against that, nothing like today's tools has been seen before, so the past is a
+    weak guide.
 
 - id: open-weights-timeline
   question: When will AI models that anyone can download be as good at hacking as the most
     advanced ones?
   asked_by:
     - author: johnswentworth
-      url: https://www.lesswrong.com/posts/wJunGnpY3qACWSvnh/on-open-weights-mythos-capabilities
+      url: https://www.lesswrong.com/posts/wJunGnpY3qACWSvnh/on-open-weights-mythos-capabilities?commentId=KwPbBtCA9HqqsfQg5
   status: open
   current_best_answer: >-
-    hadad put 85% on a downloadable model hacking as well as Mythos, a leading model,
-    within 24 months of August 2026. Vladimir_Nesov guessed maybe 2028, limited mainly
-    by computing power in China. Metaculus's professional forecasters put about 95% on
-    one matching Mythos on a hacking test before July 2027, but a test is not real-world
-    attack ability.
+    Nobody knows; these are individual guesses. hadad put 85% on a downloadable model
+    hacking as well as Mythos, a leading model, within 24 months of August 2026.
+    Vladimir_Nesov guessed "maybe 2 years, in 2028", limited mainly by computing power
+    in China. In October 2026 the writer Zvi judged the best downloadable model "more
+    than six months behind". Forecasters at the forecasting site Metaculus put about
+    95% on one matching Mythos on a hacking test before July 2027, but a test is not
+    real-world attack ability.
   sources:
     - title: On Open-Weights Mythos Capabilities, hadad
       url: https://www.lesswrong.com/posts/wJunGnpY3qACWSvnh/on-open-weights-mythos-capabilities
+    - title: The Hackening, Zvi
+      url: https://www.lesswrong.com/posts/iqgZaJMnmyDCYfnuC/the-hackening-1
     - title: Forecasting the fallout from the Hugging Face incident, Metaculus
       url: https://metaculus.substack.com/p/forecast-hugging-face-incident-openai-breach-cyberattack
 
@@ -149,13 +173,13 @@
     is closing. Will banks keep the backups, and will anyone independent still check
     them?
   asked_by:
-    - author: Alexander (maintainer)
-      url: https://www.fsisac.com/who-we-are/sheltered-harbor
+    - author: Alex A (this site's maintainer)
+      url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/EAifqfeEHYQ6QJscX
   status: open
   current_best_answer: >-
-    The backups likely continue, because banks and their suppliers run the storage
-    themselves. The closing notice hands the standard to the industry group FS-ISAC and
-    doesn't mention independent certification.
+    Not known. The maintainer's guess is that the backups continue, because banks and
+    their suppliers run the storage themselves. The closing notice hands the standard
+    to the industry group FS-ISAC and doesn't mention independent certification.
   sources:
     - title: Sheltered Harbor announces planned wind-down, FS-ISAC
       url: https://www.fsisac.com/who-we-are/sheltered-harbor
@@ -164,11 +188,17 @@
 - id: big-bank-or-credit-union
   question: Against AI-driven hacking, is your money safer at one of the five biggest
     banks or at a credit union?
-  asked_by:
-    - author: RHollerith
-      url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/BPqcsafhHTjKgkDGz
   status: partly_answered
-  current_best_answer: Disputed. Big banks defend better but are bigger targets. Credit
-    unions run on different systems, so the two tend to fail at different times. Holding
-    accounts at both is the cautious choice.
+  current_best_answer: >-
+    Disputed, and nothing here is a recommendation to move your money. Grendel1209, who
+    describes working at a threat-intelligence company, recommends a top-five bank, on the
+    view that only the biggest firms can afford strong defenses. Thane Ruthenis
+    suggests splitting money across several different banks. The maintainer's own
+    reasoning, which is untested, is that a big bank and a credit union may not fail at
+    the same time, so holding accounts at both is the cautious choice.
+  sources:
+    - title: Comment by Grendel1209
+      url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/NGfGhPs7zD9EbLygc
+    - title: Comment by Thane Ruthenis
+      url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/4bAkyL8jgkmpoCFkc
   related_advice: [ big-bank-or-credit-union ]

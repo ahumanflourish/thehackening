@@ -43,7 +43,7 @@ export const SCHEMAS = {
     confidence: en(ENUMS.confidence),
     confidence_note: str(),
     review_status: en(ENUMS.review_status),
-    reviews: list(obj({ name: str(true), background: str(true), date: date(true), scope: str(true) })),
+    reviews: list(obj({ name: str(true), background: str(true), profile: { type: 'url' }, date: date(true), scope: str(true) })),
     sides: obj({ for: str(true), against: str(true), synthesis: str(true) }),
     sources: list(link),
     thread_refs: list(obj({ author: str(true), url: { type: 'url', required: true }, note: str() })),
@@ -165,6 +165,13 @@ export function validate(data) {
     if (a.kind === 'action' && !(a.tier && a.time && a.money))
       errors.push(`${path}: action items need tier, time and money`);
     if (a.kind === 'action' && !a.rank) errors.push(`${path}: action items need a rank`);
+    for (const st of a.steps ?? []) {
+      if (!st.url) continue;
+      const h = new URL(st.url).hostname;
+      const ok = (data.site?.step_link_domains ?? []).some((d) => h === d || h.endsWith(`.${d}`));
+      if (!ok) errors.push(`${path}: step link host "${h}" is not on step_link_domains in site.yaml`);
+      if (!st.url.startsWith('https://')) errors.push(`${path}: step links must use https`);
+    }
     if (a.checklist && !a.checklist_text) errors.push(`${path}: checklist: true needs checklist_text`);
     if (a.review_status === 'expert_reviewed' && !a.reviews?.length)
       errors.push(`${path}: expert_reviewed needs at least one entry under reviews`);

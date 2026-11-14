@@ -3,13 +3,14 @@
 - id: chrome-fixes
   title: Security fixes in Google Chrome, per month
   takeaway: >-
-    For years Chrome shipped a few dozen security fixes a month. In spring 2026
-    that jumped more than tenfold and has stayed there.
+    These are flaws that were found and fixed, not attacks. For years Chrome fixed
+    a few dozen a month. Since May 2026 it has fixed several hundred a month, with
+    a peak of 996 in June.
   unit: fixes
   note: >-
-    Most of these flaws were found and fixed by Google itself, which says the
-    rise comes from using AI to search its own code. More flaws found is not
-    the same as more attacks, but the same tools are available to attackers.
+    Google says AI tools are finding and fixing these flaws much faster, both its
+    own tools and reports from outside researchers. More flaws found and fixed is
+    not the same as more attacks, but similar tools are available to attackers.
   as_of: 2026-11-11
   source:
     title: Chrome Releases blog, every desktop stable update, counted by month

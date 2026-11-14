@@ -5,11 +5,15 @@ Everything on the site is generated from the files in [`data/`](https://github.c
 There are two ways to contribute:
 
 - **Pull request** against the data files in the [GitHub repository](https://github.com/ahumanflourish/thehackening).
-- **Comment in the [LessWrong thread](https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions).** A maintainer folds thread comments into the data files and links back to yours.
+- **Comment in the [LessWrong thread](https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions).** The maintainer folds thread comments into the data files and links back to yours.
+
+To report a mistake without touching any code, leave a comment in that thread saying which page is wrong and what the source says.
+
+So far the site has one maintainer. Where this page says "a maintainer", that is who it means until others join.
 
 ## Volunteer as a reviewer
 
-This is the most useful thing you can do. Every item currently says **Unreviewed**, and that label only changes when someone with relevant professional background checks the item.
+This is the most useful thing you can do. Every item currently says **Checked by: Nobody yet**, and that label only changes when someone with relevant professional background checks the item.
 
 Reviewers wanted:
 
@@ -17,18 +21,36 @@ Reviewers wanted:
 - **Finance or compliance professional**, for the refund-rule and deposit-insurance items (Regulation E, broker guarantees, FDIC, NCUA, SIPC).
 - **Open-questions maintainer**, to fold new thread comments into `data/questions.yaml` and keep the answers current.
 
-To review an item, open a pull request (or an issue, or a thread comment) that says what you checked and what you'd change. A maintainer then sets the item to `expert_reviewed` and records your review on it:
+### What a "Checked by" credit requires
+
+A "Checked by" credit tells readers that a professional looked at an item, so it is not given on someone's word alone. All three of these are required:
+
+1. **Something checkable about you.** A public professional profile or an employer page that names you, which a maintainer can confirm belongs to you. It is linked on the item, so readers can check it too. Describing your own background is not enough, however plausible.
+2. **Your own explicit request to be credited.** You have to ask, in your own words, to be named as the reviewer of that item. Nobody is credited because they made a helpful comment.
+3. **A statement of exactly what you checked.** For example "the Regulation E deadlines in the 'why' section", not "the item".
+
+A forum comment alone cannot grant a credit. Comments are welcome and get folded in as corrections, but the label stays "Nobody yet" until all three requirements are met and a maintainer has confirmed the first one.
+
+Once they are met, a maintainer sets the item to `expert_reviewed` and records the review on it:
 
 ```yaml
 review_status: expert_reviewed
 reviews:
-  - name: Your name or handle
-    background: One line on why you're qualified, e.g. "10 years in bank fraud operations"
+  - name: Your name, as it appears on your public profile
+    background: Your role, plus the address of the profile or employer page the maintainer confirmed
     date: 2026-11-20
-    scope: What you checked, e.g. "Reg E timelines and the authorized/unauthorized distinction"
+    scope: Exactly what you checked, e.g. "Reg E timelines and the authorized/unauthorized distinction"
 ```
 
-A review says what was checked, not that the item is guaranteed correct. Reviews older than six months are shown as due for re-review.
+A review says what was checked, not that the item is guaranteed correct. Reviews older than six months are shown as due for re-review. A reviewer can ask at any time for the credit to be removed.
+
+### Links and phone numbers in steps
+
+Readers act on the links and phone numbers in the steps, so these get extra care:
+
+- **Any change to a link or a phone number in a step must be checked by a maintainer against the institution's own website before it is merged**, whoever proposes it and whatever else the change contains. A review credit does not exempt a change from this.
+- **Step links must stay on the approved list of official domains.** The build enforces the list and fails on a step link to any other site. Adding a domain to the list is a separate change that a maintainer makes after checking that the domain really belongs to the institution.
+- Do not bundle a link or phone-number change with other edits. Send it on its own so it can be checked on its own.
 
 ## Add an advice item
 
@@ -48,7 +70,7 @@ Rules for every item:
 4. **Paraphrase thread comments and link to them** under `thread_refs`. Don't quote at length.
 5. **Check for duplicates first.** If the advice already exists, add your source or comment link to the existing item.
 6. **If it's genuinely uncertain, it's a question, not advice.** Put it in `data/questions.yaml`.
-7. **No personal financial details** about yourself or anyone else.
+7. **No personal financial details** about yourself or anyone else, including what a named commenter says they keep or hold.
 8. Set `updated` to today's date. Date any number that will go stale ("as of Nov 2026").
 
 To put an item on the printable checklist, set `checklist: true` and write a one-sentence `checklist_text` that someone could act on without reading the guide.
@@ -71,7 +93,9 @@ Link the comments or sources for each side under `thread_refs` or `sources`. The
 Add an entry to `data/incidents.yaml`. The log is a small set of real, dated events that inform the advice, not a news feed.
 
 - `kind` is `current` for a Hackening-era event, or `precedent` for an older event used for calibration.
-- Rate `ai_involvement` separately for each stage you have information on (`discovery`, `attack`, `agent_behavior`), using `confirmed`, `suspected`, `unlikely` or `unknown`. Rate from what the victim, vendor or officials have actually said, and put who said it in `note`.
+- Rate `ai_involvement` separately for each stage you have information on (`discovery`, `attack`, `agent_behavior`), using `confirmed`, `suspected`, `unlikely` or `unknown`. Use `confirmed` only when the victim, the supplier or an official investigator says AI was used in that stage of that event. A report from unnamed sources, a private researcher or a security company is `suspected`. Put who said it in `note`.
+- Open the source before you write a figure, and put a date on any figure that can change ("as of 5 Nov 2026"). Do not rely on a summary of a source, and do not cite an AI-generated summary.
+- Do not credit an AI-generated comment as a contributor or as support for an estimate. If one has to be mentioned, call it "an AI-generated comment in the thread".
 - List the advice it informs under `related_advice`.
 - Set `needs_research: true` if details are still missing or the cause is still under investigation.
 

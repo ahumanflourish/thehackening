@@ -23,23 +23,23 @@ export const DIAGRAM_TEXT = {
     ],
   },
   institutional: {
-    alt: 'How it happens: an attack hits a bank, or a supplier that several smaller banks share. The bank shuts its own systems down until it can prove they are clean. Your money is probably still there, but you can’t reach it. Past cases took about two weeks.',
+    alt: 'How it happens: an attack hits a bank, or a supplier that several smaller banks share. The bank shuts its own systems down until it can prove they are clean. Your money is probably still there, but you may not be able to reach it. In the best-known case so far, that took about two weeks.',
     steps: [
       { label: 'A bank or supplier is attacked', note: 'Many smaller banks share one supplier' },
       { label: 'The bank shuts its systems down', note: 'until it can prove they are clean' },
-      { label: 'You can’t reach your money', note: 'It is probably still there' },
-      { label: 'About two weeks', note: 'is how long past cases took' },
+      { label: 'You may not reach your money', note: 'It is probably still there' },
+      { label: 'About two weeks', note: 'in the best-known case so far' },
     ],
   },
   crypto: {
-    alt: 'A comparison of two ways money moves. A bank transfer that takes days can be stopped and reversed, so the money can come back. Crypto, wire transfers and instant payment apps can’t be stopped: once the money moves it is gone, and nobody is required to refund you.',
+    alt: 'A comparison of two ways money moves. A bank transfer that takes days can often be stopped, so the money can come back. Crypto, wire transfers and instant payment apps can’t be pulled back once sent. If you sent the money yourself, nobody is required to refund you. If a thief sent it from your US payment app or bank account without you, report it at once, because federal rules can still require a refund. Crypto has no such rule.',
     lanes: [
       {
         name: 'Bank transfer that takes days',
         steps: [
           { label: 'Money leaves your account' },
           { label: 'Slow enough to be stopped' },
-          { label: 'And it can be reversed' },
+          { label: 'So it can often come back' },
         ],
       },
       {
@@ -47,7 +47,7 @@ export const DIAGRAM_TEXT = {
         steps: [
           { label: 'Money leaves your account' },
           { label: 'It can’t be stopped' },
-          { label: 'Gone. Nobody has to refund you.' },
+          { label: 'Gone. Sent it yourself? No refund.' },
         ],
       },
     ],

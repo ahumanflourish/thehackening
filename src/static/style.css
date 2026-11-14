@@ -162,6 +162,7 @@ p { margin: 0 0 0.9rem; max-width: var(--measure); }
 .subhead::after { content: ""; display: block; width: 4.5rem; height: 6px; background: var(--accent); margin-top: 1.25rem; }
 .hero .lede { color: var(--muted); }
 .cta { display: inline-block; margin-top: 1.5rem; padding: 0.8rem 1.3rem; background: var(--accent); color: var(--on-accent); font: 700 1.0625rem var(--display); text-decoration: none; }
+.byline { display: flex; flex-wrap: wrap; gap: 0.2rem 1.25rem; margin: 1.25rem 0 0; font-size: 0.875rem; color: var(--muted); }
 .cta:hover { background: var(--plate-ink); }
 .hero-reach h2 { font-size: 1.125rem; font-weight: 650; color: var(--muted); margin-bottom: 0.75rem; }
 .reach-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
@@ -177,6 +178,8 @@ p { margin: 0 0 0.9rem; max-width: var(--measure); }
 .examples .fig span { font: 600 1.125rem var(--display); color: var(--muted); }
 .examples p { margin: 0; font-size: 1.0625rem; line-height: 1.45; max-width: 30rem; }
 .examples time { font-size: 0.875rem; color: var(--muted); }
+.ex-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem 1rem; font-size: 0.875rem !important; color: var(--muted); margin-top: auto !important; }
+.ai-note { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.8125rem; color: var(--muted); white-space: nowrap; }
 
 /* Before and now: the old state struck through, the new one bold. */
 .thennow { margin: 1.5rem 0 0; display: grid; gap: 1.1rem; }

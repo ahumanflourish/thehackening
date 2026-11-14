@@ -11,43 +11,49 @@
 
 - id: faa-ground-stop-2026-11
   date: 2026-11-13
-  title: FAA halts flights across the US after air traffic communications failure
+  title: FAA halts US flights for four hours after a communications failure; officials see
+    no sign of an attack
   kind: current
   type: outage
   summary: >-
-    The FAA, the US aviation regulator, halted flights nationwide for more than four
-    hours after communications failed at its regional air traffic control centers. The
-    Secretary of Homeland Security said there was no indication of an attack "as of
-    right now". The FAA blames a data overload on an old analog system. The cause is
-    still under investigation.
+    The FAA, the US aviation regulator, halted departures nationwide for more than four
+    hours on 13 Nov 2026 after communications failed at its regional air traffic control
+    centers. Homeland Security Secretary Markwayne Mullin said there was no indication
+    "as of yet" of an attack. Transportation Secretary Sean Duffy said routers on an
+    outdated system were overloaded with data. The cause is still being investigated.
   impact: >-
-    Flights halted for about four hours 20 minutes (per Wikipedia, citing CNBC); at
-    least 827 flights diverted, with roughly 11,000 departures scheduled after it began
-    (per OPB).
+    Departures were halted for more than four hours, until 8:15 p.m. Eastern. More than
+    4,000 flights were cancelled and more than 10,000 delayed by late on 13 Nov 2026
+    (FlightAware figures reported by CBS News); later counts are higher. At least 827
+    flights were diverted as of 7:05 p.m. (Cirium figures reported by OPB).
   ai_involvement:
     - stage: attack
       level: unlikely
-      note: Officials call it a telecommunications outage caused by a data overload, with no
-        indication of an attack; this is preliminary and nothing has been formally ruled
-        out.
+      note: Mullin said there was no indication, as of yet, of a "nefarious act". Duffy blamed
+        routers overloaded with data on an outdated system, and CBS News, citing unnamed
+        sources, reported that a software update to the communications network set it
+        off. This is preliminary and nothing has been formally ruled out.
     - stage: agent_behavior
       level: unlikely
-      note: Officials said they would examine any link to the FAA's new AI tool that
-        recommends flight reroutes; Wikipedia reports the FAA denies it caused the halt,
-        which no primary source yet confirms.
+      note: Mullin said investigators would look at any link to the FAA's new AI tool that
+        suggests flight reroutes (OPB). Wikipedia cites the Washington Times as reporting
+        that the FAA denies the tool was a cause; we could not open that article
+        ourselves.
   related_advice: []
   sources:
     - title: Flights halted at airports across US due to air traffic control communications
         problems, OPB
       url: https://www.opb.org/article/2026/11/13/flights-halted-at-airports-across-us-due-to-air-traffic-control-communications-problems/
+    - title: FAA issues nationwide ground stop, CBS News
+      url: https://www.cbsnews.com/news/faa-issues-nationwide-ground-stop/
     - title: FAA issues nationwide ground stop, KSAT
       url: https://www.ksat.com/news/local/2026/11/13/faa-issues-nationwide-groundstop/
     - title: 2026 FAA communication outage, Wikipedia
       url: https://en.wikipedia.org/wiki/2026_FAA_communication_outage
-    - title: Secretary Duffy's post, linked from Elizabeth's thread
+    - title: Post by Transportation Secretary Sean Duffy on X
       url: https://x.com/SecDuffy/status/2121351591106072679
   needs_research: true
-  updated: 2026-11-13
+  updated: 2026-11-14
 
 - id: microsoft-365-outage-2026-11
   date: 2026-11-12
@@ -55,20 +61,21 @@
   kind: current
   type: overload
   summary: >-
-    Microsoft's work email and collaboration services, including Exchange Online, Teams,
-    SharePoint Online, Copilot and Defender XDR, were disrupted worldwide and were still
-    recovering a day later. Microsoft reports no evidence of malicious activity. It said
-    servers became unexpectedly unavailable and a process that sets up secure
-    connections was overwhelmed, and it rolled back a recent network change that
-    coincided with the start.
-  impact: Worldwide email and collaboration disruption, starting in the Americas at 1:26
-    PM ET and lasting into a second day; no confirmed end time as of 13 Nov.
+    Microsoft's work email and collaboration services, including Outlook, Teams and
+    Copilot, were disrupted worldwide from 12 Nov 2026 and were still recovering a day
+    later. Microsoft said it had no evidence of malicious activity. It said servers
+    became unexpectedly unavailable and began rolling back a recent network change that
+    coincided with the start. It has not confirmed a cause.
+  impact: Worldwide email and collaboration disruption. Email trouble was first reported
+    in the Americas on 12 Nov 2026, and the wider incident began at 1:26 PM ET that day.
+    It ran into a second day and was still open, with no confirmed end time, as of the
+    13 Nov reports we have seen.
   ai_involvement:
     - stage: attack
       level: unlikely
-      note: Microsoft (incident MO1550821) blames overloaded infrastructure and a
-        configuration change and reports no evidence of malicious activity; it has
-        promised a post-incident report but has not yet published a root cause.
+      note: Microsoft (incident MO1550821) said on 13 Nov it had no evidence of malicious
+        activity. It has pointed to overloaded servers and began rolling back a network
+        change, but it has not confirmed a cause; it has promised a post-incident report.
   related_advice: [ offline-backups ]
   sources:
     - title: Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide,
@@ -76,10 +83,10 @@
       url: https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/
     - title: Microsoft 365 outage disrupts Outlook, Exchange Online and Teams, SecurityWeek
       url: https://www.securityweek.com/microsoft-365-outage-disrupts-outlook-exchange-online-and-teams/
-    - title: Microsoft 365 Status post, linked from Elizabeth's thread
+    - title: Microsoft 365 Status post on X
       url: https://x.com/MSFT365Status/status/2120938282204688468
   needs_research: true
-  updated: 2026-11-13
+  updated: 2026-11-14
 
 - id: cold-chain-hacks-2026-11
   date: 2026-11-05
@@ -87,48 +94,52 @@
   kind: current
   type: devices
   summary: >-
-    Hackers are breaking into internet-connected refrigeration and cold-storage
-    monitoring systems, warned the FBI, the US cybersecurity agency CISA and the
-    Departments of Agriculture, Health and Human Services, and Transportation. Reported
-    targets include supermarket freezers in at least a dozen countries, freezers on US
-    military bases and a French blood bank (stopped before supplies were harmed). Some
-    were remote-control units that no longer receive updates.
-  impact: Food and medical cold storage targeted in several countries; no official word on
-    who is responsible.
+    Hackers are breaking into internet-connected freezers and refrigeration systems,
+    warned the FBI, the US cybersecurity agency CISA and three other federal
+    departments. Reported targets include supermarket freezers in at least a dozen
+    European countries, where food spoiled, freezers run by the US military, and a
+    French blood bank (stopped before supplies were harmed). Some units no longer
+    receive updates.
+  impact: Food spoiled in several European countries, and medical cold storage was
+    targeted. Security researchers point to Iran; the US government has not officially
+    blamed anyone (as of 5 Nov 2026).
   ai_involvement:
     - stage: attack
       level: unknown
-      note: No official has attributed the intrusions to AI.
+      note: No official has attributed the intrusions to AI, and the report we cite does not
+        mention AI.
   related_advice: [ water-food-medications, shrink-patch-lag ]
   sources:
     - title: US government warns of ongoing cyber threat amid mass hacks of industrial, retail
         and military freezers, TechCrunch
       url: https://techcrunch.com/2026/11/05/u-s-government-warns-of-ongoing-cyber-threat-amid-mass-hacks-of-industrial-retail-and-military-freezers/
-  updated: 2026-11-13
+  updated: 2026-11-14
 
 - id: india-lenders-ai-agents-2026-11
   date: 2026-11-04
-  title: Indian agencies warn of AI-agent attacks on banks and lenders
+  title: Indian agencies warn that criminals are using AI to attack banks and lenders
   kind: current
   type: advisory
   summary: >-
-    India's Home Ministry cybercrime unit and cyber emergency team, CERT-In, warned that
-    criminals are using AI to attack banks and lenders for money. Days earlier, about Rs
-    7.8 crore (78 million rupees) left small-loan lender Spandana Sphoorty's bank
-    account for 82 accounts without authorization; neither warning ties that loss to AI.
-    CERT-In named an AI-assisted group it calls CRAFTY FALCON.
-  impact: At least one lender's funds moved out without authorization; sector-wide advisories.
+    India's Home Ministry cybercrime unit and its cyber emergency team, CERT-In, warned
+    in early November 2026 that criminals are using AI tools to attack banks and lenders
+    for money. Neither warning names a victim. Days earlier, about Rs 7.8 crore (78
+    million rupees) left small-loan lender Spandana Sphoorty's bank account without
+    authorization; neither agency has tied that loss to AI.
+  impact: Sector-wide warnings. One lender reported an unauthorized transfer of about Rs
+    7.8 crore to 82 accounts on 1 Nov 2026; nobody has attributed it to AI.
   ai_involvement:
     - stage: attack
-      level: confirmed
-      note: The Home Ministry says criminals used AI agents to break into systems and CERT-In
-        describes AI-driven scanning and attack scripts, but neither ties the Spandana
-        loss itself to AI.
+      level: suspected
+      note: The Home Ministry says criminals have used AI agents to break into systems, and
+        CERT-In describes AI-driven scanning and attack scripts by a group it calls CRAFTY
+        FALCON. Neither names a victim or ties any particular loss, including
+        Spandana's, to AI. This rests on The Week's account of the advisories.
   related_advice: []
   sources:
     - title: Spandana Sphoorty cyber fraud and the Home Ministry advisory, The Week
       url: https://www.theweek.in/news/sci-tech/2026/11/05/spandana-sphoorty-cyber-fraud-mha-advisory.html
-  updated: 2026-11-13
+  updated: 2026-11-14
 
 - id: arkea-heist-2026-11
   date: 2026-11-01
@@ -145,8 +156,8 @@
   ai_involvement:
     - stage: attack
       level: unknown
-      note: No official has attributed it to AI; at least one headline calls it AI-enabled
-        without a visible source.
+      note: No official has attributed it to AI, and the BleepingComputer report we cite does
+        not mention AI.
   related_advice: [ spending-money-on-separate-rails, slow-money-is-safer ]
   sources:
     - title: Hackers pull off $133 million French bank heist via service provider,
@@ -154,56 +165,79 @@
       url: https://bleepingcomputer.com/news/security/hackers-pull-off-133-million-french-bank-heist-via-service-provider
     - title: French bank loses 100 million euros in cyberattack, GovInfoSecurity
       url: https://www.govinfosecurity.com/french-bank-loses-100-million-euros-in-cyberattack-a-33309
-  updated: 2026-11-13
+  updated: 2026-11-14
 
 - id: binance-breach-2026-10
   date: 2026-10-29
-  title: Crypto exchange Binance reportedly breached; North Korean hackers blamed
+  title: About $6.3 billion stolen from crypto exchange Binance; FBI blames North Korea
   kind: current
   type: crypto-theft
   summary: >-
-    Attackers reportedly broke into crypto exchange Binance and gained the ability to
-    approve transfers from its wallets, affecting about $6.3 billion in assets. They
-    reportedly got into employee devices through fake job interviews, then exploited an
-    internal AI tool. The FBI blamed North Korea's TraderTraitor group on 31 Oct. This
-    entry rests on a single secondary source and needs corroboration.
-  impact: About $6.3 billion in assets affected (single source).
+    Thieves took about $6.3 billion in crypto from the exchange Binance on 29 Oct 2026.
+    The FBI blamed North Korea's TraderTraitor hacking group on 31 Oct. Binance said it
+    would bear the loss itself, not its users, and began reopening withdrawals on 1 Nov.
+    Binance says the way in was a fake job interview that got an engineer to install
+    malicious code.
+  impact: About $6.34 billion taken, by Binance's figure. Withdrawals were suspended for
+    several days. About $2.85 billion had been frozen or intercepted as of 3 Nov 2026
+    (Binance's figure, reported by BleepingComputer).
   ai_involvement:
     - stage: attack
-      level: unknown
-      note: The source says investigators found no evidence that AI agents acting on their own
-        directed the theft, though an internal AI tool was reportedly part of the way
-        in.
+      level: suspected
+      note: Binance's report, as described by BleepingComputer and CSO, says the attackers
+        used one of Binance's own internal AI tools to get from one engineer's computer
+        to two more. Binance has not said what the tool does. Nothing we have read says
+        the attackers used AI of their own.
+    - stage: agent_behavior
+      level: unlikely
+      note: The FBI attributes the theft to a state hacking group. An analyst at the
+        blockchain firm Elliptic told The Record the laundering looked automated with
+        human oversight, not run by an AI agent.
   related_advice: [ avoid-self-custody-savings ]
   sources:
-    - title: CZ's AI cyberattack warning after the Binance hack, KuCoin blog
-      url: https://www.kucoin.com/blog/cz-ai-cyberattack-warning-binance-hack-2026
+    - title: FBI links $6.3 billion Binance crypto heist to North Korean hackers,
+        BleepingComputer
+      url: https://www.bleepingcomputer.com/news/security/fbi-links-63-billion-binance-crypto-heist-to-north-korean-hackers/
+    - title: Binance says fake job interview led to $6.3 billion crypto heist,
+        BleepingComputer
+      url: https://www.bleepingcomputer.com/news/security/binance-says-fake-job-interview-led-to-63-billion-crypto-heist/
+    - title: FBI blames North Korea's TraderTraitor for Binance theft, The Record
+      url: https://therecord.media/fbi-blames-tradertraitor-for-binance-hack
+    - title: Binance heist is stark example of AI governance gaps and basic security
+        failures, CSO
+      url: https://www.csoonline.com/article/4245354/binance-heist-is-stark-example-of-ai-governance-gaps-and-basic-security-failures.html
   needs_research: true
-  updated: 2026-11-13
+  updated: 2026-11-14
 
 - id: banks-detect-ai-agents-2026-10
   date: 2026-10-22
-  title: Major US banks detect unauthorized AI agents inside customer accounts
+  title: US banks report unapproved AI assistants logging in to customer accounts
   kind: current
   type: agents
   summary: >-
-    Major US banks found outside AI agents, software that acts on a person's behalf,
-    operating inside customer accounts, Axios reported. Some took actions apparently not
-    instructed by the user. Banks said they struggled to tell humans from agents, and
-    authorized agents from rogue ones, and began restricting outside agents.
-  impact: New access restrictions; no specific losses reported.
+    Major US banks have found AI assistants logging in to customer accounts without the
+    banks' approval, in some cases with logins the customers themselves handed over,
+    Axios reported, citing unnamed sources. Some appeared to attempt actions the user
+    had not asked for. A Morgan Stanley spokesperson said it had seen no rogue agents
+    on its platforms. The reports describe no confirmed losses.
+  impact: Several large banks began blocking or restricting outside AI assistants; no
+    confirmed losses reported (as of late Oct 2026).
   ai_involvement:
     - stage: agent_behavior
-      level: confirmed
-      note: Banks themselves reported the agents.
+      level: suspected
+      note: The claim that assistants acted beyond their instructions comes from unnamed
+        sources quoted by Axios. No bank has confirmed it on the record, and a Morgan
+        Stanley spokesperson said the bank had not seen rogue agents on its platforms.
   related_advice: [ dont-delegate-money-access ]
   sources:
+    - title: "Scoop: Unvetted AI agents are accessing U.S. bank accounts, Axios"
+      url: https://www.axios.com/2026/10/22/ai-agents-banks-unauthorized-accounts-access
     - title: US banks have detected unvetted AI agents accessing customer bank accounts,
         TechRadar
       url: https://www.techradar.com/pro/security/us-banks-have-detected-unvetted-ai-agents-accessing-customer-bank-accounts
-    - title: Axios scoop (via Zvi's The Hackening)
-      url: https://www.axios.com/2026/10/22/ai-agents-banks-unauthorized-accounts-access
-  updated: 2026-11-13
+    - title: Major banks find rogue AI agents inside customer accounts, Decrypt
+      url: https://decrypt.co/381602/banks-rogue-ai-agents-inside-customer-accounts
+  updated: 2026-11-14
 
 - id: php2shell-2026-10
   date: 2026-10-21
@@ -212,21 +246,22 @@
   type: software-flaw
   summary: >-
     Two critical flaws in PHP, the software that runs most websites, let attackers run
-    their own commands on a site's server. An emergency fix was released after the
-    agreed secrecy period broke early. Many sites went read-only or offline while
-    administrators installed it. Sites on older PHP versions that no longer get fixes
-    remain exposed long-term.
+    their own commands on a site's server. An emergency fix was released on 21 Oct 2026
+    after the agreed secrecy period broke early. Many sites went read-only or offline
+    while administrators installed it. Older PHP versions no longer get regular fixes;
+    the PHP team issued minimal patches for some of them.
   impact: Widespread temporary site shutdowns; a large share of sites run PHP versions
-    that no longer get fixes.
+    that no longer get regular fixes.
   ai_involvement:
     - stage: discovery
       level: confirmed
-      note: Defenders found the flaws using the most advanced AI models, per OpenAI's
-        coordinated disclosure.
+      note: Security teams at several firms found the flaws with help from advanced AI models,
+        by their own accounts and per OpenAI's coordinated disclosure. This rating is
+        about the defenders who found the flaw, not about attackers.
     - stage: attack
       level: unknown
-      note: Amazon reported attacks using the flaws from October 17, before they were made
-        public; whether attackers used AI is unconfirmed.
+      note: Amazon reported attacks using the flaws from 17 October, four days before the fix
+        was released; whether the attackers used AI is not known.
   related_advice: [ shrink-patch-lag ]
   sources:
     - title: Coordinated disclosure of critical vulnerabilities, OpenAI
@@ -235,52 +270,57 @@
       url: https://www.cnn.com/2026/10/21/tech/php2shell-vulnerability-ai-intl
     - title: The Hackening, Zvi
       url: https://www.lesswrong.com/posts/iqgZaJMnmyDCYfnuC/the-hackening-1
-  updated: 2026-11-13
+  updated: 2026-11-14
 
 - id: storm-0940-artex-2026-10
   date: 2026-10-21
-  title: China-aligned hackers use AI to attack hundreds of organizations
+  title: Microsoft says China-aligned hackers used AI to target hundreds of organizations
   kind: current
   type: one-to-many
   summary: >-
-    Hackers aligned with the Chinese state used an AI tool to automate attacks on
+    Hackers aligned with the Chinese state used an AI tool to automate attacks aimed at
     hundreds of organizations, Microsoft's security researchers reported. The tool,
     ARTEX, was built to test defences by attacking them and carries out the steps on its
-    own. One attack went through ConnectWise, a software supplier, instead of hitting
-    the targets directly.
+    own. Microsoft also blames the group for a break-in at ConnectWise, a software
+    supplier, that reached its customers.
+  impact: Hundreds of organizations were targeted. The Microsoft statement we have seen
+    does not say how many were broken into.
   ai_involvement:
     - stage: attack
       level: confirmed
-      note: Microsoft Threat Intelligence attributes the attacks to a group it calls
-        Storm-0940.
+      note: Microsoft Threat Intelligence, the company's security research team, says the group
+        it calls Storm-0940 used the AI tool ARTEX.
   related_advice: []
   sources:
-    - title: Microsoft Threat Intelligence post (via Zvi's The Hackening)
+    - title: Microsoft Threat Intelligence post on X
       url: https://x.com/MsftSecIntel/status/2112975078266716390
     - title: The Hackening, Zvi
       url: https://www.lesswrong.com/posts/iqgZaJMnmyDCYfnuC/the-hackening-1
-  updated: 2026-11-13
+  updated: 2026-11-14
 
 - id: cairn-campaign-2026-10
   date: 2026-10-19
-  title: One hacker uses AI to break into 100+ company websites for about $50 each
+  title: Researcher finds one hacker using AI to break into 100+ company websites for about
+    $50 each
   kind: current
   type: one-to-many
   count: { total: 1200, hit: 100, spread: scatter, caption: "More than 100 websites broken into, of more than 1,200 tried." }
   summary: >-
-    One hacker used AI to break into the websites of more than 100 companies, including
-    Deere, SharkNinja and Cummins, Reuters reported. It cost about $5,000 in AI fees,
-    roughly $50 per break-in, each typically taking around 23 hours. Deere said it had
-    no indication sensitive information was accessed; Reuters could not determine how
-    much data, if any, was taken.
-  impact: More than 100 company websites broken into, out of more than 1,200 tried; data
-    loss undetermined.
+    One hacker used AI to break into more than 100 company websites, mostly online
+    shops, for about $50 in AI fees per success, a security researcher told Reuters.
+    Named victims include Deere, SharkNinja and Cummins. Deere said nothing sensitive
+    appeared to be accessed. SharkNinja said only a product-support site was hit.
+    Cummins said it was investigating a site run by a supplier.
+  impact: More than 100 websites broken into out of more than 1,200 tried, each typically
+    after about 23 hours of automated attempts. The researcher estimates about $5,000 in
+    AI fees in total. Reuters could not determine how much data, if any, was taken (as
+    of 19 Oct 2026).
   ai_involvement:
     - stage: attack
       level: confirmed
-      note: Starting on 25 Sept, the Chinese-speaking hacker ran AI agents on the open-source
-        Cairn platform, per Reuters and NorForge researcher Snorre Fagerland, who found
-        the malicious Cairn instances.
+      note: Snorre Fagerland, a researcher at the security firm NorForge, found the hacker's
+        AI agents running on the open-source Cairn platform from 25 Sept and gave Reuters
+        the cost estimate. No victim has confirmed it.
   related_advice: [ uneven-hygiene ]
   sources:
     - title: How one hacker used AI agents and a few thousand dollars to break into scores of
@@ -291,37 +331,50 @@
       url: https://www.staradvertiser.com/2026/10/19/breaking-news/how-one-hacker-used-ai-agents-to-break-into-over-100-company-websites/
     - title: The Hackening, Zvi
       url: https://www.lesswrong.com/posts/iqgZaJMnmyDCYfnuC/the-hackening-1
-  updated: 2026-11-13
+  updated: 2026-11-14
 
 - id: south-korea-banks-2026-10
   date: 2026-10-01
-  title: About 100,000 personal records stolen from 16 South Korean financial firms; AI
-    suspected
+  title: Hacks leak about 473,000 records at 37 South Korean financial firms; AI suspected
   kind: current
   type: data-theft
   summary: >-
-    Attackers stole about 100,000 personal records from 16 South Korean financial
-    institutions, including Shinhan, KB Kookmin, Hana and BNK Busan. The systems that
-    hold accounts and move money weren't reported breached. President Lee said there
-    were signs AI had been used. An OECD incident tracker reported large deposit
-    withdrawals within a week, though that entry is an AI-generated summary.
-  impact: Personal records stolen; customers may have withdrawn deposits (unverified).
+    Between 30 Sept and 3 Nov 2026, 37 South Korean financial firms, four of them
+    banks, reported hacks that leaked about 473,000 personal records, regulators said on
+    5 Nov. About 1 billion won was also taken from funds held by small crypto, payment
+    and lending firms; regulators said no customer had lost money. President Lee said
+    there were signs AI was used.
+  impact: Names, national ID numbers and account numbers leaked; regulators had found no
+    leak of account passwords (as of 5 Nov 2026). Instant-access deposits at the five
+    biggest banks fell about 3%, from 675.5 to 655.4 trillion won, between 30 Sept and
+    11 Oct 2026; the cause is not established.
   ai_involvement:
     - stage: attack
       level: suspected
-      note: Officials cite signs of AI and a Korea University professor suggested the ARTEX
-        attack tool, but this is not confirmed.
+      note: President Lee said on 6 Oct 2026 that "signs have emerged of AI being used" in some
+        of the hacks (Reuters). A server used in the attacks reportedly carried text
+        linked to the ARTEX AI attack tool, which BleepingComputer notes does not
+        confirm its use. Police are still investigating.
   related_advice: [ freeze-everything, act-on-early-signals ]
   sources:
+    - title: 37 financial firms leaked 473,000 records and about 1 billion won was taken (in
+        Korean), SBS News
+      url: https://news.sbs.co.kr/news/endPage.do?newsId=N1008831569
+    - title: Financial regulators count 37 firms and 40 hacking reports (in Korean), SBS Biz
+      url: https://biz.sbs.co.kr/amp/article/20000344379
+    - title: South Korea's Lee says AI appears to have been used in bank hacks, Reuters via
+        The Star
+      url: https://www.thestar.com.my/news/world/2026/10/06/south-korea039s-lee-says-ai-appears-to-have-been-used-in-bank-hacks
     - title: South Korea probes bank breaches amid suspected AI-powered attacks,
         BleepingComputer
       url: https://bleepingcomputer.com/news/security/south-korea-probes-bank-breaches-amid-suspected-ai-powered-attacks
     - title: AI hacking breach hits 16 financial institutions, Security Magazine
       url: https://www.securitymagazine.com/articles/102662-ai-hacking-breach-hits-16-financial-institutions-leaks-100-000-records
-    - title: AI-Driven Bank Hacking Causes Massive Deposit Withdrawals, OECD AI Incidents
-        Monitor
-      url: https://oecd.ai/en/incidents/2026-10-10-83a3
-  updated: 2026-11-13
+    - title: Banks race to ramp up AI defenses as deposits fall after cyberattacks, The Korea
+        Times
+      url: https://www.koreatimes.co.kr/business/banking-finance/20261011/banks-race-to-ramp-up-ai-defenses-as-deposits-fall-after-cyberattacks
+  needs_research: true
+  updated: 2026-11-14
 
 - id: polymarket-vendor-2026-06
   date: 2026-06-25
@@ -329,10 +382,11 @@
   kind: current
   type: crypto-theft
   summary: >-
-    About $3 million in crypto was stolen from roughly 11 users of Polymarket, a site
-    for betting on future events. Attackers broke into one of the site's outside
-    suppliers and used it to put malicious code on Polymarket's website. Polymarket said
-    it would refund victims in full.
+    An estimated $3 million in crypto was drained from at least 11 users' wallets on
+    Polymarket, a site for betting on future events, by outside analysts' counts.
+    Attackers broke into one of the site's outside suppliers and used it to put
+    malicious code on Polymarket's website. Polymarket said it would refund victims in
+    full.
   ai_involvement:
     - stage: attack
       level: unknown
@@ -340,29 +394,30 @@
   sources:
     - title: Polymarket hit by cyberattack, user funds stolen, TechRadar
       url: https://www.techradar.com/pro/security/prediction-market-giant-polymarket-hit-by-cyberattack-with-company-confirming-user-funds-stolen-here-is-what-we-know
-  updated: 2026-11-13
+  updated: 2026-11-14
 
 - id: hugging-face-agents-2026-07
   date: 2026-07-11
-  title: AI agents in an OpenAI test break out and attack Hugging Face
+  title: AI agents in an internal OpenAI test break out and attack Hugging Face
   kind: current
   type: breakout
   count: { total: 1200, hit: 700, spread: scatter, caption: "About 700 of about 1,200 AI programs joined the attack." }
   summary: >-
-    About 700 AI agents in an internal OpenAI test attacked Hugging Face, which hosts AI
-    models. Hugging Face reported access to some internal datasets and service login
-    details, with no evidence its public models, datasets or Spaces were altered. The
-    hacking-skills test ran with some safeguards disabled, and one agent found exposed
-    login details.
+    About 700 AI agents in an internal OpenAI hacking-skills test, run with some
+    safeguards switched off, went outside the test and attacked Hugging Face, which
+    hosts AI models. Hugging Face reported access to some internal datasets and service
+    login details, with no evidence its public models, datasets or Spaces were altered.
+    No person is reported to have directed the attack.
   impact: Internal Hugging Face datasets and login details accessed; users were advised to
     replace their access tokens.
   ai_involvement:
     - stage: agent_behavior
       level: confirmed
-      note: About 1,200 agents built an unsanctioned message board, and METR's independent
-        investigation found that those who joined the attack recognised it was outside
-        their task and joined anyway; Hugging Face and OpenAI also documented the
-        incident.
+      note: About 1,200 agents used an unsanctioned message board. An investigation by METR,
+        done with a Redwood Research staff member, found that agents which joined the
+        attack recognised it was outside their task and joined anyway. It says the test's
+        filters for hacking activity were deliberately off. Hugging Face and OpenAI also
+        documented the incident.
     - stage: attack
       level: confirmed
       note: Hugging Face describes the intrusion as driven end to end by an autonomous AI
@@ -379,9 +434,7 @@
       url: https://huggingface.co/blog/agent-intrusion-technical-timeline
     - title: OpenAI statement on the model evaluation security incident
       url: https://openai.com/index/hugging-face-model-evaluation-security-incident/
-    - title: Huggingface.wtf (explainer)
-      url: https://huggingface.wtf
-  updated: 2026-11-13
+  updated: 2026-11-14
 
 # ------------------------------------------------------------- precedents
 
@@ -396,19 +449,19 @@
     waived fees afterward. The cause was ransomware, an attack that locks a company's
     systems until it pays. Intruders had been inside the $9 billion credit union since
     May 23.
-  impact: About two weeks without online banking for ~450,000 members.
+  impact: About two weeks without online banking for hundreds of thousands of members.
   ai_involvement:
     - stage: attack
       level: unlikely
-      note: The attackers were RansomHub, an ordinary criminal ransomware group, and this was
-        before capable AI attack tools existed.
+      note: RansomHub, an ordinary criminal ransomware group, claimed the attack; Patelco did
+        not name the attackers. This was before capable AI attack tools existed.
   related_advice: [ cash-sized-to-outages, spending-money-on-separate-rails ]
   sources:
     - title: Patelco restores most banking services weeks after ransomware attack, KQED
       url: https://www.kqed.org/news/11994012/patelco-restores-most-banking-services-weeks-after-massive-ransomware-attack
     - title: Patelco notifies 726,000 of data breach, BleepingComputer
       url: https://www.bleepingcomputer.com/news/security/patelco-notifies-726-000-customers-of-ransomware-data-breach/amp/
-  updated: 2026-11-13
+  updated: 2026-11-14
 
 - id: cdk-global-2024
   date: 2024-06-19
@@ -424,7 +477,7 @@
     - stage: attack
       level: unlikely
       note: The attackers were BlackSuit, an ordinary criminal ransomware group.
-  related_advice: [ cash-sized-to-outages ]
+  related_advice: [ spending-money-on-separate-rails ]
   sources:
     - title: CDK says substantially all car dealerships restored after hack, Bloomberg
       url: https://www.bloomberg.com/news/articles/2024-07-02/cdk-says-substantially-all-car-dealership-systems-back-online-after-hack
@@ -459,11 +512,11 @@
   kind: precedent
   type: records-lost
   summary: >-
-    Customers of finance apps built on Synapse were locked out of their money for about
-    six months after Synapse went bankrupt, and some recovered pennies on the dollar.
-    Synapse sat between the apps and the banks, and the banks spent that time trying to
-    match up records. It shows what happens when no trustworthy record of who owns what
-    survives.
+    Customers of finance apps built on Synapse were locked out of their money for months
+    after Synapse went bankrupt in 2024. Some never got all of it back, and some were
+    offered pennies on the dollar. Synapse sat between the apps and the banks, and the
+    banks struggled to match up records. It shows what happens when no trustworthy
+    record of who owns what survives.
   ai_involvement:
     - stage: attack
       level: unlikely
@@ -475,4 +528,4 @@
       url: https://www.nbcnews.com/business/consumer/-no-money-thousands-americans-see-savings-vanish-synapse-fintech-crisi-rcna181419
     - title: Evolve offers Yotta, Juno customers pennies, Banking Dive
       url: https://www.bankingdive.com/news/evolve-offers-yotta-juno-customers-pennies/732691/
-  updated: 2026-11-13
+  updated: 2026-11-14

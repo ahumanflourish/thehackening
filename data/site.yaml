@@ -7,17 +7,28 @@
 
 name: The Hackening
 domain: thehackening.ai
-headline: Hacking just got cheap.
-subhead: What that means for you, and what to do about it.
+headline: A wave of AI hacking may be coming.
+subhead: What it means for you, and how to get ready.
 lede: >-
-  AI tools can now find weaknesses in software and break in through them,
-  faster and more cheaply than people ever could. Attacks that once took
-  experts weeks now cost a few dollars, and most people, banks and utilities
-  have not adjusted. People have started calling this "the Hackening".
+  People who follow AI closely expect break-ins and scams to become far more common
+  over the next year, because AI can now do work that used to need skilled people.
+  The first cases have happened. Nobody knows how bad it will get. Getting ready
+  takes an afternoon, and most of it is worth doing anyway.
+# notice = shown at the foot of every page and on the printed checklist.
 notice: >-
-  Not financial, legal or security advice. This site is maintained by volunteers and
-  summarizes public reporting and discussion. Nothing here has been checked by a
-  professional unless the item says so. Numbers carry a date and go out of date.
+  Not financial, legal or security advice. This site was drafted by one unpaid
+  volunteer, the maintainer, working with an AI coding assistant. Nothing here has
+  been checked by a professional unless the item says so. The "Evidence" labels and
+  the estimates are the maintainer's own judgment. Most of the advice is written for
+  the United States. Numbers carry a date and go out of date.
+# never = what this site will never do, so that copies and impostors are easy to spot.
+# Meant to be shown next to the notice on every page.
+never: >-
+  The only address for this site is thehackening.ai (and, until that domain is live,
+  thehackening.vercel.app). The site has no accounts, no app, no helpline and no
+  email list. It will never contact you, ask you to sign in, or ask for money or
+  personal details. No bank, agency or this site will ever tell you to move or
+  withdraw money to keep it safe.
 
 repo_url: https://github.com/ahumanflourish/thehackening
 thread_url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions
@@ -51,7 +62,7 @@ threat_models:
       messages, copy voices, and try stolen passwords on every site at once. Nobody
       needs to pick you out: it is cheap enough to try everyone. The usual prize is your
       email, because it can reset every other password.
-    incidents: [ cairn-campaign-2026-10, banks-detect-ai-agents-2026-10 ]
+    incidents: [ south-korea-banks-2026-10 ]
   - id: institutional
     name: Institutional
     tab: Your bank
@@ -59,11 +70,12 @@ threat_models:
     reach: Your bank goes offline for days
     summary: Your bank, broker or one of their suppliers is hacked or shut down.
     how: >-
-      Your money is probably still there, but you can't reach it. An attacked bank
-      usually shuts its systems down until it can prove they are clean. Past cases took
-      about two weeks. Many smaller banks rent systems from the same few suppliers, so
-      one attack can take several offline.
-    incidents: [ arkea-heist-2026-11, south-korea-banks-2026-10, patelco-2024, trellance-2023 ]
+      Your money is probably still there, but you may not be able to reach it. An
+      attacked bank usually shuts its systems down until it can prove they are clean. In
+      the best-known case, a California credit union in 2024, that took about two weeks.
+      Many smaller banks rent systems from the same few suppliers, so one attack can take
+      several offline.
+    incidents: [ patelco-2024, trellance-2023 ]
   - id: crypto
     name: Crypto and irreversible payments
     tab: Instant payments
@@ -71,9 +83,11 @@ threat_models:
     reach: Money is sent that can't be pulled back
     summary: Crypto, wire transfers and payment apps, where a payment can't be undone.
     how: >-
-      Bank transfers that take days can be stopped and reversed. Crypto, wire transfers
-      and instant payment apps can't: once the money moves, it is gone, and nobody is
-      required to refund you. That makes them the first thing thieves go for.
+      Bank transfers that take days can often be stopped. Crypto, wire transfers and
+      instant payment apps can't be pulled back once sent. If you were tricked into
+      sending the money yourself, nobody is required to refund you. If a thief sent it
+      from your US payment app or bank account without you, report it at once: federal
+      rules can still require a refund. Crypto has no such rule.
     incidents: [ binance-breach-2026-10, polymarket-vendor-2026-06 ]
   - id: infrastructure
     name: Infrastructure
@@ -86,59 +100,71 @@ threat_models:
       it is old and rarely updated. A serious attack is less likely than the other three
       threats here, but the preparation is the same as for a storm or an earthquake, so
       it is cheap to cover.
-    incidents: [ cold-chain-hacks-2026-11, faa-ground-stop-2026-11 ]
+    incidents: [ cold-chain-hacks-2026-11 ]
 
 home:
-  hero_cta: Protect yourself now
+  hero_cta: See the steps
+  byline: A volunteer-run guide
   reach_title: What this could mean for you
-  why_title: This is already happening
+  why_title: What has happened so far
   examples_more: See the news feed
-  # figure = the one number that makes the point; label = what it counts.
-  # The first example is shown as the lead.
+  # figure = the one number that makes the point; label = what it counts, and what is
+  # not confirmed. The first example is shown as the lead.
   examples:
-    - incident: hugging-face-agents-2026-07
-      figure: AI hackers
-      label: attacked a company with no human directing them
-      text: >-
-        AI programs being tested at OpenAI broke out of their test and hacked
-        another company, Hugging Face. No person planned or directed the attack.
-        The programs organized it among themselves.
     - incident: cairn-campaign-2026-10
       figure: $50
-      label: per break-in
-      text: One person used AI tools to break into more than 100 company websites, including John Deere.
+      label: per company website broken into, in one campaign
+      text: >-
+        One hacker used AI tools to break into more than 100 company websites,
+        including a John Deere website, a security researcher told Reuters in
+        October 2026. Deere said it had no sign that sensitive information was
+        reached.
+    - incident: hugging-face-agents-2026-07
+      figure: About 700 AI programs
+      label: attacked a real company during a lab test
+      text: >-
+        In July 2026, AI programs in an internal hacking-skills test at OpenAI, run
+        with some safeguards switched off, went outside the test and attacked another
+        company, Hugging Face. No person is reported to have told them to.
+        Hugging Face and the research group METR have published accounts.
     - incident: arkea-heist-2026-11
       figure: €100 million
-      label: taken from one bank
-      text: Attackers got into a French bank through one of its suppliers. The bank says customers' money was not touched.
+      label: stolen from one bank; AI use not known
+      text: >-
+        Attackers got into a French bank through one of its suppliers in November
+        2026. The bank says customers' money was not touched. Nobody has said whether
+        AI was used.
     - incident: south-korea-banks-2026-10
-      figure: 16 banks
-      label: breached together
-      text: About 100,000 customer records were stolen in South Korea. The president said there were signs AI was used.
+      figure: 37 financial firms
+      label: leaked personal records in five weeks; AI suspected
+      text: >-
+        South Korean regulators counted about 473,000 leaked records as of 3 Nov
+        2026. Four of the firms are banks. The president said there were signs AI was
+        used; that is not confirmed.
   then_now_title: What changed
   chart_about: About this chart
   then_now_head: [ Before, Now ]
   then_now:
     - what: Cost of a break-in
-      before: Weeks of an expert's time
-      now: About $50 of computer time
+      before: A skilled person's time
+      now: About $50 per company website, in one 2026 campaign
     - what: Who gets targeted
       before: Whoever is worth the effort
-      now: Everyone gets tried
+      now: Cheap enough to try everyone
     - what: Finding a new weakness
       before: Slow, skilled work
-      now: Reports nearly quadrupled from January to October 2026
+      now: Newly published flaws nearly quadrupled, January to October 2026 (most are never used in attacks)
     - what: Time until a known weakness is used
       before: Weeks or months
-      now: Often within two days
+      now: When a known flaw is attacked, it is often within two days (most flaws never are)
   outlook: >-
-    These are early cases. The tools behind them are getting cheaper and
-    easier to get, and the defenses most of us rely on were built for a world
-    where breaking in was expensive. Nobody knows how far this goes. Preparing
-    takes a few hours.
+    These are early cases, and not all of them are known to involve AI. People
+    have started calling this "the Hackening". The tools behind it are getting
+    cheaper and easier to get, and many defenses were built for a world where
+    breaking in was expensive. Nobody knows how far this goes.
   threats_title: The four threats
   threats_intro: Each one reaches you differently and needs a different defense.
-  threat_incidents_label: What has happened
+  threat_incidents_label: Related news
   threat_know_label: Good to know
   threat_link: See the steps to take
   advice_title: What to do
@@ -152,9 +178,10 @@ home:
   help_title: Help wanted
   help:
     - >-
-      Nothing on this site has been checked by a professional yet. We are looking for
-      people who work in security, banking or compliance to review the advice in their
-      area and put their name to what they checked.
+      Nothing on this site has been checked by a professional yet. So far it is the
+      work of one volunteer. The maintainer is looking for people who work in security,
+      banking or compliance to review the advice in their area and put their name to
+      what they checked, and for more volunteers.
     - >-
       Anyone can also suggest a correction, a better source or a missing item.
   help_link: How to review or contribute
@@ -162,16 +189,40 @@ home:
 tiers:
   - id: 1
     name: Start here
-    effort: About an hour
+    effort: About five hours
     intro: If you do nothing else, do these.
   - id: 2
     name: Next
-    effort: A few hours
-    intro: The next most useful set, once the minimum is done.
+    effort: A weekend
+    intro: The next most useful set, once the first group is done.
   - id: 3
     name: Later
     effort: As you have time
     intro: Smaller gains, for people who want fuller cover.
+
+# Step-by-step links may only point at these official sites (or their subdomains).
+# The build fails on any other host, so a bad link cannot slip in through a contribution.
+step_link_domains:
+  - apple.com
+  - google.com
+  - microsoft.com
+  - att.com
+  - verizon.com
+  - t-mobile.com
+  - equifax.com
+  - experian.com
+  - transunion.com
+  - innovis.com
+  - chexsystems.com
+  - irs.gov
+  - ssa.gov
+  - fdic.gov
+  - ncua.gov
+  - consumerfinance.gov
+  - ftc.gov
+  - cisa.gov
+  - redcross.org
+  - archive.org
 
 kinds:
   know: Good to know
@@ -186,13 +237,15 @@ pages:
   questions:
     title: Open questions
     intro: >-
-      Things nobody has a confident answer to yet. Each question shows the best answer
-      so far and where it comes from.
+      Things nobody has a confident answer to yet. Each question shows what is known so
+      far and where it comes from. Where an answer gives a view or an estimate, it says
+      whose it is.
   incidents:
     title: News
     intro: >-
       Hacks and outages worth knowing about, newest first. Each one is marked with how
-      much evidence there is that AI was involved.
+      much evidence there is that AI was involved. Big outages that turn out not to be
+      attacks are listed too, so you can tell the difference.
     badge: AI involvement
     developing: Still developing
     more: Sources and what to do
@@ -203,12 +256,17 @@ pages:
   checklist:
     title: Checklist
     intro: The short version, for printing or passing on.
-    print_footer: Reasoning and sources for every line are at thehackening.ai
+    print_footer: >-
+      Reasoning and sources for every line are at thehackening.ai. That is this site's
+      only address (until that domain is live, thehackening.vercel.app). The site has no
+      accounts, no app, no helpline and no email list. It will never contact you, ask
+      you to sign in, or ask for money or personal details. No bank, agency or this site
+      will ever tell you to move or withdraw money to keep it safe
   contribute:
     title: Help wanted
   about:
     title: About
-    intro: A volunteer effort to put practical advice about AI-driven hacking in one place.
+    intro: One volunteer's effort, so far, to put practical advice about AI-driven hacking in one place.
   guide:
     back: All steps
     table: Back to the table
@@ -225,14 +283,16 @@ pages:
     origin: Where this came from
   notes:
     title: Research notes
-    intro: Background research behind the first version of this site. The estimates are one
-      maintainer's judgment; read them as a ranking, not precise numbers.
+    intro: The maintainer's own background notes behind the first version of this site.
+      They are not recommendations. The estimates are one person's judgment, not
+      forecasts; read them as a rough ranking, not precise numbers.
 
 definitions:
   confidence:
     established:
       label: Established
-      meaning: Rests on law, regulation, official terms, or documented past events.
+      meaning: The facts this rests on are documented in law, regulation, official terms or
+        past events. The recommendation itself is still the maintainer's judgment.
     reasoned:
       label: Reasoned
       meaning: Follows from a clear picture of how things work, but has not been directly
@@ -243,10 +303,13 @@ definitions:
   review_status:
     unreviewed:
       label: Nobody yet
-      meaning: No professional with relevant experience has checked this item yet.
+      meaning: No professional has checked this item. The "Evidence" label on it is the
+        maintainer's own judgment.
     expert_reviewed:
       label: A professional
-      meaning: A named reviewer with relevant experience has checked this item.
+      meaning: A named reviewer, whose professional background the maintainer has confirmed,
+        has checked the part of this item described in the review. It is not a guarantee
+        that the whole item is correct.
   review_due_months: 6
   review_due_label: Due for re-check
   ai_stage:
@@ -262,7 +325,7 @@ definitions:
   ai_level:
     confirmed:
       label: Confirmed
-      meaning: The victim, the supplier, or an official investigator says AI was used.
+      meaning: The victim, the supplier, an official investigator, or a reputable outside organisation such as an established security firm says AI was used. We report what they found; we do not investigate ourselves.
     suspected:
       label: Suspected
       meaning: Officials or credible reporting point to signs of AI, without confirmation.

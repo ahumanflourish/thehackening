@@ -63,6 +63,7 @@ ${body}
 </main>
 <footer class="site-foot">
   <p class="notice">${md(site.notice)}</p>
+  ${when(site.never, () => `<p class="notice">${md(site.never)}</p>`)}
   <p>Content as of ${time(asOf)}. Built ${time(builtOn)}.
     ${each(site.footer_links, (l) => `<a href="${l.href}">${esc(l.label)}</a>. `)}
     ${ext(site.repo_url, 'Source and data on GitHub')}.</p>
@@ -78,6 +79,19 @@ ${body}
 
   const aiLevel = (level) =>
     `<span class="ai ai-${level}" title="${esc(defs.ai_level[level].meaning)}"><i aria-hidden="true"></i>${esc(defs.ai_level[level].label)}</span>`;
+
+  const stages = Object.keys(defs.ai_stage);
+  const levels = Object.keys(defs.ai_level);
+  // One overall rating per event: the strongest level reported at any stage.
+  const overall = (i) => {
+    // The headline rating describes the attack itself (or AI acting alone), never how defenders found a flaw.
+    const by = Object.fromEntries((i.ai_involvement ?? []).map((r) => [r.stage, r.level]));
+    const got = [by.attack, by.agent_behavior].filter(Boolean);
+    if (!got.length) return 'unknown';
+    return ['confirmed', 'suspected', 'unknown', 'unlikely'].find((l) => got.includes(l));
+  };
+  // Short AI-involvement mark used beside any mention of an incident, so the home page never claims more than the news page.
+  const aiMark = (i) => { const l = overall(i); return `<span class="ai-note ai-${l}"><span class="ai ai-${l}"><i aria-hidden="true"></i></span>${esc(site.pages.incidents.badge)}: ${esc(defs.ai_level[l].label.toLowerCase())}</span>`; };
 
   const sourceList = (sources) =>
     `<ul class="sources">${each(sources, (s) => `<li>${ext(s.url, esc(s.title))} <span class="host">${esc(host(s.url))}</span></li>`)}</ul>`;
@@ -113,7 +127,7 @@ ${body}
     <div class="pop" popover id="rv-${a.id}">
       <p class="pop-title">Checked by: ${esc(rev.label)}</p>
       <p>${esc(rev.meaning)}</p>
-      ${each(a.reviews, (r) => `<p>${esc(r.name)} (${esc(r.background)}), ${time(r.date)}. Checked: ${esc(r.scope)}</p>`)}
+      ${each(a.reviews, (r) => `<p>${esc(r.name)} (${r.profile ? ext(r.profile, esc(r.background)) : esc(r.background)}), ${time(r.date)}. Checked: ${esc(r.scope)}</p>`)}
       <p><a href="/contribute/">${esc(site.home.help_link)}</a></p>
     </div>
   </div>`;
@@ -205,7 +219,7 @@ ${body}
       ${when(a.steps?.length, () => `<ol class="steps">${each(a.steps, (st) => `<li>
         <p class="step-do">${esc(st.do)}</p>
         ${when(st.detail, () => `<p class="step-detail">${esc(st.detail)}</p>`)}
-        ${when(st.url, () => `<p class="step-link">${ext(st.url, esc(st.link ?? host(st.url)))}</p>`)}
+        ${when(st.url, () => `<p class="step-link">${ext(st.url, esc(st.link ?? host(st.url)))} <span class="host">${esc(host(st.url))}</span></p>`)}
       </li>`)}</ol>`)}
     </section>
 
@@ -310,6 +324,7 @@ ${body}
     <p class="subhead">${esc(site.subhead)}</p>
     <p class="lede">${md(site.lede)}</p>
     <a class="cta" href="#advice">${esc(h.hero_cta)}</a>
+    ${when(h.byline, () => `<p class="byline"><span>${esc(h.byline)}</span><span>Updated ${time(asOf)}</span><a href="/about/">About</a></p>`)}
   </div>
   <div class="hero-reach">
     <h2>${esc(h.reach_title)}</h2>
@@ -328,7 +343,7 @@ ${body}
   <ul class="examples">
     ${each(h.examples, (e) => {
       const i = incidentById.get(e.incident);
-      return `<li><p class="fig"><strong>${esc(e.figure)}</strong> <span>${esc(e.label)}</span></p><p>${esc(e.text)}</p>${time(i.date)}</li>`;
+      return `<li><p class="fig"><strong>${esc(e.figure)}</strong> <span>${esc(e.label)}</span></p><p>${esc(e.text)}</p><p class="ex-meta">${time(i.date)}${aiMark(i)}<a href="/incidents/#${i.id}">Details</a></p></li>`;
     })}
   </ul>
 </section>
@@ -362,7 +377,7 @@ ${body}
       <p class="how">${esc(m.how)}</p>
       <p><a class="go" href="#advice">${esc(h.threat_link)}</a></p>
       ${when(m.incidents?.length, () => `<h4 class="minor">${esc(h.threat_incidents_label)}</h4>
-      <ul class="sources">${each(m.incidents, (id) => `<li>${time(incidentById.get(id).date)} <a href="/incidents/#${id}">${esc(incidentById.get(id).title)}</a></li>`)}</ul>`)}
+      <ul class="sources">${each(m.incidents, (id) => `<li>${time(incidentById.get(id).date)} <a href="/incidents/#${id}">${esc(incidentById.get(id).title)}</a> ${aiMark(incidentById.get(id))}</li>`)}</ul>`)}
     </div>
     ${when(facts.length, () => `<div class="panel-side">${each(facts, knowItem)}</div>`)}
   </div>`;
@@ -438,13 +453,6 @@ ${body}
 
   // ------------------------------------------------------------ incidents
 
-  const stages = Object.keys(defs.ai_stage);
-  const levels = Object.keys(defs.ai_level);
-  // One overall rating per event: the strongest level reported at any stage.
-  const overall = (i) => {
-    const got = new Set((i.ai_involvement ?? []).map((r) => r.level));
-    return ['confirmed', 'suspected'].find((l) => got.has(l)) ?? (got.has('unlikely') && !got.has('unknown') ? 'unlikely' : got.has('unknown') ? 'unknown' : 'unlikely');
-  };
   const story = (i, lead) => {
     const lvl = overall(i);
     const first = i.sources?.[0];
@@ -514,10 +522,10 @@ ${body}
     intro: site.pages.checklist.intro,
     cls: 'checklist',
     body: `<p class="print-only print-title">${esc(site.name)} checklist, as of ${fmtDate(asOf)}</p>
-${each(site.threat_models, (m) => {
-  const items = advice.filter((a) => a.threat_model === m.id && a.checklist);
+${each(site.tiers, (t) => {
+  const items = advice.filter((a) => a.kind === 'action' && a.tier === t.id && a.checklist).sort((x, y) => x.rank - y.rank);
   return when(items.length, () => `<section class="check-group">
-  <h2>${esc(m.name)}</h2>
+  <h2>${esc(t.name)}</h2>
   <ul>
     ${each(items, (a) => `<li><label><input type="checkbox"> <span>${esc(a.checklist_text)}</span></label> <a class="why" href="/do/${a.id}/">Guide</a></li>`)}
   </ul>
