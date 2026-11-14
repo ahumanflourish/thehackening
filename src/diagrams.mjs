@@ -2,6 +2,8 @@
 // Static inline SVG plus real HTML text, drawn at build time. No scripts, no inline styles.
 //   import { threatDiagram } from './diagrams.mjs';
 //   threatDiagram('personal')  ->  '<figure class="dgm dgm-personal">…</figure>'
+// Two diagrams ('crypto' and 'infrastructure') exist in two versions, 'a' and 'b'.
+// DIAGRAM_VERSION below picks the live one; threatDiagram('crypto', 'b') draws the other.
 // Styles: src/static/diagrams.css (every selector starts with .dgm).
 
 // ============================================================================
@@ -9,7 +11,7 @@
 //   alt    one or two sentences read out by screen readers in place of the picture
 //   steps  one entry per stage, in order. label = at most 6 plain words.
 //          note = optional smaller second line (a figure or a qualifier from the text).
-//   lanes  (comparison diagram only) two paths drawn one against the other
+//   A diagram with two versions has one entry per version: { a: {alt, steps}, b: {alt, steps} }.
 // Keep every statement inside what data/site.yaml says under threat_models[*].how.
 // ============================================================================
 export const DIAGRAM_TEXT = {
@@ -32,35 +34,51 @@ export const DIAGRAM_TEXT = {
     ],
   },
   crypto: {
-    alt: 'A comparison of two ways money moves. A bank transfer that takes days can often be stopped, so the money can come back. Crypto, wire transfers and instant payment apps can’t be pulled back once sent. If you sent the money yourself, nobody is required to refund you. If a thief sent it from your US payment app or bank account without you, report it at once, because federal rules can still require a refund. Crypto has no such rule.',
-    lanes: [
-      {
-        name: 'Bank transfer that takes days',
-        steps: [
-          { label: 'Money leaves your account' },
-          { label: 'Slow enough to be stopped' },
-          { label: 'So it can often come back' },
-        ],
-      },
-      {
-        name: 'Crypto, wire transfer or instant payment app',
-        steps: [
-          { label: 'Money leaves your account' },
-          { label: 'It can’t be stopped' },
-          { label: 'Gone. Sent it yourself? No refund.' },
-        ],
-      },
-    ],
+    // a: four stages, the fork is a stage of its own.
+    a: {
+      alt: 'A comparison of two ways money leaves your account. A bank transfer that takes days is slow enough that it can often be stopped, so the money can often come back. Crypto, wire transfers and instant payment apps can’t be pulled back once sent. If you sent the money yourself, nobody is required to refund you. If a thief sent it from your US payment app or bank account without you, report it at once, because federal rules can still require a refund. Crypto has no such rule.',
+      steps: [
+        { label: 'Money leaves your account' },
+        { label: 'It travels slowly or instantly', note: 'A bank transfer can take days' },
+        { label: 'Slow enough to be stopped', note: 'So it can often come back' },
+        { label: 'Gone. Sent it yourself? No refund.', note: 'Crypto, wire transfers and instant payment apps can’t be pulled back' },
+      ],
+    },
+    // b: three stages, the fork happens as the money leaves.
+    b: {
+      alt: 'A comparison of two ways money leaves your account. A bank transfer that takes days is slow enough that it can often be stopped, so the money can often come back. Crypto, wire transfers and instant payment apps can’t be pulled back once sent. If you sent the money yourself, nobody is required to refund you. If a thief sent it from your US payment app or bank account without you, report it at once, because federal rules can still require a refund. Crypto has no such rule.',
+      steps: [
+        { label: 'Money leaves your account', note: 'by a slow route or an instant one' },
+        { label: 'Slow transfers can often be stopped', note: 'So it can often come back' },
+        { label: 'Instant payments can’t be pulled back', note: 'Gone. Sent it yourself? No refund.' },
+      ],
+    },
   },
   infrastructure: {
-    alt: 'How it happens: water systems, power grids and delivery networks run on software that is old and rarely updated. An attack on it could cut them off, though this is less likely than the other three threats. The preparation is the same as for a storm.',
-    steps: [
-      { label: 'Old, rarely updated software', note: 'runs water, power and delivery networks' },
-      { label: 'An attack cuts them off', note: 'Less likely than the other three threats' },
-      { label: 'Prepare as for a storm', note: 'Same preparation, so cheap to cover' },
-    ],
+    // a: four stages, starting from what a home depends on.
+    a: {
+      alt: 'How it could happen: a home depends on water, power, the internet and deliveries, and the networks behind them run on software that is old and rarely updated. An attack on that software could cut them off at your home, though this is less likely than the other three threats. You would get by on what you had stored. The preparation is the same as for a storm, so it is cheap to cover.',
+      steps: [
+        { label: 'Water, power, internet and deliveries', note: 'Every home depends on them' },
+        { label: 'An attack on their old software', note: 'Less likely than the other three threats' },
+        { label: 'Your home could be cut off' },
+        { label: 'Get by on what you stored', note: 'Same preparation as for a storm' },
+      ],
+    },
+    // b: three stages, starting from the attack.
+    b: {
+      alt: 'How it could happen: a home depends on water, power, the internet and deliveries, and the networks behind them run on software that is old and rarely updated. An attack on that software could cut them off at your home, though this is less likely than the other three threats. You would get by on what you had stored. The preparation is the same as for a storm, so it is cheap to cover.',
+      steps: [
+        { label: 'An attack on old software', note: 'It runs water, power, internet and deliveries' },
+        { label: 'Those services could be cut off', note: 'Less likely than the other three threats' },
+        { label: 'Home gets by on its stores', note: 'Same preparation as for a storm' },
+      ],
+    },
   },
 };
+
+// Which version is live on the site. Change 'a' to 'b' on one line to swap.
+export const DIAGRAM_VERSION = { crypto: 'a', infrastructure: 'a' };
 
 // ============================================================================
 // DRAWING. Each stage is a square field, 150 x 150, centred on 0,0, with the story
@@ -74,6 +92,8 @@ export const DIAGRAM_TEXT = {
 //   hollow circle = an account or service     diamond = money
 //   red-orange = the attacker, or what has gone wrong (always also a different
 //   shape: a cross, a filled mark, a bar)     dotted = slow, switched off or cut
+// The outages diagram adds five small pictures so its subject can be recognised:
+//   drop = water   bolt = power   fan of arcs = internet   carton = deliveries   house = home
 // ============================================================================
 const E = 340;
 const n = (x) => +x.toFixed(1);
@@ -169,63 +189,101 @@ const ART = {
     },
   ],
 
-  infrastructure: [
-    // A stack of software with pieces missing (dotted), running three services.
+};
+
+// ---------------------------------------------------------------- pictures
+// Drawn around 0,0 and about 22 across. `up` places one and keeps it the right
+// way up when the stylesheet turns the drawing for narrow screens.
+const up = (x, y, inner) => `<g transform="translate(${x} ${y})"><g class="dgm-upright">${inner}</g></g>`;
+const PIC = {
+  water: () => path(`${K} ${NODE}`, 'M0 -11C5 -4 8 0 8 3.5A8 8 0 0 1 -8 3.5C-8 0 -5 -4 0 -11Z'),
+  power: () => path(`${K} ${NODE}`, 'M3 -11L-7 2H0L-3 11L7 -2H0Z'),
+  internet: () => path(K, 'M-10.6 -2.6A15 15 0 0 1 10.6 -2.6M-5.7 2.3A8 8 0 0 1 5.7 2.3') + dot(SOLID, 0, 8, 2.5),
+  deliveries: () => path(`${K} ${NODE}`, 'M0 -11L9.5 -5.5V5.5L0 11L-9.5 5.5V-5.5Z') + path(K, 'M-9.5 -5.5L0 0L9.5 -5.5M0 0V11'),
+};
+const SERVICES = ['water', 'power', 'internet', 'deliveries'];
+const at = (x, y, inner) => `<g transform="translate(${x} ${y})">${inner}</g>`;
+// A house: walls half-width a, roof peak at -h, floor at +h, so it turns about its middle.
+const house = (a, h, inside = '') => {
+  const o = a * 0.3, eave = -h * 0.14, wall = n(-h + (eave + h) * a / (a + o));
+  return path(`${K} ${NODE}`, `M${-a} ${wall}L0 ${-h}L${a} ${wall}V${h}H${-a}Z`) +
+    path(K, `M${-a} ${wall}L${n(-a - o)} ${n(eave)}M${a} ${wall}L${n(a + o)} ${n(eave)}`) + inside;
+};
+// The home with a person in it and a store of water, power and supplies.
+const stockedHome = (x) => up(x, 0, house(40, 54,
+  dot(SOLID, 0, -15, 7) + ['water', 'power', 'deliveries'].map((p, k) => at(-24 + k * 24, 27, PIC[p]())).join('')));
+
+// Four service lines, one above the other.
+const LINES_A = [-39, -13, 13, 39];
+const LINES_B = [-48, -16, 16, 48];
+
+const ART_INFRASTRUCTURE = {
+  a: [
+    // The four things a home is supplied with, each on its own line.
+    () => LINES_A.map((y, k) => path(K, `M-16 ${y}H${E}`) + up(-30, y, PIC[SERVICES[k]]())).join(''),
+    // All four lines pass through one system. It is attacked; past it they are dead.
     () => {
       let out = '';
-      [-42, 0, 42].forEach((y) => {
-        out += path(K, `M-48 ${y}H${E}`) + box(`${K} ${NODE}`, -48, y, 18) + dot(`${K} ${NODE}`, 16, y, 12);
-      });
-      [-21, 21].forEach((y) => { out += box(`${K} ${NODE}${THIN}${DOTTED}`, -48, y, 18); });
-      return out;
+      LINES_A.forEach((y) => { out += path(K, `M${-E} ${y}H-14`) + path(K + THIN + DOTTED, `M14 ${y}H${E}`); });
+      return out + path(`${K} ${NODE}`, 'M-14 -52H14V52H-14Z') +
+        path(A, `M0 ${-E}V-55M-5 -60L0 -55L5 -60`) + dot(HIT, 0, 0, 6.5);
     },
-    // Each of the three lines is cut; past the cut it is dead.
+    // The dead lines stop short of the home.
     () => {
       let out = '';
-      [-42, 0, 42].forEach((y) => {
-        out += path(K, `M${-E} ${y}H-14`) + cross(0, y, 7) + path(K + THIN + DOTTED, `M14 ${y}H${E}`);
-      });
-      return out;
+      LINES_A.forEach((y) => { out += path(K + THIN + DOTTED, `M${-E} ${y}H-40`) + cross(-26, y, 5); });
+      return out + up(26, 0, house(22, 30)) + path(K + THIN + DOTTED, `M58 0H${E}`);
     },
-    // The dead lines reach your home, where you have a store for each.
+    // The home, living on what is stored inside it.
+    () => path(K + THIN + DOTTED, `M${-E} 0H-58`) + stockedHome(4),
+  ],
+  b: [
+    // The attack lands on one system; the four services hang off it.
     () => {
-      let out = '';
-      [[-42, -11], [0, -38], [42, -11]].forEach(([y, x]) => {
-        out += path(K + THIN + DOTTED, `M${-E} ${y}H${x}`);
+      let out = path(A, `M${-E} 0H-64`) + head(A, -64, 0);
+      LINES_B.forEach((y, k) => {
+        out += path(K, `M-36 0L-10 ${y}H${E}`) + up(18, y, at(0, 0, `<circle class="${NODE} dgm-blank" r="14"/>`) + PIC[SERVICES[k]]());
       });
-      out += dot(`${K} ${NODE}`, 10, 0, 48);
-      let home = dot(SOLID, 10, -14, 7);
-      [-10, 10, 30].forEach((x) => { home += box(SOLID, x, 16, 11); });
-      return out + `<g class="dgm-upright">${home}</g>`;
+      return out + box(`${K} ${NODE}`, -48, 0, 28) + dot(HIT, -48, 0, 6.5);
     },
+    // Each line is cut; past the cut it is dead.
+    () => LINES_B.map((y) => path(K, `M${-E} ${y}H-14`) + cross(0, y, 7) + path(K + THIN + DOTTED, `M14 ${y}H${E}`)).join(''),
+    // The dead lines reach the home, which has its own store.
+    () => LINES_B.map((y) => path(K + THIN + DOTTED, `M${-E} ${y}H-46`)).join('') + stockedHome(10),
   ],
 };
 
-// The comparison. Both paths share one layout: you on the left, the far end on the
-// right, money going out along the upper line. Only the slow path has a stopping
-// point and a lower line bringing the money back.
-const OUT = -22, BACK = 22;
-const you = () => dot(SOLID, -40, 0, 8);
-const LANE_ART = [
-  [
-    () => path(K, `M-40 0L-22 ${OUT}H${E}`) + path(K, `M${E} ${BACK}H-22L-40 0`) +
-      diamond(`${K} ${NODE}`, 14, OUT, 10) + head(K, 44, OUT) + head(K, -6, BACK, -1) + you(),
-    () => path(K + DOTTED, `M${-E} ${OUT}H${E}`) + path(K, `M${-E} ${BACK}H${E}`) +
-      path(K, `M-10 ${OUT}V${BACK}`) + head(K, -40, BACK, -1) +
-      path(K, `M2 ${OUT - 15}V${OUT + 15}M11 ${OUT - 15}V${OUT + 15}`),
-    () => box(`${K} ${NODE}`, 26, 0, 72) +
-      path(K + DOTTED, `M${-E} ${OUT}H-6`) +
-      path(K, `M-6 ${OUT}H18A22 22 0 0 1 18 ${BACK}H${-E}`) +
-      diamond(`${K} ${NODE}`, -40, BACK, 10) + head(K, -58, BACK, -1),
+// The payments comparison. Money leaves you on one line, which forks: the upper
+// route is slow (dotted) and meets a stopping point, where it turns round; the lower
+// route is instant (double arrowheads) and runs straight through to someone else.
+const SLOW = -28, FAST = 30, HOME = -52;
+const fast = (x) => head(K, x, FAST) + head(K, x + 9, FAST);
+const fork = (x) => path(K + DOTTED, `M${x} 0L${x + 28} ${SLOW}H${E}`) + path(K, `M${x} 0L${x + 28} ${FAST}H${E}`);
+// The slow route stopped and turned back towards you; the instant route passes by.
+const stopped = () =>
+  path(K + DOTTED, `M${-E} ${SLOW}H8`) +
+  path(K, `M8 ${SLOW}A12 12 0 0 0 8 ${HOME}H-50`) + head(K, -50, HOME, -1) + diamond(`${K} ${NODE}`, -20, HOME, 9) +
+  path(K, `M32 ${HOME - 12}V${SLOW + 14}M41 ${HOME - 12}V${SLOW + 14}`) +
+  path(K, `M${-E} ${FAST}H${E}`) + fast(-4);
+// The instant route ends in someone else's account.
+const gone = () =>
+  path(K, `M${-E} ${FAST}H-34L-10 10`) + fast(-52) + dot(`${A} ${NODE}`, 14, 0, 27) + diamond(HIT, 14, 0, 13);
+
+const ART_CRYPTO = {
+  a: [
+    () => path(K, `M-46 0H${E}`) + diamond(`${K} ${NODE}`, -6, 0, 10) + head(K, 32, 0) + dot(SOLID, -46, 0, 8),
+    () => path(K, `M${-E} 0H-40`) + fork(-40) + fast(34),
+    stopped,
+    gone,
   ],
-  [
-    () => path(K, `M-40 0L-22 ${OUT}H${E}`) + diamond(`${K} ${NODE}`, 14, OUT, 10) + head(K, 44, OUT) + you(),
-    () => path(K, `M${-E} ${OUT}H${E}`) + head(K, -6, OUT) + head(K, 6, OUT),
-    () => box(`${A} ${NODE}`, 26, 0, 72) +
-      path(K, `M${-E} ${OUT}H10L18 -12`) + diamond(HIT, 28, 0, 14) +
-      path(K + THIN + DOTTED, `M-10 ${BACK}H-66`) + cross(-38, BACK, 9),
+  b: [
+    () => path(K, 'M-52 0H0') + fork(0) + fast(52) + diamond(`${K} ${NODE}`, -24, 0, 10) + dot(SOLID, -52, 0, 8),
+    stopped,
+    gone,
   ],
-];
+};
+
+const VERSIONS = { crypto: ART_CRYPTO, infrastructure: ART_INFRASTRUCTURE };
 
 // ============================================================================
 // MARKUP
@@ -239,19 +297,20 @@ const flow = (arts, steps) => `<ol class="dgm-flow">
     ${steps.map((s, k) => stage(arts[k], s)).join('\n    ')}
   </ol>`;
 
-/** Complete HTML for one threat's diagram. `text` overrides the wording table. */
-export function threatDiagram(id, text = DIAGRAM_TEXT[id]) {
-  if (!text || !(id in DIAGRAM_TEXT)) return '';
-  const body = text.lanes
-    ? `<div class="dgm-lanes">
-  ${text.lanes.map((lane, k) => `<div class="dgm-lane" role="group" aria-label="${esc(lane.name)}">
-  <p class="dgm-lane-name">${esc(lane.name)}</p>
-  ${flow(LANE_ART[k], lane.steps)}
-  </div>`).join('\n  ')}
-  </div>`
-    : flow(ART[id], text.steps);
-  return `<figure class="dgm dgm-${id}">
+/**
+ * Complete HTML for one threat's diagram.
+ * `pick` is optional: 'a' or 'b' chooses a version of a diagram that has two
+ * (default: DIAGRAM_VERSION); an object { alt, steps } overrides the wording.
+ */
+export function threatDiagram(id, pick) {
+  if (!(id in DIAGRAM_TEXT)) return '';
+  const two = VERSIONS[id];
+  const version = two ? (typeof pick === 'string' && pick in two ? pick : DIAGRAM_VERSION[id]) : null;
+  const text = pick && typeof pick === 'object' ? pick : two ? DIAGRAM_TEXT[id][version] : DIAGRAM_TEXT[id];
+  const arts = two ? two[version] : ART[id];
+  if (!text?.steps || text.steps.length !== arts.length) return '';
+  return `<figure class="dgm dgm-${id}${two ? ` dgm-${id}-${version}` : ''}">
   <figcaption class="dgm-alt">${esc(text.alt)}</figcaption>
-  ${body}
+  ${flow(arts, text.steps)}
 </figure>`;
 }

@@ -230,7 +230,7 @@
         TechRadar
       url: https://www.techradar.com/pro/security/us-banks-have-detected-unvetted-ai-agents-accessing-customer-bank-accounts
   thread_refs:
-    - author: Alex A (maintainer)
+    - author: Alex A
       url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/EAifqfeEHYQ6QJscX
     - author: gilch
       url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/stH7hqL88qd7uXeq7
@@ -278,7 +278,7 @@
         News
       url: https://www.nbcnews.com/business/consumer/-no-money-thousands-americans-see-savings-vanish-synapse-fintech-crisi-rcna181419
   thread_refs:
-    - author: Alex A (maintainer)
+    - author: Alex A
       url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/EAifqfeEHYQ6QJscX
   checklist: false
   updated: 2026-11-14
@@ -311,7 +311,7 @@
   confidence_note: This is a guess about where technical people's gaps are; nobody has measured it.
   review_status: unreviewed
   thread_refs:
-    - author: Alex A (maintainer)
+    - author: Alex A
       url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/EAifqfeEHYQ6QJscX
   checklist: false
   steps:
@@ -1341,7 +1341,7 @@
     - author: Gurkenglas
       url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/rxHRpDWEDfWE2Xdmw
       note: Back up what you don't want to lose; delete what you don't want leaked.
-    - author: Alex A (maintainer)
+    - author: Alex A
       url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/EAifqfeEHYQ6QJscX
       note: Keep offline or physical copies of key documents, with sensitive information
         under lock and key.
