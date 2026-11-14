@@ -1,6 +1,6 @@
 # About
 
-This site is an unpaid volunteer effort. So far it is the work of one person, the maintainer. Nobody is paid to work on it, and no company or organisation is behind it.
+This site is an unpaid volunteer effort. Nobody is paid to work on it, and no company or organisation is behind it.
 
 ## Why it exists
 
@@ -8,13 +8,13 @@ AI tools have made hacking much cheaper, and most practical advice about what an
 
 ## Who wrote it, and how
 
-One maintainer drafted the whole site on 13 and 14 November 2026, working with an AI coding assistant. The maintainer posts on the forum LessWrong as "Alex A". The starting material was public news reporting and public discussion threads on LessWrong where people shared practical advice and argued about it.
+The site was first put together in November 2026 by volunteers working with AI agents. The starting material was public news reporting and public discussion threads on the forum LessWrong, where people shared practical advice and argued about it. Everyone who has changed the site since is recorded in its public history on GitHub.
 
 Please read everything here with that in mind:
 
-- **Nothing has been checked by a professional.** The maintainer is not a security or financial professional. The maintainer has read all of it, but it remains unverified until someone qualified reviews it. That is why every item says who has checked it, and right now the answer is "nobody yet" for all of them.
-- **The "Evidence" labels are the maintainer's own judgment.** "Established" means the facts an item rests on are documented. It does not mean a professional endorses the recommendation.
-- **The estimates are one person's judgment.** Where the site gives a probability, it is a guess by the maintainer or by a named person, or a figure from a small prediction market that uses play money. None of them is a forecast you should rely on.
+- **Nothing has been checked by a professional unless the item says so.** The site is written by volunteers, not by security or financial professionals acting in that role. Every item says who has checked it, and where the answer is "nobody yet", treat it as unverified.
+- **The "Evidence" labels are the volunteers' own judgment.** "Established" means the facts an item rests on are documented. It does not mean a professional endorses the recommendation.
+- **The estimates are judgment calls.** Where the site gives a probability, it is a guess by a named person, or a figure from a small prediction market that uses play money. None of them is a forecast you should rely on.
 - **Commenters are paraphrased by name without having been asked.** The site sums up what people wrote in public comments and links to the comment where it can. If you are named here and want the wording changed or your name removed, say so and it will be done.
 - **The advice is mostly written for the United States.** The rules about refunds, credit freezes and deposit protection are different elsewhere.
 
@@ -25,7 +25,7 @@ More volunteers are wanted, above all people who work in security, banking or co
 - **Evidence** says how strong the support for an item is: established (the facts are documented in law, official terms or past events), reasoned (follows from how things work, but untested), or speculative.
 - **Checked by** says whether a named professional has reviewed the item, and what they checked.
 - Where people who know the subject disagree, the item shows both sides.
-- The order of the steps is the maintainer's judgment.
+- The order of the steps is the volunteers' judgment.
 - Numbers carry a date. This is a fast-moving subject and they go out of date.
 
 ## What this site is not

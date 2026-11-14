@@ -8,9 +8,9 @@ It consolidates the LessWrong thread [The Hackening: Justified Practical Advice 
 
 ## Who made this, and what to expect
 
-- The site was drafted by one maintainer (Alex A on LessWrong) working with an AI coding assistant on 13 to 14 November 2026. There are no other contributors yet. It is an unpaid volunteer effort and more volunteers are wanted.
-- Nothing has been checked by a professional. The maintainer has read all of it, but it remains unverified until it is reviewed.
-- The "Evidence" labels are the maintainer's own judgment, and the probability estimates are one person's judgment.
+- The site is an unpaid volunteer effort, first put together in November 2026 by volunteers working with AI agents, from public news reporting and public discussion threads. More volunteers are wanted.
+- Nothing has been checked by a professional unless the item says so. Until an item is reviewed, treat it as unverified.
+- The "Evidence" labels and the order of the steps are the volunteers' own judgment, and the probability estimates are judgment calls.
 - Commenters are paraphrased by name from public comments without having been asked. Anyone named can ask to be corrected or removed.
 - The advice is mostly specific to the United States.
 - The only address is thehackening.ai (and, until that domain is live, thehackening.vercel.app). The site has no accounts, no app, no helpline and no email list. It will never contact you, ask you to sign in, or ask for money or personal details.
@@ -56,4 +56,4 @@ What still needs doing, including planned features, is in [TASKS.md](TASKS.md).
 
 ## Not advice
 
-Not financial, legal or security advice. This is one volunteer maintainer's summary of public discussion and reporting, drafted with an AI coding assistant and not checked by any professional.
+Not financial, legal or security advice. This is a volunteer summary of public discussion and reporting, drafted with the help of AI agents and not checked by a professional unless an item says so.

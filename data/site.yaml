@@ -16,11 +16,11 @@ lede: >-
   takes an afternoon, and most of it is worth doing anyway.
 # notice = shown at the foot of every page and on the printed checklist.
 notice: >-
-  Not financial, legal or security advice. This site was drafted by one unpaid
-  volunteer, the maintainer, working with an AI coding assistant. Nothing here has
-  been checked by a professional unless the item says so. The "Evidence" labels and
-  the estimates are the maintainer's own judgment. Most of the advice is written for
-  the United States. Numbers carry a date and go out of date.
+  Not financial, legal or security advice. This site is put together by unpaid
+  volunteers working with AI agents. Nothing here has been checked by a professional
+  unless the item says so. The "Evidence" labels and the estimates are the volunteers'
+  own judgment. Most of the advice is written for the United States. Numbers carry a
+  date and go out of date.
 # never = what this site will never do, so that copies and impostors are easy to spot.
 # Meant to be shown next to the notice on every page.
 never: >-
@@ -282,7 +282,7 @@ pages:
     title: Help wanted
   about:
     title: About
-    intro: One volunteer's effort, so far, to put practical advice about AI-driven hacking in one place.
+    intro: A volunteer effort to put practical advice about AI-driven hacking in one place.
   guide:
     back: All steps
     table: Back to the table
@@ -299,7 +299,7 @@ pages:
     origin: Where this came from
   notes:
     title: Research notes
-    intro: The maintainer's own background notes behind the first version of this site.
+    intro: Background notes behind the first version of this site.
       They are not recommendations. The estimates are one person's judgment, not
       forecasts; read them as a rough ranking, not precise numbers.
 
@@ -308,7 +308,7 @@ definitions:
     established:
       label: Established
       meaning: The facts this rests on are documented in law, regulation, official terms or
-        past events. The recommendation itself is still the maintainer's judgment.
+        past events. The recommendation itself is still this site's judgment.
     reasoned:
       label: Reasoned
       meaning: Follows from a clear picture of how things work, but has not been directly
@@ -320,10 +320,10 @@ definitions:
     unreviewed:
       label: Nobody yet
       meaning: No professional has checked this item. The "Evidence" label on it is the
-        maintainer's own judgment.
+        site's own judgment, not a professional's.
     expert_reviewed:
       label: A professional
-      meaning: A named reviewer, whose professional background the maintainer has confirmed,
+      meaning: A named reviewer, whose professional background a maintainer has confirmed,
         has checked the part of this item described in the review. It is not a guarantee
         that the whole item is correct.
   review_due_months: 6
