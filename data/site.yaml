@@ -112,13 +112,12 @@ home:
   # not confirmed. The first example is shown as the lead.
   examples:
     - incident: cairn-campaign-2026-10
-      figure: $50
-      label: per company website broken into, in one campaign
+      figure: 100+ company websites
+      label: broken into by one hacker using AI agents
       text: >-
-        One hacker used AI tools to break into more than 100 company websites,
-        including a John Deere website, a security researcher told Reuters in
-        October 2026. Deere said it had no sign that sensitive information was
-        reached.
+        It cost about $50 per website, a security researcher told Reuters in October
+        2026. The targets included a John Deere website; Deere said it had no sign
+        that sensitive information was reached.
     - incident: hugging-face-agents-2026-07
       figure: About 700 AI agents
       label: attacked a real company during a lab test
