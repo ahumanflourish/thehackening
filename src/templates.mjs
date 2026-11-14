@@ -374,7 +374,6 @@ ${body}
     <h3>${esc(m.reach)}</h3>
     ${threatDiagram(m.id)}
     <div class="panel-main">
-      <p class="how">${esc(m.how)}</p>
       <p><a class="go" href="#advice">${esc(h.threat_link)}</a></p>
       ${when(m.incidents?.length, () => `<h4 class="minor">${esc(h.threat_incidents_label)}</h4>
       <ul class="sources">${each(m.incidents, (id) => `<li>${time(incidentById.get(id).date)} <a href="/incidents/#${id}">${esc(incidentById.get(id).title)}</a> ${aiMark(incidentById.get(id))}</li>`)}</ul>`)}

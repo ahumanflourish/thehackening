@@ -71,4 +71,4 @@
 
 /* Placement in the threat panels on the home page. */
 .panel > h3 { grid-column: 1 / -1; margin: 0; }
-.panel > .dgm { margin-bottom: 1rem; }
+.panel > .dgm { margin-bottom: 0.25rem; }
