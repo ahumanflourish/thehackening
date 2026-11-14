@@ -8,6 +8,7 @@ Contributions go through the site's page on GitHub.
 
 - **To report a mistake or suggest something,** [open an issue](https://github.com/ahumanflourish/thehackening/issues). No code needed: say which page, what is wrong or missing, and a source if you have one.
 - **To make a change yourself,** [open a pull request](https://github.com/ahumanflourish/thehackening/pulls). The second half of this page explains how each kind of change is made.
+- **To find something to work on,** see the [list of open tasks](https://github.com/ahumanflourish/thehackening/blob/main/TASKS.md).
 - **To volunteer as a reviewer,** open an issue saying which guides you can review and what your background is. See the next section for how reviews are credited.
 
 ## Volunteer as a reviewer

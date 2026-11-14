@@ -50,15 +50,9 @@ npm run serve        # preview dist/ locally
 
 Any static host works: build, then serve `dist/`. For Vercel, `vercel.json` already sets the build command, output directory and security headers.
 
-## Planned, not built
+## Open tasks
 
-None of the ideas below exists. The About page tells readers about them, and says the site has no accounts and takes no money today; update that page before building any of them.
-
-- **A checklist readers can work through, with sign-in.** Let a reader sign in and run through the actual checklist: tick off each step as they do it, come back later to where they left off, see how much of their own setup is done, and get notified when a step changes or a new one is added. This conflicts with the current design (static site, no server-side code, no database, no JavaScript), which was chosen so that a site about hacking is hard to hack. A record of which protections each person has *not* set up is itself sensitive data. Options to weigh before building: ticks saved only in the reader's own browser with no account (needs a small script, loses progress across devices); email or RSS notifications with no login; or full accounts through a hosted sign-in provider, kept on a separate subdomain from the static content.
-- **Affiliate links for the few steps that involve buying something**, with proceeds donated. Deferred until the site has readers; needs a plain disclosure, a non-affiliate link alongside, and a rule that it never affects what is recommended.
-- **A form for submitting an open question or a correction,** for people who don't use GitHub. Today the only route is a GitHub issue or pull request.
-- **A "what won't help" section.** Things people commonly reach for that don't protect against these threats, each with the reason, kept separate from the steps. Gold is the first example: its guide page exists (`gold-is-the-wrong-hedge`, kind `skip`) but is not linked from the home page until this section is built.
-- **"When to act" page:** signals in the news and what to do when you see them. Draft material is in `research/notes.md`.
+What still needs doing, including planned features, is in [TASKS.md](TASKS.md).
 
 ## Not advice
 
