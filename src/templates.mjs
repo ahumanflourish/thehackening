@@ -324,8 +324,8 @@ ${body}
     <p class="subhead">${esc(site.subhead)}</p>
     <p class="lede">${md(site.lede)}</p>
     <p class="cta-row">
-      <a class="cta" href="#advice">${esc(h.hero_cta)}</a>
       <a class="cta cta-2" href="#threats">${esc(h.hero_cta2)}</a>
+      <a class="cta" href="#advice">${esc(h.hero_cta)}</a>
     </p>
     ${when(h.byline, () => `<p class="byline"><span>${esc(h.byline)}</span><span>Updated ${time(asOf)}</span><a href="/about/">About</a></p>`)}
   </div>
@@ -341,17 +341,21 @@ ${body}
   </header>
   <div class="panels">
   ${each(site.threat_models, (m) => {
-    const facts = advice.filter((a) => a.kind !== 'action' && a.covers[0] === m.id);
+    const facts = advice.filter((a) => a.kind === 'know' && a.covers[0] === m.id);
     const n = actions.filter((a) => a.covers.includes(m.id)).length;
     return `<div class="panel" data-threat="${m.id}">
     <h3>${esc(m.reach)}</h3>
     ${threatDiagram(m.id)}
     <div class="panel-main">
+      <p class="how">${esc(m.how)}</p>
       <p><a class="go" href="#advice">${esc(h.threat_link)}</a></p>
-      ${when(m.incidents?.length, () => `<h4 class="minor">${esc(h.threat_incidents_label)}</h4>
-      <ul class="sources">${each(m.incidents, (id) => `<li>${time(incidentById.get(id).date)} <a href="/incidents/#${id}">${esc(incidentById.get(id).title)}</a> ${aiMark(incidentById.get(id))}</li>`)}</ul>`)}
     </div>
-    ${when(facts.length, () => `<div class="panel-side">${each(facts, knowItem)}</div>`)}
+    <div class="panel-side">
+      ${when(facts.length, () => `<h4 class="minor">${esc(h.threat_know_label)}</h4>
+      <ul class="sources">${each(facts, (a) => `<li><a href="/do/${a.id}/">${esc(a.title)}</a></li>`)}</ul>`)}
+      ${when(m.incidents?.length, () => `<h4 class="minor">${esc(h.threat_incidents_label)}</h4>
+      <ul class="sources">${each(m.incidents, (id) => `<li><a href="/incidents/#${id}">${esc(incidentById.get(id).title)}</a> ${aiMark(incidentById.get(id))}</li>`)}</ul>`)}
+    </div>
   </div>`;
   })}
   </div>
