@@ -191,10 +191,11 @@ home:
   help_title: Help wanted
   help:
     - >-
-      Nothing on this site has been checked by a professional yet. So far it is the
-      work of one volunteer. The maintainer is looking for people who work in security,
-      banking or compliance to review the advice in their area and put their name to
-      what they checked, and for more volunteers.
+      This site gathers advice from public community discussions, put together by a
+      volunteer with the help of an AI agent. Nothing on it has been checked by a
+      professional yet. We are looking for people who work in security, banking or
+      compliance to review the advice in their area and put their name to what they
+      checked, and for more volunteers.
     - >-
       Anyone can also suggest a correction, a better source or a missing item.
   help_link: How to review or contribute
