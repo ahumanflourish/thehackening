@@ -2,7 +2,7 @@
 # kind: current = a Hackening-era event; precedent = an older event used to calibrate expectations.
 # ai_involvement is rated per stage: discovery | attack | agent_behavior.
 # Levels: confirmed | suspected | unlikely | unknown. See CONTRIBUTING.md.
-# type picks the picture on the news feed (see CONTRIBUTING.md for when to use each):
+# type picks the picture on the Incidents page (see CONTRIBUTING.md for when to use each):
 #   outage | overload | lockout | heist | crypto-theft | devices | software-flaw | supplier |
 #   one-to-many | agents | breakout | data-theft | records-lost | advisory.
 # count (optional, only when the story has a real count) draws dots instead: total, hit, spread (scatter | run), caption.

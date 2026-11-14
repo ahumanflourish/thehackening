@@ -99,7 +99,7 @@ Add an entry to `data/incidents.yaml`. The log is a small set of real, dated eve
 - List the advice it informs under `related_advice`.
 - Set `needs_research: true` if details are still missing or the cause is still under investigation.
 
-### Picture on the news feed
+### Picture on the Incidents page
 
 `type` picks the drawing shown with the story. Choose the one that matches what happened, not who did it. If the story has a real count (so many hit, out of so many), add `count` as well and the feed draws counted dots instead.
 

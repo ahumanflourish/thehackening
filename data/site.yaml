@@ -34,10 +34,9 @@ repo_url: https://github.com/ahumanflourish/thehackening
 thread_url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions
 
 nav:
-  - { href: "/#why", label: Why now }
   - { href: "/#threats", label: The threats }
   - { href: "/#advice", label: What to do }
-  - { href: /incidents/, label: News }
+  - { href: /incidents/, label: Incidents }
   - { href: /questions/, label: Open questions }
   - { href: /contribute/, label: Help wanted }
   - { href: /about/, label: About }
@@ -241,7 +240,7 @@ pages:
       far and where it comes from. Where an answer gives a view or an estimate, it says
       whose it is.
   incidents:
-    title: News
+    title: Incidents
     intro: >-
       Hacks and outages worth knowing about, newest first. Each one is marked with how
       much evidence there is that AI was involved. Big outages that turn out not to be

@@ -217,7 +217,8 @@ p { margin: 0 0 0.9rem; max-width: var(--measure); }
 .story:has(.more[open]) .story-sum { display: none; }
 .story-full { font-size: 0.9688rem; }
 .story.lead .story-sum { font-size: 1.0625rem; max-width: 46rem; }
-.pop .ai-table th { width: min(9rem, 38%); }
+.pop .ai-table th { width: 34%; }
+.pop .ai-table td:nth-child(2) { width: auto; }  /* two columns here: the note takes the rest of the row */
 .pop .note { color: var(--muted); font-size: 0.8438rem; }
 /* By default the feed shows events where AI involvement is confirmed or suspected. */
 body:has(#ai-f-ai:checked) .story:not([data-ai="confirmed"]):not([data-ai="suspected"]),
@@ -575,7 +576,7 @@ button.badge:hover { border-color: var(--ink); }
   .story-body, .story.lead .story-body { padding-inline: 1rem; }
 }
 /* Touch: controls and stand-alone links get a finger-sized target (about 40px) and room between them. */
-@media (max-width: 60rem), (pointer: coarse) {
+@media screen and (max-width: 60rem), screen and (pointer: coarse) {
   :root { --ctl-pad: 0.5rem 0.75rem; }
   .more summary { padding-block: 0.55rem; }
   .go, .why, .byline a, .ex-meta a, .g-nav p a, .step-link a, .sources a, .know h4 a, .entry h2 a { display: inline-block; padding-block: 0.65rem; }
@@ -611,7 +612,11 @@ button.badge:hover { border-color: var(--ink); }
   main { max-width: none; padding: 0; }
   a { text-decoration: none; }
   .panel { display: grid !important; grid-area: auto; visibility: visible; border: 0; padding: 1rem 0; }
-  .action, .know, .incident, .entry, .check-group li { break-inside: avoid; }
+  .action, .know, .incident, .entry, .check-group li, .steps li, .story { break-inside: avoid; }
+  /* On paper a link is only its address: print it after the link text on guide pages. */
+  .g-main a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; font-weight: 400; color: var(--muted); overflow-wrap: anywhere; }
+  .g-main .host { display: none; }
+  .g-wrap { padding-block: 0; }
   .action { display: block !important; }
   .print-only { display: block; }
 

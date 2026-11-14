@@ -331,30 +331,6 @@ ${body}
   </div>
 </section>
 
-<section class="screen cols" id="why" aria-labelledby="why-h">
-  <header class="screen-head">
-    <h2 id="why-h">${esc(h.why_title)}</h2>
-    <p>${md(h.outlook)}</p>
-    <p><a class="go" href="/incidents/">${esc(h.examples_more)}</a></p>
-  </header>
-  <ul class="examples">
-    ${each(h.examples, (e) => {
-      const i = incidentById.get(e.incident);
-      return `<li><p class="fig"><strong>${esc(e.figure)}</strong> <span>${esc(e.label)}</span></p><p>${esc(e.text)}</p><p class="ex-meta">${time(i.date)}${aiMark(i)}<a href="/incidents/#${i.id}">Details</a></p></li>`;
-    })}
-  </ul>
-</section>
-
-<section class="screen dark cols" id="changed" aria-labelledby="ch-h">
-  <header class="screen-head">
-    <h2 id="ch-h">${esc(h.then_now_title)}</h2>
-    <dl class="thennow">
-      ${each(h.then_now, (r) => `<div><dt>${esc(r.what)}</dt><dd><s>${esc(r.before)}</s><b>${esc(r.now)}</b></dd></div>`)}
-    </dl>
-  </header>
-  ${each(charts.slice(0, 1), barChart)}
-</section>
-
 <section class="screen cols" id="threats" aria-labelledby="threats-h">
   <header class="screen-head">
     <h2 id="threats-h">${esc(h.threats_title)}</h2>
