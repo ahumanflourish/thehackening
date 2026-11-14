@@ -1,0 +1,74 @@
+/* Threat diagrams (src/diagrams.mjs). Every selector starts with .dgm.
+   Uses the site tokens only: --ink, --muted, --rule, --well, --accent, --display, --body.
+   Layout follows the width of the diagram itself, not of the window: stacked top to
+   bottom by default, side by side once the figure is 42rem wide. */
+
+.dgm { margin: 0; grid-column: 1 / -1; container-type: inline-size; color: var(--ink); break-inside: avoid; }
+.dgm-alt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* ----------------------------------------------------------------- marks */
+
+.dgm-art { display: block; background: var(--well); overflow: hidden; }
+.dgm-art * { vector-effect: non-scaling-stroke; }
+.dgm-k, .dgm-a { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.dgm-a { stroke: var(--accent); stroke-width: 2.5; }
+.dgm-thin { stroke-width: 1.5; opacity: 0.6; }
+.dgm-dotted { stroke-dasharray: 0.1 6; }
+.dgm-node { fill: var(--well); }
+.dgm-solid { fill: var(--ink); }
+.dgm-hit { fill: var(--accent); }
+
+/* ---------------------------------------------- stacked (phones, narrow) */
+
+.dgm-flow { list-style: none; margin: 0; padding: 0; display: grid; }
+.dgm-step { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); align-items: center; gap: 0 1rem; }
+.dgm-art { width: 8.5rem; height: 8.5rem; }
+/* The story is drawn left to right; a quarter turn makes it read top to bottom. */
+.dgm-turn { transform: rotate(90deg); }
+.dgm-upright { transform-box: fill-box; transform-origin: center; transform: rotate(-90deg); }
+
+.dgm-label { margin: 0; max-width: 22rem; display: grid; gap: 0.2rem; font: 0.875rem/1.35 var(--body); }
+.dgm-label b { font: 650 1.0625rem/1.2 var(--display); text-wrap: balance; }
+.dgm-note { color: var(--muted); text-wrap: pretty; }
+
+/* The comparison: the two paths side by side, each stage level with its opposite. */
+.dgm-lanes { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(7, auto); gap: 0 0.75rem; }
+.dgm-lane { display: grid; grid-row: 1 / -1; grid-template-rows: subgrid; }
+.dgm-lane-name { margin: 0; max-width: none; padding: 0.5rem 0 0.6rem; border-top: 3px solid var(--ink); font: 700 1rem/1.2 var(--display); text-wrap: balance; }
+.dgm-lane .dgm-flow { grid-row: 2 / -1; grid-template-rows: subgrid; }
+.dgm-lane .dgm-step { grid-row: span 2; grid-template-rows: subgrid; grid-template-columns: minmax(0, 1fr); gap: 0; align-items: start; }
+.dgm-lane .dgm-art { width: 100%; height: 7.5rem; }
+.dgm-lane .dgm-label { padding: 0.5rem 0.25rem 1rem; text-align: center; }
+.dgm-lane .dgm-label b { font-size: 1rem; }
+
+/* ------------------------------------------------- side by side (wide) */
+
+@container (min-width: 42rem) {
+  .dgm-flow { grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); }
+  .dgm-step { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr; gap: 0; align-items: start; }
+  .dgm-art { width: 100%; height: 9.5rem; }
+  .dgm-turn, .dgm-upright { transform: none; }
+  .dgm-label { padding: 0.75rem 0.75rem 0; margin-inline: auto; max-width: 17rem; text-align: center; }
+
+  .dgm-lanes { grid-template-columns: 1fr; grid-template-rows: none; gap: 1.5rem; }
+  .dgm-lane { grid-row: auto; grid-template-rows: none; grid-template-columns: 11rem minmax(0, 1fr); gap: 0 1.5rem; }
+  .dgm-lane-name { align-self: start; padding: 0.6rem 0 0; font-size: 1.0625rem; }
+  .dgm-lane .dgm-flow { grid-row: auto; grid-template-rows: none; }
+  .dgm-lane .dgm-step { grid-row: auto; grid-template-rows: auto 1fr; }
+  .dgm-lane .dgm-art { height: 8.5rem; }
+  .dgm-lane .dgm-label { padding: 0.6rem 0.75rem 0; }
+  .dgm-lane .dgm-label b { font-size: 1.0625rem; }
+}
+
+/* ----------------------------------------------------------------- print */
+
+@media print {
+  .dgm-art { background: none; }
+  .dgm-node { fill: #fff; }
+  .dgm-flow { border: 1px solid var(--rule); }
+  .dgm-label { padding-bottom: 0.5rem; }
+}
+
+/* Placement in the threat panels on the home page. */
+.panel > h3 { grid-column: 1 / -1; margin: 0; }
+.panel > .dgm { margin-bottom: 1rem; }

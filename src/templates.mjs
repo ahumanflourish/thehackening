@@ -3,6 +3,7 @@
 
 import { marked } from 'marked';
 import { tile, GRID_DEFS } from './tiles.mjs';
+import { threatDiagram } from './diagrams.mjs';
 
 const esc = (s) =>
   String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -45,6 +46,7 @@ export function renderSite(ctx) {
 <title>${esc(title || headTitle ? `${title || headTitle} | ${site.name}` : `${site.name}: ${site.headline} ${site.subhead}`)}</title>
 <meta name="description" content="${esc(intro ?? site.lede)}">
 <link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/diagrams.css">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
 <body class="${cls}">
@@ -354,8 +356,9 @@ ${body}
     const facts = advice.filter((a) => a.kind !== 'action' && a.covers[0] === m.id);
     const n = actions.filter((a) => a.covers.includes(m.id)).length;
     return `<div class="panel" data-threat="${m.id}">
+    <h3>${esc(m.reach)}</h3>
+    ${threatDiagram(m.id)}
     <div class="panel-main">
-      <h3>${esc(m.reach)}</h3>
       <p class="how">${esc(m.how)}</p>
       <p><a class="go" href="#advice">${esc(h.threat_link)}</a></p>
       ${when(m.incidents?.length, () => `<h4 class="minor">${esc(h.threat_incidents_label)}</h4>

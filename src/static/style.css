@@ -65,7 +65,11 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-padding-top: var(--head); scroll-snap-type: y proximity; overflow-x: clip; scroll-behavior: smooth; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: var(--head); overflow-x: clip; scroll-behavior: smooth; }
+/* Only the home page settles on its screens, and only on the one-viewport screens at the top.
+   The long steps screen and everything after it scroll freely, so nothing pulls the reader
+   about inside the table or back up from the footer. */
+html:has(.home) { scroll-snap-type: y proximity; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
   margin: 0;
@@ -136,8 +140,8 @@ p { margin: 0 0 0.9rem; max-width: var(--measure); }
 .screen {
   min-height: calc(100svh - var(--head)); padding-block: clamp(2.5rem, 6vh, 5rem);
   display: grid; align-content: center; gap: 2rem var(--gutter);
-  scroll-snap-align: start;
 }
+.home .screen:not(.tall, .tall ~ .screen) { scroll-snap-align: start; }
 .screen.cols { grid-template-columns: var(--side) minmax(0, 1fr); }
 .screen h2 { margin-top: 0; }
 .screen-head > p { color: var(--muted); }
@@ -316,7 +320,7 @@ body:has(#t-infrastructure:checked) .panel[data-threat="infrastructure"] { displ
 .levels { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.3rem; }
 .level { position: relative; cursor: pointer; display: grid; }
 .level input { position: absolute; opacity: 0; width: 1px; height: 1px; }
-.level > span { display: grid; gap: 0.1rem; padding: 0.7rem 1rem 0.75rem; background: var(--well); border-top: 5px solid transparent; }
+.level > span { display: grid; align-content: start; gap: 0.1rem; padding: 0.7rem 1rem 0.75rem; background: var(--well); border-top: 5px solid transparent; }
 .level b { font: 700 1.0938rem var(--display); }
 .level small { font-size: 0.8438rem; color: var(--muted); }
 .level:hover > span { background: var(--surface); }
@@ -499,7 +503,7 @@ button.badge:hover { border-color: var(--ink); }
 /* ---------------------------------------------------------------- narrow */
 
 @media (max-width: 60rem) {
-  html { scroll-snap-type: none; }
+  html:has(.home) { scroll-snap-type: none; }
   .screen { min-height: 0; }
   .screen.cols { grid-template-columns: 1fr; }
   .g-next { grid-template-columns: 1fr; }

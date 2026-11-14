@@ -6,3 +6,4 @@ dist/
 link-report.json
 design/
 HANDOFF.md
+.vercel
