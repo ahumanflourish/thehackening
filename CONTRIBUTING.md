@@ -1,15 +1,14 @@
-# Contributing
+# Help wanted
 
-Everything on the site is generated from the files in [`data/`](https://github.com/ahumanflourish/thehackening/tree/main/data). To change the site, change a data file. You never need to touch a template.
+This site gathers advice from public community discussions, put together by a volunteer with the help of an AI agent. Nothing on it has been checked by a professional yet. The most useful help is a review from someone who works in security, banking, fraud or compliance.
 
-There are two ways to contribute:
+## How to contribute
 
-- **Pull request** against the data files in the [GitHub repository](https://github.com/ahumanflourish/thehackening).
-- **Comment in the [LessWrong thread](https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions).** The maintainer folds thread comments into the data files and links back to yours.
+Contributions go through the site's page on GitHub.
 
-To report a mistake without touching any code, leave a comment in that thread saying which page is wrong and what the source says.
-
-So far the site has one maintainer. Where this page says "a maintainer", that is who it means until others join.
+- **To report a mistake or suggest something,** [open an issue](https://github.com/ahumanflourish/thehackening/issues). No code needed: say which page, what is wrong or missing, and a source if you have one.
+- **To make a change yourself,** [open a pull request](https://github.com/ahumanflourish/thehackening/pulls). The second half of this page explains how each kind of change is made.
+- **To volunteer as a reviewer,** open an issue saying which guides you can review and what your background is. See the next section for how reviews are credited.
 
 ## Volunteer as a reviewer
 
@@ -19,7 +18,7 @@ Reviewers wanted:
 
 - **Security practitioner**, for the personal-attack and institutional items.
 - **Finance or compliance professional**, for the refund-rule and deposit-insurance items (Regulation E, broker guarantees, FDIC, NCUA, SIPC).
-- **Open-questions maintainer**, to fold new thread comments into `data/questions.yaml` and keep the answers current.
+- **Someone to keep the open questions current**, as new discussion and evidence appear.
 
 ### What a "Checked by" credit requires
 
@@ -29,7 +28,7 @@ A "Checked by" credit tells readers that a professional looked at an item, so it
 2. **Your own explicit request to be credited.** You have to ask, in your own words, to be named as the reviewer of that item. Nobody is credited because they made a helpful comment.
 3. **A statement of exactly what you checked.** For example "the Regulation E deadlines in the 'why' section", not "the item".
 
-A forum comment alone cannot grant a credit. Comments are welcome and get folded in as corrections, but the label stays "Nobody yet" until all three requirements are met and a maintainer has confirmed the first one.
+A helpful comment alone cannot grant a credit. The label stays "Nobody yet" until all three requirements are met and a maintainer has confirmed the first one.
 
 Once they are met, a maintainer sets the item to `expert_reviewed` and records the review on it:
 
@@ -51,6 +50,10 @@ Readers act on the links and phone numbers in the steps, so these get extra care
 - **Any change to a link or a phone number in a step must be checked by a maintainer against the institution's own website before it is merged**, whoever proposes it and whatever else the change contains. A review credit does not exempt a change from this.
 - **Step links must stay on the approved list of official domains.** The build enforces the list and fails on a step link to any other site. Adding a domain to the list is a separate change that a maintainer makes after checking that the domain really belongs to the institution.
 - Do not bundle a link or phone-number change with other edits. Send it on its own so it can be checked on its own.
+
+## Making changes yourself
+
+The rest of this page is for people editing the site's files. All the content lives in a handful of plain text files in the [`data/` folder](https://github.com/ahumanflourish/thehackening/tree/main/data): one for the steps and guides, one for incidents, one for open questions. Edit the relevant file and open a pull request. An automatic check runs on every pull request and says what is wrong if an entry is malformed.
 
 ## Add an advice item
 
