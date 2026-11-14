@@ -160,10 +160,10 @@ p { margin: 0 0 0.9rem; max-width: var(--measure); }
 
 .hero { grid-template-rows: 1fr auto; align-content: stretch; background-image: url("/hero.svg"); background-repeat: no-repeat; background-position: right 0 top 0; background-size: auto 100%; }
 .hero-text { align-self: center; }
-.hero h1 { max-width: 10.5em; font-size: clamp(2.5rem, 5.6vw, 4.5rem); text-wrap: balance; }
-.subhead { font: 600 clamp(1.25rem, 2.4vw, 1.875rem)/1.2 var(--display); margin: 0.6rem 0 0; max-width: none; }
+.hero h1 { max-width: none; font-size: clamp(2rem, 3.1vw, 3.5rem); text-wrap: balance; }
+.subhead { font: 600 clamp(1.125rem, 1.6vw, 1.5rem)/1.2 var(--display); margin: 0.5rem 0 0; max-width: none; }
 .subhead::after { content: ""; display: block; width: 4.5rem; height: 6px; background: var(--accent); margin-top: 1.25rem; }
-.hero .lede { color: var(--muted); }
+.hero .lede { color: var(--muted); max-width: 44rem; }
 .cta { display: inline-block; margin-top: 1.5rem; padding: 0.8rem 1.3rem; background: var(--accent); color: var(--on-accent); font: 700 1.0625rem var(--display); text-decoration: none; }
 .byline { display: flex; flex-wrap: wrap; gap: 0.2rem 1.25rem; margin: 1.25rem 0 0; font-size: 0.875rem; color: var(--muted); }
 .cta:hover { background: var(--plate-ink); }
@@ -554,9 +554,9 @@ button.badge:hover { border-color: var(--ink); }
 }
 /* Phones: the header is two short rows (name, then links) so no link is cut off at the edge. */
 @media (max-width: 36rem) {
-  :root { --head: 4.75rem; }
+  :root { --head: 5rem; }
   .site-head { flex-wrap: wrap; align-content: stretch; gap: 0; }
-  .wordmark { flex: 0 0 100%; height: 2.25rem; margin: 0; padding-top: 0.35rem; }
+  .wordmark { flex: 0 0 100%; height: 2.5rem; margin: 0; padding-top: 0.4rem; }
   .site-head nav { flex: 0 0 100%; height: 2.5rem; }
   .site-head nav a { display: flex; align-items: center; padding-block: 0; border-bottom-width: 3px; }
 }
@@ -570,9 +570,10 @@ button.badge:hover { border-color: var(--ink); }
 @media (max-width: 60rem), (pointer: coarse) {
   :root { --ctl-pad: 0.5rem 0.75rem; }
   .more summary { padding-block: 0.55rem; }
-  .go, .why, .byline a, .ex-meta a, .g-nav p a, .step-link a { display: inline-block; padding-block: 0.55rem; }
+  .go, .why, .byline a, .ex-meta a, .g-nav p a, .step-link a, .sources a, .know h4 a, .entry h2 a { display: inline-block; padding-block: 0.65rem; }
   .ex-meta, .byline { row-gap: 0; }
-  .sources li, .g-main .sources li { padding-block: 0.5rem; }
+  .sources li, .g-main .sources li { padding-block: 0; }
+  .know .short { margin-top: 0; }
   .g-nav li a { padding-block: 0.65rem; }
   /* Badges keep their size; the tappable area grows around them. */
   button.badge, a.badge { position: relative; }
