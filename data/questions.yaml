@@ -17,8 +17,16 @@
     Manifold, a prediction site that uses play money, a market with about 40
     participants put about 6% on a major US blackout caused by a cyberattack before 1
     January 2027 (as of 14 Nov 2026). A market that small is a rough signal, not a
-    forecast.
+    forecast. One commenter, Thane Ruthenis, argues that what matters more is how fast
+    emergency services could restore a basic offline service: power and deliveries
+    worked in the 1970s, and Ukraine has kept essentials running under bombardment.
+    Another, Archimedes, suggests expecting regular disruptions at least as bad as the
+    November 2026 Outlook outage and US flight halt, without saying those were attacks.
   sources:
+    - title: Comment by Thane Ruthenis
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=zzwJiDLHv9Ci9f6iH
+    - title: Comment by Archimedes
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=3tQLCJcdtJMsMrudo
     - title: America's sewer systems are surprisingly vulnerable to cyber attacks, FAI
       url: https://www.thefai.org/posts/america-s-sewer-systems-are-surprisingly-vulnerable-to-cyber-attacks
     - title: Will there be at least one major US blackout caused by a cyberattack by 2027?,
@@ -29,9 +37,6 @@
 - id: internet-before-utilities
   question: Could the internet itself fail before utilities do, and if it did, what else
     would fail with it?
-  asked_by:
-    - author: kman
-      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=fxLENPKfmFhbm2kTA
   status: open
   current_best_answer: >-
     No good answer yet. On Manifold, a prediction site that uses play money, a market
@@ -54,7 +59,15 @@
     Most guides plan for three to seven days; the Red Cross figure for water and food
     when staying at home is about two weeks. In the best-known hack of a single
     financial institution, a California credit union in 2024, online banking was out
-    for about two weeks. Nobody has answered how much to keep for neighbors.
+    for about two weeks. One commenter, Philipp Risius, suggests planning for up to two
+    weeks without mains electricity. Another, Thane Ruthenis, doubts that preparing
+    for a total breakdown fits the threat. Nobody has answered how much to keep for
+    neighbors.
+  sources:
+    - title: Comment by Philipp Risius
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=FsnPHYaFecmhwKcA2
+    - title: Comment by Thane Ruthenis
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=zzwJiDLHv9Ci9f6iH
   related_advice: [ water-food-medications, cash-sized-to-outages ]
 
 - id: when-use-survival-llm
@@ -65,10 +78,18 @@
       url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=NLA7sR9nfjiisGCex
   status: partly_answered
   current_best_answer: >-
-    Probably rarely, in the view of the two people who have discussed it here; neither
-    has tried one in an emergency. The useful part is the offline reference library it
-    searches, which is free on its own. Most of what you'd need is specific to your
-    situation and has to be prepared in advance.
+    Probably rarely, in the view of most of the commenters who have discussed it; none
+    says they have tried one in an emergency. The useful part is the offline reference
+    library it searches, which is free on its own. One commenter, lilkim2025, expects a
+    plain search tool over the same manuals to be faster and more reliable than a small
+    chatbot. Another, Thane Ruthenis, thinks it is not unhelpful but doesn't fit the
+    threat well. Most of what you'd need is specific to your situation and has to be
+    prepared in advance.
+  sources:
+    - title: Comment by lilkim2025
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=6dkA6DkA5YhyDbTzF
+    - title: Comment by Thane Ruthenis
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=sgeKtbPwygc9EakBz
   related_advice: [ offline-reference-library ]
 
 - id: who-wants-long-outages
@@ -96,8 +117,8 @@
     Not automatically, and people who follow this disagree. Finding a flaw first isn't
     enough. Defenders found the PHP2Shell flaw on August 1, yet attackers were using it
     by October 17, four days before a fix was released. The writer Zvi called that "an
-    update against defenders being advantaged". Grendel1209, who works in
-    cybersecurity, expects freely downloadable AI models to favor attackers. Vitalik
+    update against defenders being advantaged". Grendel1209, who described
+    working in cybersecurity at a threat-intelligence company, expects freely downloadable AI models to favor attackers. Vitalik
     Buterin predicts defense wins in the end, "but the transition will be hard".
     CrowdStrike, a security firm, reported that in the first half of 2026, for flaws
     with public demonstration code, 88% of the attacks it observed came within 48 hours
@@ -143,7 +164,13 @@
     forecast. The reasoning: past attacks on financial firms caused outages of days to
     weeks followed by recovery, and banks keep offline backups of account records.
     Against that, nothing like today's tools has been seen before, so the past is a
-    weak guide.
+    weak guide. On 14 November 2026 Thane Ruthenis added that the real question is how
+    quickly basic services could be restored offline, and that preparing for total
+    breakdown "doesn't really seem threat-appropriate"; he also asked whether he was
+    underrating how fragile these systems are.
+  sources:
+    - title: Comment by Thane Ruthenis (14 November 2026)
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=zzwJiDLHv9Ci9f6iH
 
 - id: open-weights-timeline
   question: When will AI models that anyone can download be as good at hacking as the most
@@ -151,16 +178,35 @@
   asked_by:
     - author: johnswentworth
       url: https://www.lesswrong.com/posts/wJunGnpY3qACWSvnh/on-open-weights-mythos-capabilities?commentId=KwPbBtCA9HqqsfQg5
-  status: open
+  status: partly_answered
   current_best_answer: >-
-    Nobody knows; these are individual guesses. hadad put 85% on a downloadable model
-    hacking as well as Mythos, a leading model, within 24 months of August 2026.
-    Vladimir_Nesov guessed "maybe 2 years, in 2028", limited mainly by computing power
-    in China. In October 2026 the writer Zvi judged the best downloadable model "more
-    than six months behind". Forecasters at the forecasting site Metaculus put about
-    95% on one matching Mythos on a hacking test before July 2027, but a test is not
-    real-world attack ability.
+    Two reports in September 2026 give part of the answer. CAISI, the US government's
+    AI testing center, said on 17 September that GLM-5.3, a Chinese model anyone can
+    download, was the most capable downloadable model at hacking so far. It also said
+    GLM-5.3 was "significantly lower" than the best US models, about four months behind
+    on its tests. Anthropic, an AI company, reported on 29 September that in its tests
+    GLM-5.3 built working attacks about as often as its own model Claude Mythos
+    Preview, announced about five months earlier: 50 of 410 attempts against 56 on one
+    test. Anthropic also found GLM-5.3's safety limits easy to get around. So on these
+    tests downloadable models have reached about where the leading models were a few
+    months before, and they still trail the newest US models, some of which are
+    released only to vetted users. Tests are not real-world attack ability. Earlier
+    guesses in the discussion were slower. In August 2026 hadad put 85% on a
+    downloadable model hacking as well as Mythos, a leading model, within 24 months,
+    and Vladimir_Nesov guessed "maybe 2 years, in 2028". In October 2026 the writer Zvi
+    judged the best downloadable model "more than six months behind". Forecasters at
+    the forecasting site Metaculus put about 95% on one matching Mythos on a hacking
+    test before July 2027.
   sources:
+    - title: CAISI's Assessment of Z.ai's GLM-5.3 Cyber Capabilities (17 September 2026),
+        NIST
+      url: https://www.nist.gov/news-events/news/2026/09/caisis-assessment-zais-glm-53-cyber-capabilities
+    - title: GLM-5.3 and the spread of advanced cyber capabilities (29 September 2026),
+        Anthropic
+      url: https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities
+    - title: Post-Glasswing cybersecurity projects, osmarks (pointed to the Anthropic
+        report)
+      url: https://www.lesswrong.com/posts/nW3g2spGXuoLsRsWh/post-glasswing-cybersecurity-projects
     - title: On Open-Weights Mythos Capabilities, hadad
       url: https://www.lesswrong.com/posts/wJunGnpY3qACWSvnh/on-open-weights-mythos-capabilities
     - title: The Hackening, Zvi
@@ -191,7 +237,7 @@
   status: partly_answered
   current_best_answer: >-
     Disputed, and nothing here is a recommendation to move your money. Grendel1209, who
-    describes working at a threat-intelligence company, recommends a top-five bank, on the
+    described working in cybersecurity at a threat-intelligence company, recommends a top-five bank, on the
     view that only the biggest firms can afford strong defenses. Thane Ruthenis
     suggests splitting money across several different banks. The maintainer's own
     reasoning, which is untested, is that a big bank and a credit union may not fail at
@@ -202,3 +248,19 @@
     - title: Comment by Thane Ruthenis
       url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/4bAkyL8jgkmpoCFkc
   related_advice: [ big-bank-or-credit-union ]
+
+- id: which-password-manager
+  question: Are some password managers safer than others, and is a good one good enough?
+  asked_by:
+    - author: Elizabeth
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=NFq8kLF6eXRdjKJKg
+  status: open
+  current_best_answer: >-
+    Nobody in the discussion has answered yet. Elizabeth asks whether one well-known
+    password manager is better than another, naming LastPass and 1Password, and whether
+    the better one is good enough. This site has not compared them or checked either
+    one's record. Its guide says the free password managers built into Apple and Google
+    devices are enough to start with. Elizabeth also points out that replacing old
+    backup codes (the one-time codes that let you into an account without your phone)
+    seems worth doing but was on nobody's list; the backup guide now includes it.
+  related_advice: [ password-manager-unique-passwords, offline-backups ]

@@ -11,34 +11,40 @@
 
 - id: faa-ground-stop-2026-11
   date: 2026-11-13
-  title: FAA halts US flights for four hours after a communications failure; officials see
-    no sign of an attack
+  title: FAA halts US flights for four hours after a router floods its network; officials
+    see no sign of an attack or of AI
   kind: current
   type: outage
   summary: >-
     The FAA, the US aviation regulator, halted departures nationwide for more than four
     hours on 13 Nov 2026 after communications failed at its regional air traffic control
-    centers. Homeland Security Secretary Markwayne Mullin said there was no indication
-    "as of yet" of an attack. Transportation Secretary Sean Duffy said routers on an
-    outdated system were overloaded with data. The cause is still being investigated.
+    centers. Officials traced it to a router that flooded the network with data during a
+    contractor's cable upgrade, and said they found no evidence of an attack or of AI
+    involvement. Whether the router was faulty or wrongly installed is still being
+    investigated.
   impact: >-
-    Departures were halted for more than four hours, until 8:15 p.m. Eastern. More than
-    4,000 flights were cancelled and more than 10,000 delayed by late on 13 Nov 2026
-    (FlightAware figures reported by CBS News); later counts are higher. At least 827
-    flights were diverted as of 7:05 p.m. (Cirium figures reported by OPB).
+    Departures were halted for more than four hours, until about 8:15 p.m. Eastern on
+    13 Nov 2026. About 9,159 flights were cancelled and 7,190 delayed that day
+    (FlightAware figures reported by CBS News on 14 Nov), and more than 6,400 were
+    cancelled the next day (FlightAware, as of 9 p.m. Eastern on 14 Nov, reported by
+    Yahoo News). The FAA's chief said about 12,000 flights could not be completed on
+    13 Nov. At least 827 flights were diverted as of 7:05 p.m. that day (Cirium figures
+    reported by OPB).
   ai_involvement:
     - stage: attack
       level: unlikely
-      note: Mullin said there was no indication, as of yet, of a "nefarious act". Duffy blamed
-        routers overloaded with data on an outdated system, and CBS News, citing unnamed
-        sources, reported that a software update to the communications network set it
-        off. This is preliminary and nothing has been formally ruled out.
+      note: Transportation Secretary Sean Duffy said on 14 Nov "we don't believe this was
+        cyber at all". He said a router being swapped during a contractor's
+        copper-to-fiber cable upgrade "started flooding other routers", and FAA chief
+        Bryan Bedford said "we have an equipment issue". The contractor, L3Harris, says
+        it is supporting the investigation. No final finding has been published.
     - stage: agent_behavior
       level: unlikely
-      note: Mullin said investigators would look at any link to the FAA's new AI tool that
-        suggests flight reroutes (OPB). Wikipedia cites the Washington Times as reporting
-        that the FAA denies the tool was a cause; we could not open that article
-        ourselves.
+      note: The FAA had widened its use of a new AI traffic-management tool, SMART, days
+        earlier. Bedford said on 14 Nov that officials found "zero evidence of anything
+        nefarious and zero evidence of anything AI related" (Yahoo News). The tool's
+        maker, Air Space Intelligence, said the ground stop "is not based on or a result
+        of the SMART system".
   related_advice: []
   sources:
     - title: Flights halted at airports across US due to air traffic control communications
@@ -46,6 +52,11 @@
       url: https://www.opb.org/article/2026/11/13/flights-halted-at-airports-across-us-due-to-air-traffic-control-communications-problems/
     - title: FAA issues nationwide ground stop, CBS News
       url: https://www.cbsnews.com/news/faa-issues-nationwide-ground-stop/
+    - title: Travelers stranded and thousands of flights canceled after FAA ground stop, CBS
+        News
+      url: https://www.cbsnews.com/news/faa-ground-stop-canceled-flights-travelers-what-we-know/
+    - title: FAA ground stop latest updates, Yahoo News
+      url: https://www.yahoo.com/news/us/live/faa-ground-stop-latest-updates-duffy-blames-contractor-l3harris-thousands-more-flights-canceled-saturday-no-sign-of-cyberattack-161329174.html
     - title: FAA issues nationwide ground stop, KSAT
       url: https://www.ksat.com/news/local/2026/11/13/faa-issues-nationwide-groundstop/
     - title: 2026 FAA communication outage, Wikipedia
@@ -53,7 +64,7 @@
     - title: Post by Transportation Secretary Sean Duffy on X
       url: https://x.com/SecDuffy/status/2121351591106072679
   needs_research: true
-  updated: 2026-11-14
+  updated: 2026-11-15
 
 - id: microsoft-365-outage-2026-11
   date: 2026-11-12
@@ -62,20 +73,22 @@
   type: overload
   summary: >-
     Microsoft's work email and collaboration services, including Outlook, Teams and
-    Copilot, were disrupted worldwide from 12 Nov 2026 and were still recovering a day
-    later. Microsoft said it had no evidence of malicious activity. It said servers
-    became unexpectedly unavailable and began rolling back a recent network change that
-    coincided with the start. It has not confirmed a cause.
+    Copilot, were disrupted worldwide for more than a day from 12 Nov 2026. Microsoft
+    said the fault came from a problem during an earlier upgrade to its network, and
+    that it found no sign of a cyberattack. Service is restored; its full report on the
+    cause is still to come.
   impact: Worldwide email and collaboration disruption. Email trouble was first reported
     in the Americas on 12 Nov 2026, and the wider incident began at 1:26 PM ET that day.
-    It ran into a second day and was still open, with no confirmed end time, as of the
-    13 Nov reports we have seen.
+    It ran into a second day. Microsoft said on 14 Nov 2026 that service had been
+    restored to all customers and regions (CNBC); delayed email took longer to clear.
   ai_involvement:
     - stage: attack
       level: unlikely
-      note: Microsoft (incident MO1550821) said on 13 Nov it had no evidence of malicious
-        activity. It has pointed to overloaded servers and began rolling back a network
-        change, but it has not confirmed a cause; it has promised a post-incident report.
+      note: Microsoft said the disruption stemmed from "an issue during an earlier network
+        capacity upgrade" and that it had detected no malicious activity (CNBC, 14 Nov).
+        A status tracker's copy of Microsoft's final update on incident MO1550821 says
+        it was a technical fault unrelated to cyber activity or to AI agents; we could
+        not open Microsoft's own page. Its post-incident report is still to come.
   related_advice: [ offline-backups ]
   sources:
     - title: Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide,
@@ -83,10 +96,117 @@
       url: https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/
     - title: Microsoft 365 outage disrupts Outlook, Exchange Online and Teams, SecurityWeek
       url: https://www.securityweek.com/microsoft-365-outage-disrupts-outlook-exchange-online-and-teams/
+    - title: Microsoft apologizes for massive outage that took down Outlook and other 365
+        services, CNBC
+      url: https://www.cnbc.com/2026/11/12/microsoft-outage-outlook-aws-google.html
+    - title: MO1550821, Users may be unable to connect to multiple Microsoft 365 services,
+        Cloud Admin Hub (copy of Microsoft's status updates)
+      url: https://www.cloudadminhub.com/microsoft-365-service-health/mo1550821/
     - title: Microsoft 365 Status post on X
       url: https://x.com/MSFT365Status/status/2120938282204688468
   needs_research: true
-  updated: 2026-11-14
+  updated: 2026-11-15
+
+- id: fbi-artex-alert-2026-11
+  date: 2026-11-13
+  title: FBI warns that an AI tool is automating break-ins "at machine speed"
+  kind: current
+  type: advisory
+  summary: >-
+    The FBI warned on 13 Nov 2026 that hackers are using ARTEX, a freely shared AI
+    tool, to carry out break-ins largely on its own, from scouting a target to taking
+    data, sometimes in under three hours. It cites attacks on South Korean financial
+    firms and on customers of the software supplier ConnectWise. Copies of the tool
+    keep spreading.
+  impact: A warning, not a single attack. The FBI says ARTEX has been used since at least
+    August 2026 against organizations in finance, government, energy, healthcare,
+    telecoms and other fields, and that researchers had found more than 1,600 ARTEX
+    control panels visible on the internet as of early November 2026.
+  ai_involvement:
+    - stage: attack
+      level: confirmed
+      note: The FBI's alert (FLASH-20261113-001) says attackers have used ARTEX "to automate
+        multiple phases of cyber intrusions at machine speed, from reconnaissance through
+        data exfiltration", with some going "from initial targeting to privileged access
+        in under three hours".
+  related_advice: [ shrink-patch-lag ]
+  sources:
+    - title: Threat Overview of ARTEX Autonomous Penetration Testing Framework
+        (FLASH-20261113-001), FBI
+      url: https://www.ic3.gov/CSA/2026/261113.pdf
+    - title: FBI flash alert says Artex tool automating cyberattacks at 'machine speed', The
+        Record
+      url: https://therecord.media/artex-ai-tool-fbi-flash-alert
+  updated: 2026-11-15
+
+- id: facestealer-2026-11
+  date: 2026-11-12
+  title: US disrupts North Korean fake-video-call scheme that stole $400 million in crypto
+  kind: current
+  type: crypto-theft
+  summary: >-
+    North Korean hackers stole more than $400 million in crypto over 18 months by
+    inviting people to fake video meetings that installed malicious software, the US
+    Justice Department said on 12 Nov 2026. They replayed secretly recorded video of
+    earlier victims and, the department says, AI-made fake video of well-known people.
+    US authorities seized the servers behind it.
+  impact: More than $400 million stolen over 18 months, by the Justice Department's
+    figure (12 Nov 2026). The FBI seized over 900 secretly recorded webcam videos of
+    victims. The security firm Arctic Wolf counted 677 people targeted in 58 countries,
+    mostly company founders and senior executives (reported by BleepingComputer, 14
+    Nov 2026).
+  ai_involvement:
+    - stage: attack
+      level: confirmed
+      note: The Justice Department says the scheme relied on secretly recorded videos and on
+        deepfakes, and that the hackers used AI to make fake videos of well-known people
+        in crypto, shown in meetings to win a target's trust. Recorded video of real
+        victims was the other main trick.
+  related_advice: [ hang-up-and-call-back, avoid-self-custody-savings ]
+  sources:
+    - title: Justice Department Announces Actions to Disrupt North Korea's Massive Theft of
+        Cryptocurrency, US Department of Justice
+      url: https://www.justice.gov/opa/pr/justice-department-announces-actions-disrupt-north-koreas-massive-theft-cryptocurrency
+    - title: US disrupts North Korean campaign behind $400 million crypto theft,
+        BleepingComputer
+      url: https://www.bleepingcomputer.com/news/security/us-disrupts-north-korean-campaign-behind-400-million-crypto-theft/
+    - title: Feds announce seizure of $1.2 billion from Binance theft; also takedown of
+        'FaceStealer' tools, The Record
+      url: https://therecord.media/stolen-binance-crypto-recovered-doj-facestealer-disrupted
+  updated: 2026-11-15
+
+- id: cairn-china-unit42-2026-11
+  date: 2026-11-12
+  title: Security firm finds China-linked hackers used AI agents to break into 10
+    organizations
+  kind: current
+  type: one-to-many
+  count: { total: 19, hit: 10, spread: scatter, caption: "Break-ins confirmed at 10 of at least 19 organizations targeted." }
+  summary: >-
+    China-linked hackers used AI agents to break into 10 organizations in August and
+    September 2026, the security firm Palo Alto Networks reported on 12 Nov. The
+    hackers named a target and a goal; the AI planned and carried out the steps.
+    Targets included computer-chip suppliers, defence-policy groups and a US teachers'
+    union, where over a million member records were reached.
+  impact: 25 attack runs against at least 19 organizations, with access or data taken
+    confirmed at 10, each run lasting between 20 minutes and more than 50 hours
+    (Palo Alto Networks, 12 Nov 2026). The firm says the AI raised the number of
+    targets attacked, not the difficulty of the attacks; the weaknesses used were
+    already known.
+  ai_involvement:
+    - stage: attack
+      level: confirmed
+      note: Unit 42, Palo Alto Networks' research team, says "The attackers supplied a target
+        and a goal, then Cairn planned, executed and recorded results on its own." Cairn
+        is an AI agent system. Unit 42 judges with moderate confidence that this was
+        Chinese intelligence gathering by one operator or a small team. No victim has
+        confirmed it publicly. This is a separate campaign from the 100-website one.
+  related_advice: [ uneven-hygiene ]
+  sources:
+    - title: Attackers Use Autonomous AI to Target Semiconductor, Defense and Civil Society
+        Sectors, Unit 42
+      url: https://unit42.paloaltonetworks.com/cairn-framework-ai-autonomous-attacks/
+  updated: 2026-11-15
 
 - id: cold-chain-hacks-2026-11
   date: 2026-11-05
@@ -98,22 +218,29 @@
     warned the FBI, the US cybersecurity agency CISA and three other federal
     departments. Reported targets include supermarket freezers in at least a dozen
     European countries, where food spoiled, freezers run by the US military, and a
-    French blood bank (stopped before supplies were harmed). Some units no longer
-    receive updates.
+    French blood bank (stopped before supplies were harmed). France has formally blamed
+    hackers linked to Iran's Revolutionary Guard.
   impact: Food spoiled in several European countries, and medical cold storage was
-    targeted. Security researchers point to Iran; the US government has not officially
-    blamed anyone (as of 5 Nov 2026).
+    targeted. France says attacks on 11-12 Oct 2026 hit refrigeration at about 700
+    shops, spoiled food worth millions of euros and started at least 15 fires, and it
+    formally blamed hackers linked to Iran's Revolutionary Guard (reported 10 Nov
+    2026). The US government has not officially blamed anyone (as of 10 Nov 2026).
   ai_involvement:
     - stage: attack
       level: unknown
-      note: No official has attributed the intrusions to AI, and the report we cite does not
+      note: No official has attributed the intrusions to AI, and the reports we cite do not
         mention AI.
   related_advice: [ water-food-medications, shrink-patch-lag ]
   sources:
     - title: US government warns of ongoing cyber threat amid mass hacks of industrial, retail
         and military freezers, TechCrunch
       url: https://techcrunch.com/2026/11/05/u-s-government-warns-of-ongoing-cyber-threat-amid-mass-hacks-of-industrial-retail-and-military-freezers/
-  updated: 2026-11-14
+    - title: France attributes grocery hacks to Iran-backed threat actors, Cybersecurity Dive
+        via Yahoo News
+      url: https://www.yahoo.com/news/us/articles/france-attributes-grocery-hacks-iran-153342260.html
+    - title: Trail of Iran's fridge hackers traced to US equipment, The National
+      url: https://www.thenationalnews.com/news/europe/2026/11/10/trail-of-irans-fridge-hackers-traced-to-us-equipment/
+  updated: 2026-11-15
 
 - id: india-lenders-ai-agents-2026-11
   date: 2026-11-04
@@ -132,14 +259,17 @@
     - stage: attack
       level: suspected
       note: The Home Ministry says criminals have used AI agents to break into systems, and
-        CERT-In describes AI-driven scanning and attack scripts by a group it calls CRAFTY
-        FALCON. Neither names a victim or ties any particular loss, including
-        Spandana's, to AI. This rests on The Week's account of the advisories.
+        CERT-In's advisory of 4 Nov (CIAD-2026-0058) describes AI-driven scanning and
+        attack scripts by a group it calls CRAFTY FALCON. Neither names a victim or ties
+        any particular loss, including Spandana's, to AI. This rests on The Week's and
+        Infosecurity Magazine's accounts of the advisories.
   related_advice: []
   sources:
     - title: Spandana Sphoorty cyber fraud and the Home Ministry advisory, The Week
       url: https://www.theweek.in/news/sci-tech/2026/11/05/spandana-sphoorty-cyber-fraud-mha-advisory.html
-  updated: 2026-11-14
+    - title: India warns of AI-driven cyberattacks on financial firms, Infosecurity Magazine
+      url: https://www.infosecurity-magazine.com/news/india-warns-ai-cyberattacks/
+  updated: 2026-11-15
 
 - id: arkea-heist-2026-11
   date: 2026-11-01
@@ -177,10 +307,14 @@
     The FBI blamed North Korea's TraderTraitor hacking group on 31 Oct. Binance said it
     would bear the loss itself, not its users, and began reopening withdrawals on 1 Nov.
     Binance says the way in was a fake job interview that got an engineer to install
-    malicious code.
+    malicious code. More than $2.7 billion has since been frozen, the US Justice
+    Department said on 12 Nov.
   impact: About $6.34 billion taken, by Binance's figure. Withdrawals were suspended for
     several days. About $2.85 billion had been frozen or intercepted as of 3 Nov 2026
-    (Binance's figure, reported by BleepingComputer).
+    (Binance's figure, reported by BleepingComputer). The US Justice Department said on
+    12 Nov 2026 that more than $2.7 billion had been frozen by government and private
+    efforts, and that it had court approval to seize or hold more than $1.2 billion of
+    that. Frozen is not yet returned.
   ai_involvement:
     - stage: attack
       level: suspected
@@ -206,8 +340,11 @@
     - title: Binance heist is stark example of AI governance gaps and basic security
         failures, CSO
       url: https://www.csoonline.com/article/4245354/binance-heist-is-stark-example-of-ai-governance-gaps-and-basic-security-failures.html
+    - title: Justice Department Announces Actions to Disrupt North Korea's Massive Theft of
+        Cryptocurrency, US Department of Justice
+      url: https://www.justice.gov/opa/pr/justice-department-announces-actions-disrupt-north-koreas-massive-theft-cryptocurrency
   needs_research: true
-  updated: 2026-11-14
+  updated: 2026-11-15
 
 - id: banks-detect-ai-agents-2026-10
   date: 2026-10-22
@@ -251,7 +388,9 @@
     while administrators installed it. Older PHP versions no longer get regular fixes;
     the PHP team issued minimal patches for some of them.
   impact: Widespread temporary site shutdowns; a large share of sites run PHP versions
-    that no longer get regular fixes.
+    that no longer get regular fixes. From 30 Oct 2026, attackers used the flaws to get
+    into security devices made by Check Point and then wiped data at organizations in
+    Israel, Check Point said (reported 13 Nov 2026). It gave no count of victims.
   ai_involvement:
     - stage: discovery
       level: confirmed
@@ -261,16 +400,22 @@
     - stage: attack
       level: unknown
       note: Amazon reported attacks using the flaws from 17 October, four days before the fix
-        was released; whether the attackers used AI is not known.
+        was released; whether the attackers used AI is not known. The reports of the
+        Check Point attacks do not mention AI.
   related_advice: [ shrink-patch-lag ]
   sources:
     - title: Coordinated disclosure of critical vulnerabilities, OpenAI
       url: https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/
     - title: Websites shut down globally after AI finds cybersecurity flaw, CNN
       url: https://www.cnn.com/2026/10/21/tech/php2shell-vulnerability-ai-intl
+    - title: PHP2Shell Exploited in Destructive Check Point Gateway Attacks, SecurityWeek
+      url: https://www.securityweek.com/php2shell-exploited-in-destructive-check-point-gateway-attacks/
+    - title: Check Point gateways hacked via PHP2Shell to deploy VMware ESXi wiper,
+        BleepingComputer
+      url: https://www.bleepingcomputer.com/news/security/check-point-gateways-hacked-via-php2shell-to-deploy-vmware-esxi-wiper/
     - title: The Hackening, Zvi
       url: https://www.lesswrong.com/posts/iqgZaJMnmyDCYfnuC/the-hackening-1
-  updated: 2026-11-14
+  updated: 2026-11-15
 
 - id: storm-0940-artex-2026-10
   date: 2026-10-21
@@ -284,7 +429,8 @@
     own. Microsoft also blames the group for a break-in at ConnectWise, a software
     supplier, that reached its customers.
   impact: Hundreds of organizations were targeted. The Microsoft statement we have seen
-    does not say how many were broken into.
+    does not say how many were broken into. An FBI alert of 13 Nov 2026 says the
+    ConnectWise break-in opened a way in to more than 2,250 of its customers' accounts.
   ai_involvement:
     - stage: attack
       level: confirmed
@@ -294,9 +440,12 @@
   sources:
     - title: Microsoft Threat Intelligence post on X
       url: https://x.com/MsftSecIntel/status/2112975078266716390
+    - title: Threat Overview of ARTEX Autonomous Penetration Testing Framework
+        (FLASH-20261113-001), FBI
+      url: https://www.ic3.gov/CSA/2026/261113.pdf
     - title: The Hackening, Zvi
       url: https://www.lesswrong.com/posts/iqgZaJMnmyDCYfnuC/the-hackening-1
-  updated: 2026-11-14
+  updated: 2026-11-15
 
 - id: cairn-campaign-2026-10
   date: 2026-10-19
@@ -335,26 +484,34 @@
 
 - id: south-korea-banks-2026-10
   date: 2026-10-01
-  title: Hacks leak about 473,000 records at 37 South Korean financial firms; AI suspected
+  title: Hacks leak about 473,000 records at 37 South Korean financial firms; AI used in
+    some
   kind: current
   type: data-theft
   summary: >-
     Between 30 Sept and 3 Nov 2026, 37 South Korean financial firms, four of them
     banks, reported hacks that leaked about 473,000 personal records, regulators said on
     5 Nov. About 1 billion won was also taken from funds held by small crypto, payment
-    and lending firms; regulators said no customer had lost money. President Lee said
-    there were signs AI was used.
+    and lending firms; regulators said no customer had lost money. The FBI and the
+    security firm CrowdStrike say an AI attack tool was used in some of the hacks.
   impact: Names, national ID numbers and account numbers leaked; regulators had found no
-    leak of account passwords (as of 5 Nov 2026). Instant-access deposits at the five
-    biggest banks fell about 3%, from 675.5 to 655.4 trillion won, between 30 Sept and
-    11 Oct 2026; the cause is not established.
+    leak of account passwords (as of 5 Nov 2026). Since that count, the broker Mirae
+    Asset Securities reported a leak covering about 39,000 customers and staff (9 Nov),
+    and the Financial Security Institute, the industry's own security body, found on
+    9 Nov that about 130 files from 48 firms had been taken from it (as of 13 Nov 2026).
+    Instant-access deposits at the five biggest banks fell about 3%, from 675.5 to 655.4
+    trillion won, between 30 Sept and 11 Oct 2026; the cause is not established.
   ai_involvement:
     - stage: attack
-      level: suspected
-      note: President Lee said on 6 Oct 2026 that "signs have emerged of AI being used" in some
-        of the hacks (Reuters). A server used in the attacks reportedly carried text
-        linked to the ARTEX AI attack tool, which BleepingComputer notes does not
-        confirm its use. Police are still investigating.
+      level: confirmed
+      note: This covers some of the hacks, not necessarily all 37 firms. CrowdStrike reported
+        on 7 Oct 2026 that an attacker "targeted South Korean financial organizations
+        with extensive activity leveraging ARTEX and LLMs", meaning an AI attack tool
+        and AI language models. An FBI alert of 13 Nov says ARTEX attacks took personal
+        details of about 67,000 people from South Korean financial firms. President Lee
+        said on 6 Oct that "signs have emerged of AI being used" (Reuters). Korean police
+        have not published findings, and nobody has said AI was used against Mirae
+        Asset or the Financial Security Institute.
   related_advice: [ freeze-everything, act-on-early-signals ]
   sources:
     - title: 37 financial firms leaked 473,000 records and about 1 billion won was taken (in
@@ -373,8 +530,19 @@
     - title: Banks race to ramp up AI defenses as deposits fall after cyberattacks, The Korea
         Times
       url: https://www.koreatimes.co.kr/business/banking-finance/20261011/banks-race-to-ramp-up-ai-defenses-as-deposits-fall-after-cyberattacks
+    - title: Unknown Threat Actor Uses AI-Driven ARTEX to Target South Korean Finance,
+        CrowdStrike
+      url: https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/
+    - title: Threat Overview of ARTEX Autonomous Penetration Testing Framework
+        (FLASH-20261113-001), FBI
+      url: https://www.ic3.gov/CSA/2026/261113.pdf
+    - title: FSS Launches On-Site Inspection of Mirae Asset Securities, Seoul Economic Daily
+      url: https://en.sedaily.com/finance/2026/11/09/fss-launches-on-site-inspection-of-mirae-asset-securities
+    - title: Korea's Financial Security Institute Apologizes for Hack; Regulator Opens Audit,
+        Seoul Economic Daily
+      url: https://en.sedaily.com/finance/2026/11/13/koreas-financial-security-agency-apologizes-for-hack
   needs_research: true
-  updated: 2026-11-14
+  updated: 2026-11-15
 
 - id: polymarket-vendor-2026-06
   date: 2026-06-25

@@ -150,11 +150,11 @@ home:
         October 2026. Microsoft has not said how many were broken into.
     - incident: south-korea-banks-2026-10
       figure: 37 financial firms
-      label: leaked personal records in five weeks; AI suspected
+      label: leaked personal records in five weeks; AI used in some
       text: >-
         South Korean regulators counted about 473,000 leaked records as of 3 Nov
-        2026. Four of the firms are banks. The president said there were signs AI was
-        used; that is not confirmed.
+        2026. Four of the firms are banks. The FBI and the security firm CrowdStrike
+        say an AI attack tool was used in some of the hacks.
   then_now_title: What changed
   chart_about: About this chart
   then_now_head: [ Before, Now ]

@@ -97,7 +97,7 @@ Link the comments or sources for each side under `thread_refs` or `sources`. The
 Add an entry to `data/incidents.yaml`. The log is a small set of real, dated events that inform the advice, not a news feed.
 
 - `kind` is `current` for a Hackening-era event, or `precedent` for an older event used for calibration.
-- Rate `ai_involvement` separately for each stage you have information on (`discovery`, `attack`, `agent_behavior`), using `confirmed`, `suspected`, `unlikely` or `unknown`. Use `confirmed` only when the victim, the supplier or an official investigator says AI was used in that stage of that event. A report from unnamed sources, a private researcher or a security company is `suspected`. Put who said it in `note`.
+- Rate `ai_involvement` separately for each stage you have information on (`discovery`, `attack`, `agent_behavior`), using `confirmed`, `suspected`, `unlikely` or `unknown`. Use `confirmed` only when the victim, the supplier, an official investigator, or a reputable outside organisation such as an established security firm says AI was used in that stage of that event. A report from unnamed sources or an individual researcher with no established organisation behind them is `suspected`. Put who said it in `note`.
 - Open the source before you write a figure, and put a date on any figure that can change ("as of 5 Nov 2026"). Do not rely on a summary of a source, and do not cite an AI-generated summary.
 - Do not credit an AI-generated comment as a contributor or as support for an estimate. If one has to be mentioned, call it "an AI-generated comment in the thread".
 - List the advice it informs under `related_advice`.

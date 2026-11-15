@@ -50,6 +50,10 @@
     - author: gilch
       url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/stH7hqL88qd7uXeq7
       note: Use a completely different password for each financial account.
+    - author: Philipp Risius
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=FsnPHYaFecmhwKcA2
+      note: Use a password manager, ideally protected with a hardware security key, and
+        keep paper copies of important passwords and recovery codes somewhere safe.
   checklist: true
   checklist_text: Use a password manager and a different password on every account,
     starting with email and money accounts.
@@ -64,6 +68,8 @@
       link: "Google: Password Manager"
     - do: Protect the manager itself with a strong screen lock on your phone and computer.
       detail: A dedicated manager has one main password. Make it long, use it nowhere else, and write it on paper kept somewhere safe at home.
+    - do: If you use a dedicated password manager, add a security key or passkey to that account too.
+      detail: Look in its security settings. A security key is a small USB device; a passkey uses your phone's screen lock. Keep a backup way in, on paper.
     - do: Change your email password first, letting the manager create and save a long random one.
       detail: "Open your email by typing its address yourself. When you choose a new password, accept the one the manager suggests."
     - do: Do the same for each bank, card, brokerage and payment account.
@@ -72,7 +78,7 @@
     - do: If the manager warns that a password is reused or has leaked, change that one next.
     - do: Never type a password into a page you reached from a link in a message.
       detail: Type the site's address yourself or use its app.
-  updated: 2026-11-14
+  updated: 2026-11-15
 
 - id: hang-up-and-call-back
   threat_model: personal
@@ -370,6 +376,13 @@
       url: https://support.google.com/accounts/answer/13548313
     - title: The Hackening (Peter Wildeford's list), Zvi
       url: https://www.lesswrong.com/posts/iqgZaJMnmyDCYfnuC/the-hackening-1
+    - title: Set up recovery options, Google Account Help
+      url: https://support.google.com/accounts/answer/183723
+    - title: Microsoft account security info and verification codes, Microsoft Support
+      url: https://support.microsoft.com/en-us/account-billing/microsoft-account-security-info-verification-codes-bf2505ca-cae5-c5b4-77d1-69d3343a5452
+    - title: A digital security checklist for the AI age, Girish Gupta (suggests checking
+        an email account's recovery options)
+      url: https://girishgupta.com/beyond-the-parrot/20260810-digital-security-checklist-for-the-age-of-ai/
   thread_refs:
     - author: Terence Coelho
       url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/EMkqX2trSffWznaXv
@@ -407,11 +420,15 @@
       link: "Google: backup codes"
     - do: Only then, remove text messages as a sign-in option on your email account.
       detail: Adding a passkey leaves text codes switched on. In the security settings, find the sign-in or 2-step methods and remove the text-message option.
+    - do: Check your email account's recovery options and remove any old phone number or email address.
+      detail: "In a Google Account, open \"Security & sign-in\", then \"Recovery phone\" and \"Recovery email\". In a Microsoft account, open Security, then \"Manage how I sign in\". Keep one current way back in."
+      url: https://support.google.com/accounts/answer/183723
+      link: "Google: recovery options"
     - do: Repeat on each bank and money account that offers a passkey or security key.
       detail: A security key is a small USB device, roughly $30 to $60. An authenticator app (a phone app showing login codes) beats text codes but can be fooled by fake login pages.
     - do: If text codes are the only extra step your bank offers, leave them on.
       detail: They are much better than nothing, and the carrier locks above protect them.
-  updated: 2026-11-14
+  updated: 2026-11-15
 
 - id: freeze-everything
   threat_model: personal
@@ -860,7 +877,7 @@
     trigger must be narrow. Stolen customer records, and the events on this site's news
     page, do not meet it. The precedents are thin: in June 2015 Greece closed its banks
     for almost three weeks and capped withdrawals at €60 a day, in a debt crisis, not a
-    cyberattack. After suspected AI-assisted breaches in South Korea in 2026,
+    cyberattack. After breaches in South Korea in 2026, some of them AI-assisted,
     instant-access deposits at the five biggest banks fell about 3%; the cause is not
     established.
   protects_against: Deciding in a panic, or being short of cash in a long outage
@@ -1071,8 +1088,8 @@
   confidence: speculative
   review_status: unreviewed
   sides:
-    for: Grendel1209, who says they work at a threat-intelligence company, recommends
-      switching to a top-5 bank.
+    for: Grendel1209, who described working in cybersecurity at a threat-intelligence
+      company, recommends switching to a top-5 bank.
     against: hadad judges big and regional banks roughly equally risky, since bigger targets
       have only slightly better security.
     synthesis: "Our view: hold an account at each kind if you can. Where to keep long-term
@@ -1091,7 +1108,7 @@
       url: https://www.lesswrong.com/posts/wJunGnpY3qACWSvnh/on-open-weights-mythos-capabilities
       note: Big and regional banks roughly equally risky.
   checklist: false
-  updated: 2026-11-14
+  updated: 2026-11-15
 
 # ---------------------------------------------------------------- crypto
 
@@ -1251,10 +1268,12 @@
     storms and earthquakes.
   advice: >-
     Keep about two weeks of water, shelf-stable food, and daily medications, plus a
-    first-aid kit.
+    first-aid kit, a flashlight and a battery radio.
   why: >-
     Two weeks is the Red Cross figure for water and food when staying at home; its list
-    says seven days for medications, so two weeks of those is our own margin. Storms and
+    says seven days for medications, so two weeks of those is our own margin. The same
+    list includes a flashlight, a battery-powered or hand-crank radio, extra batteries
+    and phone chargers, for when the power is out. Storms and
     earthquakes justify the supplies even if no attack comes. Water and sewer systems
     are split among many separate operators and look unusually exposed to cyberattacks.
     Whether the three to seven days in most guides is enough here is an open question.
@@ -1283,6 +1302,11 @@
     - author: Grendel1209
       url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/NGfGhPs7zD9EbLygc
       note: Keep emergency supplies that last several weeks, and a basic first-aid kit.
+    - author: Philipp Risius
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=FsnPHYaFecmhwKcA2
+      note: Plan for up to two weeks without mains electricity, with a large power bank
+        that can run mains devices, a 100-watt solar panel, a hand-crank radio and a
+        flashlight.
   checklist: true
   checklist_text: Keep about two weeks of water, food and daily medications, plus a first-aid kit.
   steps:
@@ -1296,9 +1320,14 @@
     - do: Ask your doctor or pharmacist how to keep two extra weeks of your daily medications.
       detail: "Ask: \"Can I get an early refill or a longer supply, so I have a reserve?\""
     - do: Buy a first-aid kit and keep it with the supplies.
+    - do: Add a flashlight, spare batteries, a battery-powered or hand-crank radio, and a power bank to charge phones.
+      detail: The Red Cross list names a flashlight, a radio, extra batteries and phone chargers. Philipp Risius also suggests a solar panel and a power bank big enough for mains devices; those are optional.
+      url: https://www.redcross.org/get-help/how-to-prepare-for-emergencies/survival-kit-supplies.html
+      link: Red Cross supply list
     - do: Write today's date on everything and store it together.
     - do: Set a reminder every six months to use up and replace the oldest food, water and medications.
-  updated: 2026-11-14
+      detail: Recharge the power bank and check the flashlight and radio batteries at the same time.
+  updated: 2026-11-15
 
 - id: offline-backups
   threat_model: infrastructure
@@ -1345,6 +1374,14 @@
       url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/EAifqfeEHYQ6QJscX
       note: Keep offline or physical copies of key documents, with sensitive information
         under lock and key.
+    - author: Philipp Risius
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=FsnPHYaFecmhwKcA2
+      note: Keep two backups, one kept unplugged and one away from home, protect them with
+        a password, and check that you can get your files back from them.
+    - author: Elizabeth
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=NFq8kLF6eXRdjKJKg
+      note: Suggests that replacing old backup codes would help, and notes it was on
+        nobody's list.
   checklist: true
   checklist_text: Back up important files to a drive you keep unplugged and locked away,
     with recovery codes on paper somewhere else.
@@ -1361,12 +1398,20 @@
       detail: "Look in each account's security settings for \"backup codes\" or \"recovery codes\". Google offers them only once 2-Step Verification is on. Never send these codes to anyone."
       url: https://support.google.com/accounts/answer/1187538
       link: "Google: backup codes"
+    - do: If old backup codes were ever saved in email, notes or a screenshot, create a new set.
+      detail: With Google, creating a new set switches the old codes off. Other accounts usually have a similar button in their security settings.
+      url: https://support.google.com/accounts/answer/1187538
+      link: "Google: get new backup codes"
     - do: Keep the paper codes somewhere separate from the drive.
+    - do: "Test the backup: open two or three files from the drive on another device."
+      detail: A backup nobody has opened may not work. Use a device you trust.
     - do: Eject the drive, unplug it, and keep it somewhere locked at home.
     - do: If you can, use two drives and alternate them.
       detail: Then one bad copy can't ruin your only backup.
+    - do: If you can, keep a second password-protected copy outside your home.
+      detail: For example with a relative you trust. A fire, flood or burglary could take everything kept in one place.
     - do: Set a monthly reminder to plug the drive in, copy anything new, and unplug it again.
-  updated: 2026-11-14
+  updated: 2026-11-15
 
 - id: offline-maps-and-addresses
   threat_model: infrastructure
@@ -1448,6 +1493,8 @@
       url: https://github.com/Crosstalk-Solutions/project-nomad
     - title: Homesteading and survival manuals library, Internet Archive
       url: https://archive.org/details/homesteading-survival-manuals/Full-First-Aid-Manual-FM-2111/
+    - title: Kiwix (nonprofit offline reader for Wikipedia and other reference works)
+      url: https://kiwix.org/en/
   thread_refs:
     - author: Elizabeth
       url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=NLA7sR9nfjiisGCex
@@ -1459,8 +1506,21 @@
         every book.
     - author: Brendan Long
       url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=zBhs9bduESRzFjXDa
-      note: Asks, half in jest, whether any laptop with an AI model already downloaded
-        would do the same job.
+      note: Asks whether any laptop with an AI model already downloaded, kept in a metal
+        trash can as a shield, would do the same job. Elizabeth replies that a less
+        rugged version would not be hard to make yourself.
+    - author: lilkim2025
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=6dkA6DkA5YhyDbTzF
+      note: Doubts the small chatbot adds much; expects a plain search tool over popular
+        survival manuals to be faster, more reliable and lighter.
+    - author: Thane Ruthenis
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=sgeKtbPwygc9EakBz
+      note: Finds the idea appealing but not a good fit for the threat; not unhelpful to
+        have, but not pivotal.
+    - author: Taleuntum
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=yeZCibAne3dPhYBFB
+      note: Recommends Kiwix, an offline reader that can download Wikipedia, maps and
+        Project Gutenberg books.
   checklist: false
   steps:
     - do: Choose a laptop or e-reader to hold the manuals, and keep its charger with it.
@@ -1472,7 +1532,9 @@
     - do: Download a few more manuals on the topics you'd most likely need, such as repairs.
     - do: Add a document of your own listing your contacts, your medications and which accounts you hold.
       detail: Write down which accounts exist and where, not their passwords.
+    - do: "Optional: Kiwix is a free app that stores Wikipedia and other reference works for reading offline."
+      detail: One commenter recommends it. It is made by a nonprofit and runs on phones, tablets and computers. The project is listed under sources.
     - do: Turn off the device's Wi-Fi and open each file to check it works offline.
     - do: "Optional: an offline AI chatbot built for emergencies can search manuals on your own computer."
       detail: It needs a recent Mac or Windows PC with at least 16 GB of memory, not an e-reader. The project is listed under sources.
-  updated: 2026-11-14
+  updated: 2026-11-15
