@@ -21,6 +21,8 @@ Every guide says "Checked by: Nobody yet". A review from someone who works in th
 - [ ] **Evidence on the home page.** The home page no longer shows examples or the chart of Chrome security fixes (data in `data/charts.yaml`). Decide whether a short "what has happened so far" belongs there or the chart moves to the Incidents page.
 - [ ] **Explain the name.** "The Hackening" is no longer explained on the home page, only on About.
 - [ ] **"Good to know" facts for the Power and internet threat.** The other three threats have them; this one has none.
+- [ ] **Have incidents really increased?** Go through the news from the past year or two and count, so the claim rests on a record and not an impression. Say how incidents were found and counted, since more reporting is not the same as more incidents.
+- [ ] **A shopping list for preparing,** possibly one per climate (heat, cold, storms).
 - [ ] **Keep Incidents current.** Add new events, and update the ones marked "Still developing" (the FAA ground stop, the Microsoft 365 outage, the Binance theft) when causes are published.
 - [ ] **Keep Open questions current** as new discussion and evidence appear.
 - [ ] **Remaining audit findings.** The audit's lower-priority items were only partly applied: style polish, and topics it said are missing (backup power, a battery radio, closing unused accounts).
@@ -50,6 +52,10 @@ Every guide says "Checked by: Nobody yet". A review from someone who works in th
 
 - [ ] **A checklist readers can work through.** Tick off steps, come back later, see progress, get notified when a step changes. Sign-in conflicts with the current design (no accounts, no scripts, no database), and a record of which protections someone has *not* set up is sensitive. Options: ticks saved only in the reader's own browser; email or RSS notifications with no login; or full accounts through a hosted sign-in provider on a separate subdomain.
 - [ ] **Automated incident updates.** A scheduled AI agent (for example a Claude scheduled task) that checks the news on a regular schedule for new hacks and outages and for updates to entries marked "Still developing", then drafts the changes to `data/incidents.yaml` with sources. It must open a pull request for a person to review and never publish on its own: every change to the main branch goes live, and the AI-involvement ratings need a human check against the site's definitions.
+- [ ] **A page for each incident.** Its own address, a description and its sources. A catalogue entry, not a news article.
+- [ ] **A severity badge on each incident page.** Needs a written definition of each level, like the AI-involvement ratings have.
+- [ ] **Filter the incidents, and download them as a table.** Filtering has to fit the no-scripts design or the design has to change; the download could be a CSV file built from `data/incidents.yaml`.
+- [ ] **Data.** Noted without detail; to be spelled out. Possibly: publishing the incident data in a reusable form.
 - [ ] **A form for submitting a question or correction,** for people who don't use GitHub.
 - [ ] **Search-engine basics:** a sitemap, and step-by-step markup on the guides so the steps can appear in search results.
 - [ ] **Affiliate links, proceeds donated** (deferred). Only for the few steps that involve buying something; needs a plain disclosure, a non-affiliate link alongside, and a rule that it never affects what is recommended.
@@ -63,3 +69,11 @@ Every guide says "Checked by: Nobody yet". A review from someone who works in th
 - [ ] **Protect the publishing route.** Every change to the main branch goes live automatically. Require a review before merging, and protect the maintainer accounts on GitHub and the hosting service with a security key.
 - [ ] **A public change log.** A dated list of what changed on the site and why, so returning readers and reviewers can see corrections.
 - [ ] **Co-maintainers.** People willing to merge changes and keep Incidents and Open questions current.
+
+## Questions to decide
+
+Not tasks yet. Noted on 15 November so they are not lost.
+
+- **Blogs.** Do blog posts belong on this site, or should the maintainer write them separately?
+- **If nobody answers the request for professional review, what does that mean?** This is the main question. What does it say about whether there is demand for security-focused projects like this one?
+- **Security consultations for individuals.** Is there a need? Hardening your own accounts and devices is a chore even for someone motivated, and it is hard to trust the job to an AI.
