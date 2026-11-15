@@ -55,7 +55,8 @@ Every guide says "Checked by: Nobody yet". A review from someone who works in th
 - [ ] **A page for each incident.** Its own address, a description and its sources. A catalogue entry, not a news article.
 - [ ] **A severity badge on each incident page.** Needs a written definition of each level, like the AI-involvement ratings have.
 - [ ] **Filter the incidents, and download them as a table.** Filtering has to fit the no-scripts design or the design has to change; the download could be a CSV file built from `data/incidents.yaml`.
-- [ ] **Data.** Noted without detail; to be spelled out. Possibly: publishing the incident data in a reusable form.
+- [ ] **A data page.** Key figures on events and risk in one place: Chrome security fixes, published software flaws (CVEs) and similar series. Some of this was collected before (`data/charts.yaml`, `research/charts`) but is no longer shown anywhere.
+- [ ] **Incident data in like terms.** Record each incident in `data/incidents.yaml` with the same structured fields (date, kind, severity, scale of impact) so they can be added up: the impact or severity of cyber events per month, or per week. Depends on the severity definitions above, and feeds the "have incidents really increased?" question.
 - [ ] **A form for submitting a question or correction,** for people who don't use GitHub.
 - [ ] **Search-engine basics:** a sitemap, and step-by-step markup on the guides so the steps can appear in search results.
 - [ ] **Affiliate links, proceeds donated** (deferred). Only for the few steps that involve buying something; needs a plain disclosure, a non-affiliate link alongside, and a rule that it never affects what is recommended.
