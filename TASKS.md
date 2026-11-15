@@ -2,7 +2,7 @@
 
 What still needs doing on thehackening.ai. If you want to help, pick something here and open an issue or pull request on [GitHub](https://github.com/ahumanflourish/thehackening) saying you're taking it. See [Help wanted](CONTRIBUTING.md) for how contributions work.
 
-Last updated: 14 November 2026.
+Last updated: 15 November 2026.
 
 ## Most wanted: professional review
 
@@ -15,6 +15,7 @@ Every guide says "Checked by: Nobody yet". A review from someone who works in th
 ## Content
 
 - [ ] **Redraw the "Instant payments" diagram.** The current one (a forked line: slow transfers can be stopped, instant ones are gone) is still hard to read. A four-stage alternate exists in `src/diagrams.mjs`.
+- [ ] **A deeper treatment of each threat model.** The home page gives each threat a short paragraph and a diagram. Wanted: for each, how it would actually happen, who would do it and why, what has already happened that resembles it, how likely and how bad (with whose estimate), what to watch for, and where people who know the field disagree.
 - [ ] **"What won't help" section.** Things people commonly reach for that don't protect against these threats, with the reason for each. Gold is the first example; its page exists but nothing links to it.
 - [ ] **"When to act" page.** Signals in the news and what to do when you see them. Draft material is in `research/notes.md`. Must not tell readers to withdraw cash on a headline.
 - [ ] **Evidence on the home page.** The home page no longer shows examples or the chart of Chrome security fixes (data in `data/charts.yaml`). Decide whether a short "what has happened so far" belongs there or the chart moves to the Incidents page.
