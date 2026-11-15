@@ -34,20 +34,6 @@
       url: https://manifold.markets/JamieWahls/will-there-be-at-least-one-major-us
   related_advice: [ water-food-medications ]
 
-- id: internet-before-utilities
-  question: Could the internet itself fail before utilities do, and if it did, what else
-    would fail with it?
-  status: open
-  current_best_answer: >-
-    No good answer yet. On Manifold, a prediction site that uses play money, a market
-    with about 35 participants put about 44% on a massive internet outage of two hours
-    or more before 2028 (as of 14 Nov 2026). That market also counts accidents, and it
-    counts a large outage confined to China, so it says little about attacks.
-  sources:
-    - title: Will there be a massive internet outage before 2028?, Manifold
-      url: https://manifold.markets/Plant/will-there-be-a-massive-internet-ou
-  related_advice: [ offline-maps-and-addresses, offline-reference-library ]
-
 - id: how-much-supplies
   question: How many days of water, food and supplies are enough, and how much extra
     should you keep for neighbors who didn't prepare?
