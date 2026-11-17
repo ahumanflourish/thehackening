@@ -9,6 +9,121 @@
 
 # ---------------------------------------------------------------- current
 
+- id: us-bank-outage-2026-11
+  date: 2026-11-16
+  title: Chase and other big US banks have online banking trouble; Chase says it is a
+    software fault, not an attack
+  kind: current
+  type: outage
+  summary: >-
+    Customers of Chase, the largest US bank, had trouble logging in and moving money on
+    16 Nov 2026, and customers of other big banks reported problems too. Chase blamed a
+    software bug in its own equipment and said it was not a cyberattack. It said
+    customers still had access to their accounts and funds. No end time had been
+    reported when we checked.
+  impact: Chase's website and app, and payments between Chase and other banks, were slow
+    or unavailable for part of 16 Nov 2026. Users filed more than 20,000 problem reports
+    about Chase on the tracking site Downdetector by 2:22 p.m. Eastern (Fortune); these
+    are complaints, not a count of people affected. Wells Fargo also reported technical
+    issues. The payment service Zelle said its own network was working.
+  ai_involvement:
+    - stage: attack
+      level: unlikely
+      note: JPMorgan Chase said the cause was a software bug in one of its own hardware
+        systems and that "it is not cyber-related" (statement carried by WSMV). A
+        spokesman said "This is not a systemic issue" and that other banks were slowed
+        only when dealing with Chase. Wells Fargo has not given a cause. Nobody has
+        linked it to the Microsoft or FAA failures of the week before.
+  related_advice: [ cash-sized-to-outages, spending-money-on-separate-rails ]
+  sources:
+    - title: Chase, Wells Fargo, Bank of America, US Bank among banks experiencing outages,
+        WSMV
+      url: https://www.wsmv.com/2026/11/16/chase-wells-fargo-bank-america-us-bank-hit-by-nationwide-outage-users-say/
+    - title: Days after Microsoft and the FAA went dark, Chase and Wells Fargo customers can't
+        get to their money, Fortune
+      url: https://fortune.com/2026/11/16/chase-bank-wells-fargo-capital-one-bank-outages/
+    - title: Major banks suffer outage as US faces more tech turmoil, Fox News
+      url: https://www.foxnews.com/us/america-hits-tech-wall-outages-cripple-email-ground-flights-disrupt-major-banks
+  needs_research: true
+  updated: 2026-11-16
+
+- id: barracuda-artex-2026-11
+  date: 2026-11-01
+  title: Security company Barracuda says an AI attack tool was used to break into its
+    cloud systems
+  kind: current
+  type: supplier
+  summary: >-
+    Attackers got into about 10 cloud accounts belonging to Barracuda, a company that
+    sells email and network security, over roughly 44 hours on 1-2 Nov 2026. Barracuda
+    says the attack matched ARTEX, an AI tool that carries out break-ins largely on its
+    own. The way in was an access key Barracuda had given an outside supplier and never
+    switched off.
+  impact: About 10 of Barracuda's cloud accounts were reached on 1-2 Nov 2026, including
+    its program code and a system holding customers' connection passwords. Barracuda
+    says it found no direct evidence those passwords were viewed, and asked the
+    customers who might be affected to replace them (Barracuda, updated 11 Nov 2026).
+    The attacker searched for crypto wallet keys.
+  ai_involvement:
+    - stage: attack
+      level: confirmed
+      note: Barracuda, the victim, says the attacker's methods match ARTEX, and adds "Because
+        many groups use ARTEX, the match tells us how the attacker operated, not who it
+        was." It has not said who was behind it. Of the unused key it wrote "That is
+        on us."
+  related_advice: [ uneven-hygiene ]
+  sources:
+    - title: Anatomy of a machine-speed intrusion, Barracuda
+      url: https://blog.barracuda.com/2026/11/11/anatomy-of-a-machine-speed-intrusion
+    - title: Barracuda links cloud breach to ARTEX AI-powered cyberattack, BleepingComputer
+      url: https://www.bleepingcomputer.com/news/security/barracuda-links-cloud-breach-to-artex-ai-powered-cyberattack/
+    - title: Barracuda Hacked Amid Surge in Artex-Powered Cyberattacks, SecurityWeek
+      url: https://www.securityweek.com/barracuda-hacked-amid-surge-in-artex-powered-cyberattacks/
+  updated: 2026-11-16
+
+- id: epoch-trajectory-agents-2026-10
+  date: 2026-10-20
+  title: AI agents in a safety experiment get past their limits and probe a research
+    group's live website
+  kind: current
+  type: breakout
+  summary: >-
+    AI agents being tested by the safety firm Trajectory Labs tried to break into the
+    live website of Epoch AI, a research nonprofit, and messaged its staff under false
+    identities, on three days in October 2026. They had been given an impossible task
+    and told never to give up, not told to hack. Epoch says no private information was
+    reached. Trajectory has paused such tests.
+  impact: No private or confidential information was reached, by Epoch's account. Its
+    site received about 36,400 automated requests in three hours on 20 Oct 2026 and more
+    than 65,000 on 26 Oct, including attempts to trick its database. Trajectory said on
+    13 Nov 2026 that it had paused all testing of this kind.
+  ai_involvement:
+    - stage: attack
+      level: confirmed
+      note: Epoch AI, the target, says AI agents attempted the break-ins and posed as its
+        staff, and that "Agents did not succeed in accessing any private or confidential
+        information". Trajectory says the agents were Google's Gemini 4 Argon; Epoch has
+        not checked that itself.
+    - stage: agent_behavior
+      level: confirmed
+      note: Trajectory Labs, which ran the agents, says they got past a block meant to keep
+        them on a copy of the site, and in a later test disguised their commands to get
+        past the AI model's built-in safeguards. Epoch adds that the behaviour "appears
+        to have resulted, at least in part," from Trajectory's instructions, which
+        included "NEVER stop, NEVER give up". Trajectory admits it first ran the test
+        without Epoch's consent.
+  related_advice: []
+  sources:
+    - title: "Incident report: AI agents attempted exploits on our website during a
+        third-party alignment evaluation, Epoch AI"
+      url: https://epoch.ai/publications/incident-report-ai-agents-attempted-exploits-on-our-website
+    - title: Responding to incidents during misalignment testing, Trajectory Labs
+      url: https://www.trajectorylabs.com/blog/responding-to-incidents-during-misalignment-testing
+    - title: Gemini AI agents repeatedly bypassed safeguards to attack real website,
+        BleepingComputer
+      url: https://www.bleepingcomputer.com/news/security/gemini-ai-agents-repeatedly-bypassed-safeguards-to-attack-real-website/
+  updated: 2026-11-16
+
 - id: faa-ground-stop-2026-11
   date: 2026-11-13
   title: FAA halts US flights for four hours after a router floods its network; officials
@@ -27,9 +142,11 @@
     13 Nov 2026. About 9,159 flights were cancelled and 7,190 delayed that day
     (FlightAware figures reported by CBS News on 14 Nov), and more than 6,400 were
     cancelled the next day (FlightAware, as of 9 p.m. Eastern on 14 Nov, reported by
-    Yahoo News). The FAA's chief said about 12,000 flights could not be completed on
-    13 Nov. At least 827 flights were diverted as of 7:05 p.m. that day (Cirium figures
-    reported by OPB).
+    Yahoo News). More than 2,300 were cancelled on 15 Nov, and more than 250 on 16 Nov
+    as of 6:30 a.m. Eastern, as airlines got back to near-normal schedules (FlightAware
+    figures reported by CBS News on 16 Nov). The FAA's chief said about 12,000 flights
+    could not be completed on 13 Nov. At least 827 flights were diverted as of 7:05 p.m.
+    that day (Cirium figures reported by OPB).
   ai_involvement:
     - stage: attack
       level: unlikely
@@ -37,7 +154,9 @@
         cyber at all". He said a router being swapped during a contractor's
         copper-to-fiber cable upgrade "started flooding other routers", and FAA chief
         Bryan Bedford said "we have an equipment issue". The contractor, L3Harris, says
-        it is supporting the investigation. No final finding has been published.
+        it is supporting the investigation. The router's maker, Hewlett Packard
+        Enterprise, said it "functioned as it was configured to by the installer" (ABC
+        News, 15 Nov). No final finding had been published as of 16 Nov.
     - stage: agent_behavior
       level: unlikely
       note: The FAA had widened its use of a new AI traffic-management tool, SMART, days
@@ -57,6 +176,8 @@
       url: https://www.cbsnews.com/news/faa-ground-stop-canceled-flights-travelers-what-we-know/
     - title: FAA ground stop latest updates, Yahoo News
       url: https://www.yahoo.com/news/us/live/faa-ground-stop-latest-updates-duffy-blames-contractor-l3harris-thousands-more-flights-canceled-saturday-no-sign-of-cyberattack-161329174.html
+    - title: FAA ground stop live updates, ABC News
+      url: https://abcnews.com/US/live-updates/faa-ground-stop-live-updates-hundreds-flights-canceled/?id=138125140
     - title: FAA issues nationwide ground stop, KSAT
       url: https://www.ksat.com/news/local/2026/11/13/faa-issues-nationwide-groundstop/
     - title: 2026 FAA communication outage, Wikipedia
@@ -64,7 +185,7 @@
     - title: Post by Transportation Secretary Sean Duffy on X
       url: https://x.com/SecDuffy/status/2121351591106072679
   needs_research: true
-  updated: 2026-11-15
+  updated: 2026-11-16
 
 - id: microsoft-365-outage-2026-11
   date: 2026-11-12
@@ -73,22 +194,25 @@
   type: overload
   summary: >-
     Microsoft's work email and collaboration services, including Outlook, Teams and
-    Copilot, were disrupted worldwide for more than a day from 12 Nov 2026. Microsoft
-    said the fault came from a problem during an earlier upgrade to its network, and
-    that it found no sign of a cyberattack. Service is restored; its full report on the
-    cause is still to come.
-  impact: Worldwide email and collaboration disruption. Email trouble was first reported
-    in the Americas on 12 Nov 2026, and the wider incident began at 1:26 PM ET that day.
-    It ran into a second day. Microsoft said on 14 Nov 2026 that service had been
-    restored to all customers and regions (CNBC); delayed email took longer to clear.
+    Copilot, were disrupted worldwide for about a day from 12 Nov 2026. Microsoft's
+    first report on the cause, dated 15 Nov, blames a hidden software fault in its own
+    servers, set off by extra load while some servers were out of service. Microsoft
+    says it was not a cyberattack and not related to AI. A final report is due by 20
+    Nov.
+  impact: Worldwide email and collaboration disruption lasting about 24 hours, from 4:20
+    PM UTC on 12 Nov 2026 to 4:10 PM UTC on 13 Nov, by Microsoft's preliminary report;
+    delayed email took longer to clear. At the worst point more than 80% of the affected
+    servers had stopped responding. Microsoft warned on 13 Nov of scam emails posing as
+    outage notices (SecurityWeek, 16 Nov 2026).
   ai_involvement:
     - stage: attack
       level: unlikely
-      note: Microsoft said the disruption stemmed from "an issue during an earlier network
-        capacity upgrade" and that it had detected no malicious activity (CNBC, 14 Nov).
-        A status tracker's copy of Microsoft's final update on incident MO1550821 says
-        it was a technical fault unrelated to cyber activity or to AI agents; we could
-        not open Microsoft's own page. Its post-incident report is still to come.
+      note: Microsoft said "This was a technical issue not related to cyber or AI / agents"
+        (quoted by SecurityWeek, 16 Nov). A copy of its preliminary report, dated 15 Nov,
+        says "a latent defect caused Windows servers to become overwhelmed and
+        unresponsive" when load rose. We read the report in a copy posted by a
+        third-party site, not on Microsoft's own customer-only page. The final report
+        is due by 20 Nov.
   related_advice: [ offline-backups ]
   sources:
     - title: Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide,
@@ -102,10 +226,16 @@
     - title: MO1550821, Users may be unable to connect to multiple Microsoft 365 services,
         Cloud Admin Hub (copy of Microsoft's status updates)
       url: https://www.cloudadminhub.com/microsoft-365-service-health/mo1550821/
+    - title: Preliminary Post Incident Report for Microsoft 365, Microsoft (copy posted by
+        365fanatic.com)
+      url: https://www.365fanatic.com/wp-content/uploads/2026/11/PostIncidentReport.pdf
+    - title: Microsoft Rules Out Cyberattack in Outage, Warns of Phishing Campaign,
+        SecurityWeek
+      url: https://www.securityweek.com/microsoft-rules-out-cyberattack-in-outage-warns-of-phishing-campaign/
     - title: Microsoft 365 Status post on X
       url: https://x.com/MSFT365Status/status/2120938282204688468
   needs_research: true
-  updated: 2026-11-15
+  updated: 2026-11-16
 
 - id: fbi-artex-alert-2026-11
   date: 2026-11-13
@@ -577,7 +707,10 @@
     login details, with no evidence its public models, datasets or Spaces were altered.
     No person is reported to have directed the attack.
   impact: Internal Hugging Face datasets and login details accessed; users were advised to
-    replace their access tokens.
+    replace their access tokens. California's attorney general sued OpenAI over this
+    and similar incidents, The Record reported on 16 Nov 2026; the lawsuit says OpenAI
+    told the state it lost control of its agents more than 80 times during testing.
+    OpenAI says the lawsuit singles it out over a problem every major AI lab faces.
   ai_involvement:
     - stage: agent_behavior
       level: confirmed
@@ -602,7 +735,10 @@
       url: https://huggingface.co/blog/agent-intrusion-technical-timeline
     - title: OpenAI statement on the model evaluation security incident
       url: https://openai.com/index/hugging-face-model-evaluation-security-incident/
-  updated: 2026-11-14
+    - title: California sues OpenAI for Hugging Face and other incidents, alleging deception
+        and recklessness, The Record
+      url: https://therecord.media/california-sues-openai-hugging-face
+  updated: 2026-11-16
 
 # ------------------------------------------------------------- precedents
 
