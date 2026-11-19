@@ -9,6 +9,113 @@
 
 # ---------------------------------------------------------------- current
 
+- id: nsa-network-outage-2026-11
+  date: 2026-11-17
+  title: NSA's classified internal network falters; officials blame maintenance, not an
+    attack
+  kind: current
+  type: overload
+  summary: >-
+    The internal classified network of the NSA, the US signals-intelligence agency,
+    kept dropping out from 17 Nov 2026, and most staff were sent home or told to come
+    in late. The NSA blamed scheduled maintenance and said its critical work carried
+    on. The director of national intelligence said the week's failures were separate
+    faults, not a coordinated attack.
+  impact: Staff arrivals at the NSA's headquarters were staggered on 17 and 18 Nov 2026,
+    and a source told The Record full recovery could take one or two more days (as of
+    18 Nov). The NSA said its critical operations kept running. It came days after the
+    Microsoft, FAA and Chase failures, which is why many people linked them.
+  ai_involvement:
+    - stage: attack
+      level: unlikely
+      note: The NSA said it "experienced temporary degradation during scheduled routine
+        maintenance" (AP, 17 Nov). The director of national intelligence, Jay Clayton,
+        said the maintenance involved PHP, widely used web software, and called the
+        week's failures "separate service outages" (The Record, 18 Nov). Neither said
+        whether this was the fix for the PHP2Shell flaws. The FBI's deputy director said
+        there was "no indication whatsoever" of malicious cyber activity.
+  related_advice: []
+  sources:
+    - title: NSA continues response to interruptions in classified internal network, The
+        Record
+      url: https://therecord.media/nsa-continues-response-to-nsa-net-problems
+    - title: Classified Communications Network at the National Security Agency Goes Down,
+        Defense Official Says, AP via SecurityWeek
+      url: https://www.securityweek.com/classified-communications-network-at-the-national-security-agency-goes-down-defense-official-says/
+    - title: Trump administration officials size-up a bad stretch for tech, The Record
+      url: https://therecord.media/tech-disruptions-house-homeland-committee-testimony
+  needs_research: true
+  updated: 2026-11-18
+
+- id: equinor-attack-2026-11
+  date: 2026-11-17
+  title: Cyberattack disrupts office systems at Norwegian oil and gas giant Equinor;
+    production unaffected
+  kind: current
+  type: outage
+  summary: >-
+    Equinor, the Norwegian oil and gas giant, said on 17 Nov 2026 that it was under a
+    cyberattack on some of its office computer systems. It said oil and gas production
+    was not affected and that it saw no sign of stolen data. It was still working to
+    stop the attack a day later. It has not said who was behind it or how they got in.
+  impact: Staff could have trouble using company applications, an Equinor spokesperson
+    said; internal email was down, according to Reuters as cited by The Record.
+    Production was unaffected, and Equinor said it was too early to say how long
+    repairs would take (Equinor update, 18 Nov 2026).
+  ai_involvement:
+    - stage: attack
+      level: unknown
+      note: Equinor has not named the attackers or the method, saying only that it was not
+        a virus and so could not spread. Neither its statement nor The Record's report
+        mentions AI.
+  related_advice: []
+  sources:
+    - title: Equinor detected cyber-attack - update, Equinor
+      url: https://www.equinor.com/news/20261711-equinor-detected-cyber-attack
+    - title: Cyberattack hits Norwegian energy giant Equinor, disrupting internal services,
+        The Record
+      url: https://therecord.media/norway-equinor-cyberattack-energy
+  needs_research: true
+  updated: 2026-11-18
+
+- id: java4shell-2026-11
+  date: 2026-11-17
+  title: "Java4Shell: a serious flaw, found with AI's help, in software most big companies
+    run"
+  kind: current
+  type: software-flaw
+  summary: >-
+    A serious flaw in Java, software that runs inside a great many business systems,
+    was made public on 17 Nov 2026. It can let an outsider crash a system or, with more
+    work, take it over without a password. The security firm that found it says AI
+    helped it do so in about an hour. The US cybersecurity agency CISA urged immediate
+    updates. No attacks had been seen.
+  impact: A fix is in Oracle's November 2026 update, but other suppliers' versions of
+    Java were still waiting for theirs as of 17 Nov 2026 (SecurityWeek). Only some
+    newer Intel-type processors are affected. Cisco's Talos team had seen no attacks
+    but expected probing to start soon (reported 18 Nov 2026).
+  ai_involvement:
+    - stage: discovery
+      level: confirmed
+      note: Calif, the security firm whose researchers Oracle credits with the find, says
+        AI played a key part, and that "It took our own Quang Luong an hour to discover
+        the vulnerability". It has not named the AI model. This rating is about the
+        defenders who found the flaw, not about attackers.
+    - stage: attack
+      level: unknown
+      note: No attacks had been reported as of 18 Nov 2026. Calif says it is holding back
+        its working attack code until people have had time to update.
+  related_advice: [ shrink-patch-lag ]
+  sources:
+    - title: CISA warns of 'Java4Shell,' an AI-found Java bug touching most of the Fortune
+        500, The Record
+      url: https://therecord.media/cisa-issues-java4shell-alert
+    - title: Java4Shell Vulnerability Puts Many Enterprise Applications at Risk of Takeover,
+        SecurityWeek
+      url: https://www.securityweek.com/java4shell-vulnerability-puts-many-enterprise-applications-at-risk-of-takeover/
+  needs_research: true
+  updated: 2026-11-18
+
 - id: us-bank-outage-2026-11
   date: 2026-11-16
   title: Chase and other big US banks have online banking trouble; Chase says it is a
@@ -18,11 +125,12 @@
   summary: >-
     Customers of Chase, the largest US bank, had trouble logging in and moving money on
     16 Nov 2026, and customers of other big banks reported problems too. Chase blamed a
-    software bug in its own equipment and said it was not a cyberattack. It said
-    customers still had access to their accounts and funds. No end time had been
-    reported when we checked.
+    software bug in its own equipment and said it was not a cyberattack. Chase said
+    transactions were back to normal by that night. The FBI told Congress on 18 Nov it
+    had found no sign of hacking.
   impact: Chase's website and app, and payments between Chase and other banks, were slow
-    or unavailable for part of 16 Nov 2026. Users filed more than 20,000 problem reports
+    or unavailable for part of 16 Nov 2026; Chase said transactions were processing
+    normally again by that night (6abc, 17 Nov). Users filed more than 20,000 problem reports
     about Chase on the tracking site Downdetector by 2:22 p.m. Eastern (Fortune); these
     are complaints, not a count of people affected. Wells Fargo also reported technical
     issues. The payment service Zelle said its own network was working.
@@ -32,8 +140,11 @@
       note: JPMorgan Chase said the cause was a software bug in one of its own hardware
         systems and that "it is not cyber-related" (statement carried by WSMV). A
         spokesman said "This is not a systemic issue" and that other banks were slowed
-        only when dealing with Chase. Wells Fargo has not given a cause. Nobody has
-        linked it to the Microsoft or FAA failures of the week before.
+        only when dealing with Chase. Wells Fargo has not given a cause, and we found no
+        comment from a bank regulator (as of 18 Nov). Asked about the week's failures
+        at a House hearing on 18 Nov, the FBI's deputy director said there was "no
+        indication whatsoever" of malicious cyber activity (The Record). Chase has not
+        published a detailed account of the fault.
   related_advice: [ cash-sized-to-outages, spending-money-on-separate-rails ]
   sources:
     - title: Chase, Wells Fargo, Bank of America, US Bank among banks experiencing outages,
@@ -44,8 +155,13 @@
       url: https://fortune.com/2026/11/16/chase-bank-wells-fargo-capital-one-bank-outages/
     - title: Major banks suffer outage as US faces more tech turmoil, Fox News
       url: https://www.foxnews.com/us/america-hits-tech-wall-outages-cripple-email-ground-flights-disrupt-major-banks
+    - title: Chase transactions return to normal after outage affected thousands of
+        customers, 6abc Philadelphia
+      url: https://6abc.com/post/chase-transactions-return-normal-outage-affected-thousands-customers/20046578/
+    - title: Trump administration officials size-up a bad stretch for tech, The Record
+      url: https://therecord.media/tech-disruptions-house-homeland-committee-testimony
   needs_research: true
-  updated: 2026-11-16
+  updated: 2026-11-18
 
 - id: barracuda-artex-2026-11
   date: 2026-11-01
@@ -135,8 +251,8 @@
     hours on 13 Nov 2026 after communications failed at its regional air traffic control
     centers. Officials traced it to a router that flooded the network with data during a
     contractor's cable upgrade, and said they found no evidence of an attack or of AI
-    involvement. Whether the router was faulty or wrongly installed is still being
-    investigated.
+    involvement. Whether the router was faulty or wrongly installed was still being
+    investigated as of 18 Nov.
   impact: >-
     Departures were halted for more than four hours, until about 8:15 p.m. Eastern on
     13 Nov 2026. About 9,159 flights were cancelled and 7,190 delayed that day
@@ -146,7 +262,8 @@
     as of 6:30 a.m. Eastern, as airlines got back to near-normal schedules (FlightAware
     figures reported by CBS News on 16 Nov). The FAA's chief said about 12,000 flights
     could not be completed on 13 Nov. At least 827 flights were diverted as of 7:05 p.m.
-    that day (Cirium figures reported by OPB).
+    that day (Cirium figures reported by OPB). As a precaution the FAA switched off the
+    suspect function on about 60 similar routers (FedScoop, 16 Nov).
   ai_involvement:
     - stage: attack
       level: unlikely
@@ -156,14 +273,21 @@
         Bryan Bedford said "we have an equipment issue". The contractor, L3Harris, says
         it is supporting the investigation. The router's maker, Hewlett Packard
         Enterprise, said it "functioned as it was configured to by the installer" (ABC
-        News, 15 Nov). No final finding had been published as of 16 Nov.
+        News, 15 Nov). The router is being examined at an L3Harris lab in Florida by FAA
+        staff and FBI agents (FedScoop, 16 Nov). At a House hearing on 18 Nov the FBI's
+        deputy director said there was "no indication whatsoever" of malicious cyber
+        activity in the week's failures (The Record). No final finding had been
+        published as of 18 Nov.
     - stage: agent_behavior
       level: unlikely
       note: The FAA had widened its use of a new AI traffic-management tool, SMART, days
         earlier. Bedford said on 14 Nov that officials found "zero evidence of anything
         nefarious and zero evidence of anything AI related" (Yahoo News). The tool's
         maker, Air Space Intelligence, said the ground stop "is not based on or a result
-        of the SMART system".
+        of the SMART system". Homeland Security Secretary Markwayne Mullin had
+        suggested on television, citing unnamed tech executives, that AI might have
+        played a part (as described by The Record, 18 Nov); the FAA and the Transportation
+        Department have not supported that.
   related_advice: []
   sources:
     - title: Flights halted at airports across US due to air traffic control communications
@@ -184,8 +308,12 @@
       url: https://en.wikipedia.org/wiki/2026_FAA_communication_outage
     - title: Post by Transportation Secretary Sean Duffy on X
       url: https://x.com/SecDuffy/status/2121351591106072679
+    - title: FAA, FBI investigating router responsible for nationwide ground stop, FedScoop
+      url: https://fedscoop.com/?p=92517
+    - title: Trump administration officials size-up a bad stretch for tech, The Record
+      url: https://therecord.media/tech-disruptions-house-homeland-committee-testimony
   needs_research: true
-  updated: 2026-11-16
+  updated: 2026-11-18
 
 - id: microsoft-365-outage-2026-11
   date: 2026-11-12
@@ -197,8 +325,8 @@
     Copilot, were disrupted worldwide for about a day from 12 Nov 2026. Microsoft's
     first report on the cause, dated 15 Nov, blames a hidden software fault in its own
     servers, set off by extra load while some servers were out of service. Microsoft
-    says it was not a cyberattack and not related to AI. A final report is due by 20
-    Nov.
+    says it was not a cyberattack and not related to AI. Its final report, due by 20
+    Nov, had not appeared when we checked on 18 Nov.
   impact: Worldwide email and collaboration disruption lasting about 24 hours, from 4:20
     PM UTC on 12 Nov 2026 to 4:10 PM UTC on 13 Nov, by Microsoft's preliminary report;
     delayed email took longer to clear. At the worst point more than 80% of the affected
@@ -211,8 +339,11 @@
         (quoted by SecurityWeek, 16 Nov). A copy of its preliminary report, dated 15 Nov,
         says "a latent defect caused Windows servers to become overwhelmed and
         unresponsive" when load rose. We read the report in a copy posted by a
-        third-party site, not on Microsoft's own customer-only page. The final report
-        is due by 20 Nov.
+        third-party site, not on Microsoft's own customer-only page. By
+        BleepingComputer's account of that report (16 Nov), the fault came in with an
+        update that began in July, and about 14% of the servers concerned were already
+        out of service when the load rose. The final report is due by 20 Nov; we found
+        no sign of it as of 18 Nov.
   related_advice: [ offline-backups ]
   sources:
     - title: Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide,
@@ -234,8 +365,11 @@
       url: https://www.securityweek.com/microsoft-rules-out-cyberattack-in-outage-warns-of-phishing-campaign/
     - title: Microsoft 365 Status post on X
       url: https://x.com/MSFT365Status/status/2120938282204688468
+    - title: Microsoft says months-old bug caused global Microsoft 365 outage,
+        BleepingComputer
+      url: https://bleepingcomputer.com/news/microsoft/microsoft-says-months-old-bug-caused-global-microsoft-365-outage
   needs_research: true
-  updated: 2026-11-16
+  updated: 2026-11-18
 
 - id: fbi-artex-alert-2026-11
   date: 2026-11-13
@@ -354,7 +488,11 @@
     targeted. France says attacks on 11-12 Oct 2026 hit refrigeration at about 700
     shops, spoiled food worth millions of euros and started at least 15 fires, and it
     formally blamed hackers linked to Iran's Revolutionary Guard (reported 10 Nov
-    2026). The US government has not officially blamed anyone (as of 10 Nov 2026).
+    2026). The US government has not officially blamed anyone (as of 10 Nov 2026). On
+    12 Nov researchers at the security firm VulnCheck published 14 flaws in one widely
+    used make of refrigeration controller and saw break-in attempts within two hours;
+    they say nothing ties those attempts to the October attackers (SecurityWeek, 16 Nov
+    2026).
   ai_involvement:
     - stage: attack
       level: unknown
@@ -370,7 +508,10 @@
       url: https://www.yahoo.com/news/us/articles/france-attributes-grocery-hacks-iran-153342260.html
     - title: Trail of Iran's fridge hackers traced to US equipment, The National
       url: https://www.thenationalnews.com/news/europe/2026/11/10/trail-of-irans-fridge-hackers-traced-to-us-equipment/
-  updated: 2026-11-15
+    - title: Hackers Probe Newly Disclosed Flaws in Copeland Refrigeration Controllers,
+        SecurityWeek
+      url: https://www.securityweek.com/hackers-probe-newly-disclosed-flaws-in-copeland-refrigeration-controllers/
+  updated: 2026-11-18
 
 - id: india-lenders-ai-agents-2026-11
   date: 2026-11-04
@@ -577,6 +718,41 @@
       url: https://www.lesswrong.com/posts/iqgZaJMnmyDCYfnuC/the-hackening-1
   updated: 2026-11-15
 
+- id: vapor-panda-artex-2026-10
+  date: 2026-10-17
+  title: Security firm says China-linked hackers used AI against 200 organizations,
+    breaking into phone companies and ministries
+  kind: current
+  type: one-to-many
+  count: { total: 200, hit: 9, spread: scatter, caption: "Break-ins confirmed at 9 of more than 200 organizations targeted." }
+  summary: >-
+    A China-linked hacking group used the AI attack tool ARTEX against more than 200
+    organizations in 14 countries over 11 days from 17 Oct 2026, the security firm
+    CrowdStrike reported. It confirmed break-ins at nine, including phone companies in
+    the US, Belgium and the Philippines and government bodies. A human gave directions
+    in Chinese at key points; the AI did the rest.
+  impact: More than 200 organizations targeted and nine confirmed broken into, with at
+    least 12 more hit by password-guessing (CrowdStrike, 29 Oct 2026). Targets
+    included foreign ministries and US chip, defence, drug, nuclear and financial
+    organizations. CrowdStrike does not say what was taken from most victims.
+  ai_involvement:
+    - stage: attack
+      level: confirmed
+      note: CrowdStrike, which calls the group Vapor Panda, says "the adversary used ARTEX
+        against more than 200 distinct organizations worldwide" and that it "confirmed
+        post-exploitation activity at nine organizations", meaning the attackers got in
+        and kept working. It says this is separate from the ARTEX campaign Microsoft
+        reported under the name Storm-0940. No victim has confirmed it publicly.
+  related_advice: []
+  sources:
+    - title: VAPOR PANDA Uses AI-Driven ARTEX to Scale a Global Espionage Campaign,
+        CrowdStrike
+      url: https://www.crowdstrike.com/en-us/blog/vapor-panda-uses-artex-to-scale-global-campaign/
+    - title: Chinese hackers use ARTEX AI in automated attacks against 200 orgs,
+        BleepingComputer
+      url: https://bleepingcomputer.com/news/security/chinese-hackers-use-artex-ai-in-automated-attacks-against-200-orgs
+  updated: 2026-11-18
+
 - id: cairn-campaign-2026-10
   date: 2026-10-19
   title: Researcher finds one hacker using AI to break into 100+ company websites for about
@@ -629,6 +805,11 @@
     Asset Securities reported a leak covering about 39,000 customers and staff (9 Nov),
     and the Financial Security Institute, the industry's own security body, found on
     9 Nov that about 130 files from 48 firms had been taken from it (as of 13 Nov 2026).
+    The institute said on 11 Nov that the files held about 200 administrative forms,
+    about 300 personal details such as names and birth dates, and details of about 350
+    users of the system, and no customer credit information (Byline Network).
+    Regulators ordered a thorough inspection of the institute; no result and no new
+    sector-wide tally had been published when we checked on 18 Nov 2026.
     Instant-access deposits at the five biggest banks fell about 3%, from 675.5 to 655.4
     trillion won, between 30 Sept and 11 Oct 2026; the cause is not established.
   ai_involvement:
@@ -639,9 +820,13 @@
         with extensive activity leveraging ARTEX and LLMs", meaning an AI attack tool
         and AI language models. An FBI alert of 13 Nov says ARTEX attacks took personal
         details of about 67,000 people from South Korean financial firms. President Lee
-        said on 6 Oct that "signs have emerged of AI being used" (Reuters). Korean police
-        have not published findings, and nobody has said AI was used against Mirae
-        Asset or the Financial Security Institute.
+        said on 6 Oct that "signs have emerged of AI being used" (Reuters). The security
+        firm Zscaler said on 21 Oct that records it recovered point to a
+        Chinese-speaking operator who also went after organizations in other countries.
+        The Financial Security Institute said on 11 Nov that, given how fast the
+        attempts on it came, AI was probably used, but that this was not confirmed
+        (Byline Network's account, in Korean). Korean police have not published
+        findings, and nobody has said AI was used against Mirae Asset.
   related_advice: [ freeze-everything, act-on-early-signals ]
   sources:
     - title: 37 financial firms leaked 473,000 records and about 1 billion won was taken (in
@@ -671,8 +856,83 @@
     - title: Korea's Financial Security Institute Apologizes for Hack; Regulator Opens Audit,
         Seoul Economic Daily
       url: https://en.sedaily.com/finance/2026/11/13/koreas-financial-security-agency-apologizes-for-hack
+    - title: Financial Security Institute on the hack of its assessment system (in Korean),
+        Byline Network
+      url: https://byline.network/2026/11/11-724/
+    - title: Korea's financial cybersecurity watchdog hacked just days after regulator's
+        warning, Korea JoongAng Daily
+      url: https://www.koreajoongangdaily.com/korea/koreas-financial-cybersecurity-watchdog-hacked-just-days-after-regulators-warning/12967591
+    - title: Inside a global AI-assisted hacking campaign, Zscaler
+      url: https://zscaler.com/blogs/security-research/inside-global-ai-assisted-hacking-campaign
   needs_research: true
-  updated: 2026-11-15
+  updated: 2026-11-18
+
+- id: hilltop-bank-2026-09
+  date: 2026-09-08
+  title: Wyoming's Hilltop Bank goes offline for about two weeks after a "cybersecurity
+    incident"
+  kind: current
+  type: outage
+  summary: >-
+    Customers of Hilltop Bank in Wyoming lost online and mobile banking for about two
+    weeks from 8 Sept 2026. The bank closed its branches on 9 Sept, cut itself and its
+    backup system off from the internet, and limited debit cards to $1,000 a day.
+    Scheduled payments stopped at first. It called this a cybersecurity incident and
+    has not said what kind.
+  impact: Online and mobile banking were down from 8 Sept 2026; the bank said personal
+    banking systems were all working again by 22 Sept (Cowboy State Daily, 30 Sept).
+    Afterwards customers reported late-posting charges and lower balances than they
+    expected; the bank said it would repay late fees the outage caused. Hilltop is a
+    bank of about $1.14 billion with eight offices (American Banker, 15 Sept 2026).
+  ai_involvement:
+    - stage: attack
+      level: unknown
+      note: The bank would not say what caused the incident or whether data was taken; a
+        spokesman said the technical details "are not something we are able to
+        discuss" (Cowboy State Daily, 30 Sept). The reports do not mention AI.
+  related_advice: [ cash-sized-to-outages, spending-money-on-separate-rails ]
+  sources:
+    - title: Wyoming bank has been offline a week due to cyber incident, American Banker
+      url: https://www.americanbanker.com/news/wyoming-bank-has-been-offline-a-week-due-to-cyber-incident
+    - title: Customers Shocked As 'Cybersecurity Incident' Shuts Down Hilltop Bank Across
+        Wyoming, Cowboy State Daily
+      url: https://cowboystatedaily.com/2026/09/09/hilltop-bank-suffers-cybersecurity-incident-unplugs-from-internet/
+    - title: Hilltop Bank Customers Report Unexpected Charges After Cyber Breach, Cowboy
+        State Daily
+      url: https://cowboystatedaily.com/2026/09/30/hilltop-bank-customers-report-unexpected-charges-after-cyber-breach/
+  updated: 2026-11-18
+
+- id: us-water-utilities-2026-07
+  date: 2026-07-27
+  title: Hackers tamper with control equipment at water utilities in at least seven US
+    states
+  kind: current
+  type: devices
+  summary: >-
+    Hackers got into control equipment at water utilities in at least seven US states
+    from 27 July 2026, the FBI and the Environmental Protection Agency warned. They
+    changed settings and passwords, so operators could no longer watch or control some
+    equipment; reported effects included lost water pressure and flooding. The devices
+    were reachable directly from the internet. Nobody has been officially blamed.
+  impact: Some water operations were degraded, by the FBI and EPA's account (30 July
+    2026). In Minnesota more than 30 municipal water facilities were targeted; the
+    state said no water supply was contaminated (NBC News, 31 July 2026). The agencies
+    gave no total number of utilities.
+  ai_involvement:
+    - stage: attack
+      level: unknown
+      note: The FBI and EPA notice names no attacker and does not mention AI. A law
+        enforcement official told NBC News the Minnesota attack had hallmarks of Iran;
+        that is not an official finding.
+  related_advice: [ water-food-medications ]
+  sources:
+    - title: Malicious Cyber Actors Targeting Water and Wastewater Sector Internet-Facing
+        Programmable Logic Controllers (I-073026-PSA), FBI and EPA
+      url: https://www.ic3.gov/PSA/2026/PSA260730.pdf
+    - title: Hackers targeted municipal water systems in 7 states this week, FBI says, NBC
+        News
+      url: https://www.nbcwashington.com/news/national-international/hackers-municipal-water-systems-states/4136930/
+  updated: 2026-11-18
 
 - id: polymarket-vendor-2026-06
   date: 2026-06-25
@@ -685,14 +945,23 @@
     Attackers broke into one of the site's outside suppliers and used it to put
     malicious code on Polymarket's website. Polymarket said it would refund victims in
     full.
+  impact: About $3 million from at least 11 wallets in June 2026, by outside analysts'
+    counts. It happened again on 29 Oct 2026, when Polymarket said another outside
+    supplier had been broken into; it paused trading for about an hour and promised to
+    repay everyone affected. Outside estimates of that second loss ran from about $2.2
+    million to $2.65 million; Polymarket gave no figure (Unchained, 29 Oct 2026).
   ai_involvement:
     - stage: attack
       level: unknown
+      note: The reports we cite on either theft do not mention AI.
   related_advice: [ avoid-self-custody-savings ]
   sources:
     - title: Polymarket hit by cyberattack, user funds stolen, TechRadar
       url: https://www.techradar.com/pro/security/prediction-market-giant-polymarket-hit-by-cyberattack-with-company-confirming-user-funds-stolen-here-is-what-we-know
-  updated: 2026-11-14
+    - title: Polymarket resumes trading, vows to reimburse traders after third-party
+        provider compromise, Unchained
+      url: https://unchainedcrypto.com/polymarket-resumes-trading-vows-to-reimburse-traders-after-third-party-provider-compromise/
+  updated: 2026-11-18
 
 - id: hugging-face-agents-2026-07
   date: 2026-07-11

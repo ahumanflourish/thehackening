@@ -1289,6 +1289,9 @@
       url: https://www.redcross.org/get-help/how-to-prepare-for-emergencies/survival-kit-supplies.html
     - title: America's sewer systems are surprisingly vulnerable to cyber attacks, FAI
       url: https://www.thefai.org/posts/america-s-sewer-systems-are-surprisingly-vulnerable-to-cyber-attacks
+    - title: "Survival Basics: Sanitation and Waste Management (the twin-bucket emergency
+        toilet), Oregon State University Extension Service"
+      url: https://extension.oregonstate.edu/catalog/pub/em9334-s
   thread_refs:
     - author: Elizabeth
       url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=HeNoSTDPZfvFvMZyz
@@ -1307,6 +1310,11 @@
       note: Plan for up to two weeks without mains electricity, with a large power bank
         that can run mains devices, a 100-watt solar panel, a hand-crank radio and a
         flashlight.
+    - author: sudo-nym
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=6Tc8vj3Fyh3rZgXWz
+      note: Describes how to manage if the sewers stop working, including a two-bucket
+        toilet, heavy-duty bags, keeping waste out of the normal trash, avoiding sink
+        and shower drains, and washing hands every time.
   checklist: true
   checklist_text: Keep about two weeks of water, food and daily medications, plus a first-aid kit.
   steps:
@@ -1324,10 +1332,12 @@
       detail: The Red Cross list names a flashlight, a radio, extra batteries and phone chargers. Philipp Risius also suggests a solar panel and a power bank big enough for mains devices; those are optional.
       url: https://www.redcross.org/get-help/how-to-prepare-for-emergencies/survival-kit-supplies.html
       link: Red Cross supply list
+    - do: "Add supplies for a toilet that can't flush: two 5-gallon buckets, heavy-duty trash bags and hand sanitizer."
+      detail: If the sewers fail, flushing and drains stop being safe to use. Oregon State University's guide, listed under sources, shows how to set up a two-bucket toilet.
     - do: Write today's date on everything and store it together.
     - do: Set a reminder every six months to use up and replace the oldest food, water and medications.
       detail: Recharge the power bank and check the flashlight and radio batteries at the same time.
-  updated: 2026-11-15
+  updated: 2026-11-18
 
 - id: offline-backups
   threat_model: infrastructure
@@ -1442,6 +1452,14 @@
       url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=pDfo3jPjFbEo6GzRJ
       note: Offline maps and addresses; people without local community might note the nearest
         LDS church to volunteer with.
+    - author: beyarkay (Boyd Kane)
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=EpP3dcRNBYqGRyeyv
+      note: Agree beforehand on a place to meet friends and family if communications go
+        down, and on when you would go there; it costs little to decide in advance.
+  sources:
+    - title: Make a plan (choose two places to meet up if you are separated), American Red
+        Cross
+      url: https://www.redcross.org/get-help/how-to-prepare-for-emergencies/make-a-plan.html
   checklist: true
   checklist_text: Keep paper maps and a written list of addresses for family, friends and
     your bank branches.
@@ -1458,8 +1476,10 @@
     - do: Add the addresses of your bank branches and the nearest community organizations.
       detail: For example a library, a community center or a place of worship.
     - do: Make a second copy of the list; keep one at home and one in your bag or car.
+    - do: Agree with family and friends on a place to meet if phones and the internet go down.
+      detail: Decide beforehand when you would go there. The Red Cross suggests one spot just outside your home and one outside your neighborhood.
     - do: Switch your phone to airplane mode and check the downloaded maps still open.
-  updated: 2026-11-14
+  updated: 2026-11-18
 
 - id: offline-reference-library
   threat_model: infrastructure

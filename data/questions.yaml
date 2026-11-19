@@ -22,7 +22,12 @@
     worked in the 1970s, and Ukraine has kept essentials running under bombardment.
     Another, Archimedes, suggests expecting regular disruptions at least as bad as the
     November 2026 Outlook outage and US flight halt, without saying those were attacks.
+    A third, Zian, says it depends on how far a service relies on networked computers
+    to control it, and thinks a takeover of a gas utility's control room could almost
+    certainly cause physical damage.
   sources:
+    - title: Comment by Zian
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=Sb9JtMZTCkm4KpnYn
     - title: Comment by Thane Ruthenis
       url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=zzwJiDLHv9Ci9f6iH
     - title: Comment by Archimedes
@@ -47,9 +52,16 @@
     financial institution, a California credit union in 2024, online banking was out
     for about two weeks. One commenter, Philipp Risius, suggests planning for up to two
     weeks without mains electricity. Another, Thane Ruthenis, doubts that preparing
-    for a total breakdown fits the threat. Nobody has answered how much to keep for
-    neighbors.
+    for a total breakdown fits the threat. A third, sudo-nym, would prepare for
+    something like the 2003 Northeast blackout or the damage after a hurricane, and
+    says that past about a month, preparing without a local community becomes an
+    expensive hobby; Thane Ruthenis agrees on that point. Nobody has answered how much
+    to keep for neighbors.
   sources:
+    - title: Comment by sudo-nym
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=yzmMyHW8WnkRqfApd
+    - title: Reply by Thane Ruthenis
+      url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=2KxTvgcjWvpcDuYrG
     - title: Comment by Philipp Risius
       url: https://www.lesswrong.com/posts/YA2r4rg6SpBtwRqtq/the-hackening-justified-practical-advice-and-open-questions?commentId=FsnPHYaFecmhwKcA2
     - title: Comment by Thane Ruthenis
@@ -250,3 +262,24 @@
     backup codes (the one-time codes that let you into an account without your phone)
     seems worth doing but was on nobody's list; the backup guide now includes it.
   related_advice: [ password-manager-unique-passwords, offline-backups ]
+
+- id: will-incidents-keep-rising
+  question: Will the number of hacks and outages level off soon, or keep climbing?
+  asked_by:
+    - author: Mike W
+      url: https://www.lesswrong.com/posts/RPsgjBsAbAuRQegjm/nunosempere-s-shortform?commentId=M8EqYZyzzgc9ZAbjE
+  status: open
+  current_best_answer: >-
+    Nobody knows. NunoSempere posted a chart counting the cyber incidents in the weekly
+    news roundups of Sentinel, a group that watches for signs of global catastrophes. It peaks at 12 in the week of 2
+    November 2026; most weeks in 2025 had two or fewer. That counts what the roundups
+    mentioned, not every incident. He says both outcomes are possible and sees no limit
+    on how many incidents there could be or how bad. He puts the lower counts of the
+    latest two weeks down to noise.
+  sources:
+    - title: Chart posted by NunoSempere (18 November 2026)
+      url: https://www.lesswrong.com/posts/RPsgjBsAbAuRQegjm/nunosempere-s-shortform?commentId=FkgogiseH9gnhk3Bg
+    - title: Reply by NunoSempere on whether the rise will continue
+      url: https://www.lesswrong.com/posts/RPsgjBsAbAuRQegjm/nunosempere-s-shortform?commentId=xKbnRQntf7gTuvdab
+    - title: Reply by NunoSempere on the latest two weeks
+      url: https://www.lesswrong.com/posts/RPsgjBsAbAuRQegjm/nunosempere-s-shortform?commentId=a8zMrybBkRHYD4jNE
