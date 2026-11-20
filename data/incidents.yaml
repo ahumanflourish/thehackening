@@ -259,6 +259,37 @@
   needs_research: true
   updated: 2026-11-20
 
+- id: chase-visa-mastercard-suppliers-2026-11
+  date: 2026-11-19
+  title: Chase, Mastercard and Visa say hackers got into firms that work for them
+  kind: current
+  type: supplier
+  summary: >-
+    Chase, Mastercard and Visa each said on 19 Nov 2026 that outside firms they use had
+    been hacked. Chase said marketing data was reached, possibly including some
+    customers' names and email addresses. Mastercard and Visa said no card numbers or
+    payment systems were affected. None of the three named the supplier or said who was
+    behind it. Chase says it is unrelated to its outage three days earlier.
+  impact: Marketing data held by outside firms, possibly including some Chase customers'
+    names and email addresses; no card numbers or payment systems, by the companies'
+    accounts, and Chase said "There is no disruption to our services" (ABC News, 19 Nov
+    2026). Leaked names and email addresses are mainly useful for sending convincing fake
+    messages. How many people are affected has not been said.
+  ai_involvement:
+    - stage: attack
+      level: unknown
+      note: Chase said outside firms it uses "were the target of a cyberattack". Neither it
+        nor Mastercard or Visa has named the supplier, the attacker or the method, and the
+        reports do not mention AI (as of 20 Nov 2026). Chase said it found no connection
+        to its 16 Nov outage, by ABC News's account.
+  related_advice: [ hang-up-and-call-back, alerts-and-fast-reporting ]
+  sources:
+    - title: JPMorganChase, Mastercard, Visa report cyberattack on third-party service
+        providers, ABC News
+      url: https://abcnews.com/US/jpmorgan-chase-reports-cyberattack-party-service-providers/story?id=138287705
+  needs_research: true
+  updated: 2026-11-20
+
 - id: us-bank-outage-2026-11
   date: 2026-11-16
   title: Chase and other big US banks have online banking trouble; Chase says it is a
@@ -270,20 +301,15 @@
     16 Nov 2026, and customers of other big banks reported problems too. Chase blamed a
     software bug in its own equipment and said it was not a cyberattack. Chase said
     transactions were back to normal by that night. The FBI told Congress on 18 Nov it
-    had found no sign of hacking. On 19 Nov Chase disclosed a separate hack of some
-    of its suppliers, which it says is unrelated.
+    had found no sign of hacking.
   impact: Chase's website and app, and payments between Chase and other banks, were slow
     or unavailable for part of 16 Nov 2026; Chase said transactions were processing
     normally again by that night (6abc, 17 Nov). Users filed more than 20,000 problem reports
     about Chase on the tracking site Downdetector by 2:22 p.m. Eastern (Fortune); these
     are complaints, not a count of people affected. Wells Fargo also reported technical
-    issues. The payment service Zelle said its own network was working. Separately,
-    Chase said on 19 Nov 2026 that outside firms it uses "were the target of a
-    cyberattack" and that marketing data, possibly including some customers' names and
-    email addresses, was reached; it said "There is no disruption to our services".
-    Mastercard and Visa reported supplier breaches the same day and said no card
-    numbers or payment systems were affected (ABC News). None of the three named the
-    supplier.
+    issues. The payment service Zelle said its own network was working. A hack of
+    suppliers to Chase, Mastercard and Visa, disclosed three days later, is a separate
+    entry; Chase says the two are unrelated.
   ai_involvement:
     - stage: attack
       level: unlikely
@@ -294,9 +320,7 @@
         comment from a bank regulator (as of 20 Nov). Asked about the week's failures
         at a House hearing on 18 Nov, the FBI's deputy director said there was "no
         indication whatsoever" of malicious cyber activity (The Record). Chase has not
-        published a detailed account of the fault (as of 20 Nov). Of the supplier
-        attack it disclosed on 19 Nov, Chase said it found no connection to the
-        outage, by ABC News's account; the reports of that attack do not mention AI.
+        published a detailed account of the fault (as of 20 Nov).
   related_advice: [ cash-sized-to-outages, spending-money-on-separate-rails ]
   sources:
     - title: Chase, Wells Fargo, Bank of America, US Bank among banks experiencing outages,
@@ -310,9 +334,6 @@
     - title: Chase transactions return to normal after outage affected thousands of
         customers, 6abc Philadelphia
       url: https://6abc.com/post/chase-transactions-return-normal-outage-affected-thousands-customers/20046578/
-    - title: JPMorganChase, Mastercard, Visa report cyberattack on third-party service
-        providers, ABC News
-      url: https://abcnews.com/US/jpmorgan-chase-reports-cyberattack-party-service-providers/story?id=138287705
     - title: Trump administration officials size-up a bad stretch for tech, The Record
       url: https://therecord.media/tech-disruptions-house-homeland-committee-testimony
   needs_research: true
