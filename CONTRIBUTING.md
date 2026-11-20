@@ -96,6 +96,7 @@ Link the comments or sources for each side under `thread_refs` or `sources`. The
 
 Add an entry to `data/incidents.yaml`. The log is a small set of real, dated events that inform the advice, not a news feed.
 
+- **One event per entry.** Incidents that are unrelated get their own entries, even when they involve the same company or happen in the same week. Add to an existing entry only when the news is about that same event (new findings, figures or official statements). If readers might confuse two events, say in one sentence in each that they are separate.
 - `kind` is `current` for a Hackening-era event, or `precedent` for an older event used for calibration.
 - Rate `ai_involvement` separately for each stage you have information on (`discovery`, `attack`, `agent_behavior`), using `confirmed`, `suspected`, `unlikely` or `unknown`. Use `confirmed` only when the victim, the supplier, an official investigator, or a reputable outside organisation such as an established security firm says AI was used in that stage of that event. A report from unnamed sources or an individual researcher with no established organisation behind them is `suspected`. Put who said it in `note`.
 - Open the source before you write a figure, and put a date on any figure that can change ("as of 5 Nov 2026"). Do not rely on a summary of a source, and do not cite an AI-generated summary.
