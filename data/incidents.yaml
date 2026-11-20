@@ -9,65 +9,195 @@
 
 # ---------------------------------------------------------------- current
 
+- id: european-commission-artex-2026-10
+  date: 2026-10-22
+  title: European Commission says an AI-driven attack disrupted its staff systems for
+    more than 10 days
+  kind: current
+  type: outage
+  summary: >-
+    Hackers using AI tools disrupted the internal staff systems of the European
+    Commission, the EU's executive body, for more than 10 days, including pay, leave
+    and medical-claims systems. The Commission detected the attack on 22 Oct 2026 and
+    confirmed it on 19 Nov. It says it has found no evidence of a data leak affecting
+    its staff as a whole, and is still investigating. It has not said who was behind
+    it.
+  impact: Systems for pay, leave requests, medical reimbursements and translation were
+    disrupted for more than 10 days, and several were switched off as a precaution
+    (The Record, 19 Nov 2026). Staff were still paid, by TechRadar's account (20 Nov
+    2026). The Commission said it knew of no ransom demand, had told the people
+    affected, and was checking its other systems. Whether any staff data was taken was
+    still being investigated.
+  ai_involvement:
+    - stage: attack
+      level: confirmed
+      note: The Commission, the victim, called it an "AI-generated cyber campaign"
+        through its spokesperson Thomas Regnier, who did not name the tool or the
+        attackers (The Record, 19 Nov). Politico reported that CERT-EU, the EU
+        institutions' own cyber emergency team, identified the tool as ARTEX, the AI
+        attack tool in the FBI's 13 Nov warning. That is Politico's account as relayed
+        by The Record and TechRadar; we could not open Politico's report ourselves.
+  related_advice: []
+  sources:
+    - title: European Commission confirms cyberattack, says hackers used AI tool, The
+        Record
+      url: https://therecord.media/european-commission-confirms-cyberattack-using-ai
+    - title: European Commission says it was hacked by attackers using AI tools, TechRadar
+      url: https://www.techradar.com/pro/security/european-commission-says-it-was-hacked-by-attackers-using-ai-tools-says-it-is-taking-the-necessary-steps-in-response-to-a-detected-cyber-campaign
+  needs_research: true
+  updated: 2026-11-20
+
+- id: optimizely-web-code-2026-11
+  date: 2026-11-16
+  title: Malicious code reaches 178 websites, 32 of them financial, through the web
+    tool Optimizely
+  kind: current
+  type: supplier
+  summary: >-
+    Hackers slipped malicious code onto 178 widely visited websites, 32 of them
+    finance or banking sites, by exploiting a flaw in Optimizely, a tool companies use
+    to test changes to their web pages. The code could copy payment card details typed
+    into a page and swap crypto payment addresses for the thieves' own. Optimizely
+    said on 16 Nov 2026 that it had contained the problem. Known losses are small; the
+    full extent is unknown.
+  impact: The outside research firm Report URI counted 178 affected websites and traced
+    at least $7,000 in stolen crypto; it could not tell how many cards were copied (The
+    Record, 17 Nov 2026). The code also took login cookies and screenshots and tried to
+    infect iPhones and iPads. HSBC was among the sites named, and Salesforce confirmed
+    it was affected (CSO, 17 Nov 2026). Optimizely says it has blocked the flaw, removed
+    the code and contacted the customers affected.
+  ai_involvement:
+    - stage: attack
+      level: unknown
+      note: Neither report describes any use of AI in the attack, and Optimizely has not
+        named the attackers. Optimizely said it had "identified and contained a
+        security incident affecting some Optimizely Web Experimentation customers" (The
+        Record). The Report URI researcher told CSO that Chinese-language text in the
+        code points to China; that is his view, not an official finding.
+  related_advice: [ spend-on-credit-cards, avoid-self-custody-savings ]
+  sources:
+    - title: Report on malicious code on Optimizely customers' websites, The Record
+      url: https://therecord.media/optimizely-malicious-code-customer-sites
+    - title: Optimizely confirms massive cyberattack on customer websites, injected stealer
+        malware, CSO
+      url: https://www.csoonline.com/article/4249925/optimizely-confirms-massive-cyberattack-on-customer-websites-injected-stealer-malware.html
+  updated: 2026-11-20
+
+- id: wellington-it-credit-unions-2026-10
+  date: 2026-10-02
+  title: Hack of a shared software supplier exposes saved payee details at more than
+    40 Irish credit unions
+  kind: current
+  type: data-theft
+  summary: >-
+    Hackers copied saved payee details, the names and bank account numbers of people
+    members pay, from more than 40 Irish credit unions by breaking into Wellington
+    IT, the Belfast firm behind their mobile banking apps. The attack was in early
+    October 2026, but credit unions were only told on 16 Nov. Officials say no money
+    was taken. How many members are affected is not yet known.
+  impact: Ireland's data regulator received more than 40 breach reports from credit
+    unions (The Record, 20 Nov 2026). The Irish Times estimated on 17 Nov 2026 that up
+    to 1.8 million members could be affected; Wellington IT has hired outside experts
+    to establish the real number. Passwords, PINs and card details were not reached,
+    according to the notices sent to credit unions (BleepingComputer, 19 Nov 2026).
+    Ireland's National Cyber Security Centre said there was "no indication that member
+    funds have been compromised". The main risk to members is convincing scam
+    messages that use the stolen details.
+  ai_involvement:
+    - stage: attack
+      level: unknown
+      note: By BleepingComputer's account of notices seen by the Irish Examiner, an
+        automated script sent about five million requests on 2-4 Oct to exploit a flaw
+        in how the system checked who was allowed to see what. Automated scripts long
+        predate AI, and none of the reports mentions AI. Wellington IT has not publicly
+        described the flaw or named the attackers.
+  related_advice: [ hang-up-and-call-back, big-bank-or-credit-union ]
+  sources:
+    - title: Dozens of credit unions hit by supplier breach that went unnoticed for six
+        weeks, The Record
+      url: https://therecord.media/dozens-of-credit-unions-hit-by-supplier-breach
+    - title: Data breach impacts 40 Irish credit unions in reported IT provider hack,
+        BleepingComputer
+      url: https://www.bleepingcomputer.com/news/security/data-breach-impacts-40-irish-credit-unions-in-reported-it-provider-hack/
+    - title: Suspected data breach at 43 credit unions could affect hundreds of thousands
+        of members, The Irish Times
+      url: https://www.irishtimes.com/your-money/2026/11/17/suspected-data-breach-at-43-credit-unions-could-affect-hundreds-of-thousands-of-members/
+  needs_research: true
+  updated: 2026-11-20
+
 - id: nsa-network-outage-2026-11
   date: 2026-11-17
-  title: NSA's classified internal network falters; officials blame maintenance, not an
-    attack
+  title: NSA's classified internal network falters for three days; officials blame
+    software updates, not an attack
   kind: current
   type: overload
   summary: >-
     The internal classified network of the NSA, the US signals-intelligence agency,
-    kept dropping out from 17 Nov 2026, and most staff were sent home or told to come
-    in late. The NSA blamed scheduled maintenance and said its critical work carried
-    on. The director of national intelligence said the week's failures were separate
-    faults, not a coordinated attack.
+    kept dropping out for about three days from 17 Nov 2026, and many staff were sent
+    home or told to come in late. The NSA blamed scheduled maintenance, and the
+    director of national intelligence said software updates had stopped some systems
+    restarting. Officials said it was not an attack. The NSA was mostly back to
+    normal on 20 Nov.
   impact: Staff arrivals at the NSA's headquarters were staggered on 17 and 18 Nov 2026,
-    and a source told The Record full recovery could take one or two more days (as of
-    18 Nov). The NSA said its critical operations kept running. It came days after the
-    Microsoft, FAA and Chase failures, which is why many people linked them.
+    and some non-essential staff were told to work from home for a third day on 19 Nov
+    (NBC News). A recorded message to staff on 20 Nov described "normal conditions,
+    with exceptions", with some sites still opening late (The Record). The NSA said its
+    critical operations kept running. It came days after the Microsoft, FAA and Chase
+    failures, which is why many people linked them.
   ai_involvement:
     - stage: attack
       level: unlikely
       note: The NSA said it "experienced temporary degradation during scheduled routine
         maintenance" (AP, 17 Nov). The director of national intelligence, Jay Clayton,
         said the maintenance involved PHP, widely used web software, and called the
-        week's failures "separate service outages" (The Record, 18 Nov). Neither said
-        whether this was the fix for the PHP2Shell flaws. The FBI's deputy director said
-        there was "no indication whatsoever" of malicious cyber activity.
+        week's failures "separate service outages" (The Record, 18 Nov). In a television
+        interview he said the updates had "caused some of these systems to not come
+        back up" (The Record, 20 Nov). Neither said whether this was the fix for the
+        PHP2Shell flaws. The FBI's deputy director said there was "no indication
+        whatsoever" of malicious cyber activity. The NSA has published no detailed
+        account, and did not answer The Record's questions on 20 Nov.
   related_advice: []
   sources:
+    - title: NSA resumes normal operations following internal network disruptions, The
+        Record
+      url: https://therecord.media/nsa-resumes-normal-operations-following-internal-disruptions
     - title: NSA continues response to interruptions in classified internal network, The
         Record
       url: https://therecord.media/nsa-continues-response-to-nsa-net-problems
+    - title: Report on the third day of the NSA network disruption, NBC News
+      url: https://www.nbcnews.com/politics/national-security/classified-nsa-network-still-leaving-staff-working-home-rcna610261
     - title: Classified Communications Network at the National Security Agency Goes Down,
         Defense Official Says, AP via SecurityWeek
       url: https://www.securityweek.com/classified-communications-network-at-the-national-security-agency-goes-down-defense-official-says/
     - title: Trump administration officials size-up a bad stretch for tech, The Record
       url: https://therecord.media/tech-disruptions-house-homeland-committee-testimony
-  needs_research: true
-  updated: 2026-11-18
+  updated: 2026-11-20
 
 - id: equinor-attack-2026-11
   date: 2026-11-17
-  title: Cyberattack disrupts office systems at Norwegian oil and gas giant Equinor;
-    production unaffected
+  title: Cyberattack disrupts office systems at Norwegian oil and gas giant Equinor for
+    three days; production unaffected
   kind: current
   type: outage
   summary: >-
-    Equinor, the Norwegian oil and gas giant, said on 17 Nov 2026 that it was under a
-    cyberattack on some of its office computer systems. It said oil and gas production
-    was not affected and that it saw no sign of stolen data. It was still working to
-    stop the attack a day later. It has not said who was behind it or how they got in.
+    Equinor, the Norwegian oil and gas giant, was hit by a cyberattack on some of its
+    office computer systems from 17 Nov 2026. It said on 20 Nov that the attack had
+    been stopped, that oil and gas production was never affected, and that it saw no
+    sign of data being stolen or altered. It has reported the attack to police. It has
+    not said who was behind it or how they got in.
   impact: Staff could have trouble using company applications, an Equinor spokesperson
     said; internal email was down, according to Reuters as cited by The Record.
-    Production was unaffected, and Equinor said it was too early to say how long
-    repairs would take (Equinor update, 18 Nov 2026).
+    Production ran normally throughout. Equinor said on 19 Nov 2026 that the attack did
+    not appear to be aimed at Equinor in particular, and on 20 Nov that it had been
+    stopped. Its 20 Nov update does not say whether every affected system is back in
+    use.
   ai_involvement:
     - stage: attack
       level: unknown
       note: Equinor has not named the attackers or the method, saying only that it was not
-        a virus and so could not spread. Neither its statement nor The Record's report
-        mentions AI.
+        a virus and so could not spread, and that it did not appear to be aimed at
+        Equinor in particular. Neither its statements (to 20 Nov) nor The Record's
+        report mentions AI.
   related_advice: []
   sources:
     - title: Equinor detected cyber-attack - update, Equinor
@@ -76,7 +206,7 @@
         The Record
       url: https://therecord.media/norway-equinor-cyberattack-energy
   needs_research: true
-  updated: 2026-11-18
+  updated: 2026-11-20
 
 - id: java4shell-2026-11
   date: 2026-11-17
@@ -89,11 +219,15 @@
     was made public on 17 Nov 2026. It can let an outsider crash a system or, with more
     work, take it over without a password. The security firm that found it says AI
     helped it do so in about an hour. The US cybersecurity agency CISA urged immediate
-    updates. No attacks had been seen.
+    updates. Security firms have since reported attackers probing for it; no
+    successful attack had been confirmed as of 20 Nov.
   impact: A fix is in Oracle's November 2026 update, but other suppliers' versions of
     Java were still waiting for theirs as of 17 Nov 2026 (SecurityWeek). Only some
-    newer Intel-type processors are affected. Cisco's Talos team had seen no attacks
-    but expected probing to start soon (reported 18 Nov 2026).
+    newer Intel-type processors are affected. Some security firms said their decoy
+    systems were recording scans and attempted attacks, by The Hacker News's account
+    (article updated 19 Nov 2026); none reported a successful break-in. The flaw was
+    not on the US cybersecurity agency's list of flaws known to be used in attacks
+    when we checked on 20 Nov 2026.
   ai_involvement:
     - stage: discovery
       level: confirmed
@@ -103,8 +237,12 @@
         defenders who found the flaw, not about attackers.
     - stage: attack
       level: unknown
-      note: No attacks had been reported as of 18 Nov 2026. Calif says it is holding back
-        its working attack code until people have had time to update.
+      note: No successful attack had been reported as of 20 Nov 2026. The Hacker News
+        quotes the security firm watchTowr as saying "We are already seeing attackers
+        spray the internet", and says another firm, Previdian, logged nine attempts on
+        its decoy systems. Nobody has said whether those attackers used AI. Calif
+        says it is holding back its working attack code until people have had time to
+        update.
   related_advice: [ shrink-patch-lag ]
   sources:
     - title: CISA warns of 'Java4Shell,' an AI-found Java bug touching most of the Fortune
@@ -113,8 +251,13 @@
     - title: Java4Shell Vulnerability Puts Many Enterprise Applications at Risk of Takeover,
         SecurityWeek
       url: https://www.securityweek.com/java4shell-vulnerability-puts-many-enterprise-applications-at-risk-of-takeover/
+    - title: CISA Urges Immediate Patching of Java4Shell Flaw That Could Allow Remote Code
+        Execution, The Hacker News
+      url: https://thehackernews.com/2026/11/cisa-urges-immediate-patching-of.html
+    - title: Known Exploited Vulnerabilities Catalog, CISA
+      url: https://www.cisa.gov/known-exploited-vulnerabilities-catalog
   needs_research: true
-  updated: 2026-11-18
+  updated: 2026-11-20
 
 - id: us-bank-outage-2026-11
   date: 2026-11-16
@@ -127,13 +270,20 @@
     16 Nov 2026, and customers of other big banks reported problems too. Chase blamed a
     software bug in its own equipment and said it was not a cyberattack. Chase said
     transactions were back to normal by that night. The FBI told Congress on 18 Nov it
-    had found no sign of hacking.
+    had found no sign of hacking. On 19 Nov Chase disclosed a separate hack of some
+    of its suppliers, which it says is unrelated.
   impact: Chase's website and app, and payments between Chase and other banks, were slow
     or unavailable for part of 16 Nov 2026; Chase said transactions were processing
     normally again by that night (6abc, 17 Nov). Users filed more than 20,000 problem reports
     about Chase on the tracking site Downdetector by 2:22 p.m. Eastern (Fortune); these
     are complaints, not a count of people affected. Wells Fargo also reported technical
-    issues. The payment service Zelle said its own network was working.
+    issues. The payment service Zelle said its own network was working. Separately,
+    Chase said on 19 Nov 2026 that outside firms it uses "were the target of a
+    cyberattack" and that marketing data, possibly including some customers' names and
+    email addresses, was reached; it said "There is no disruption to our services".
+    Mastercard and Visa reported supplier breaches the same day and said no card
+    numbers or payment systems were affected (ABC News). None of the three named the
+    supplier.
   ai_involvement:
     - stage: attack
       level: unlikely
@@ -141,10 +291,12 @@
         systems and that "it is not cyber-related" (statement carried by WSMV). A
         spokesman said "This is not a systemic issue" and that other banks were slowed
         only when dealing with Chase. Wells Fargo has not given a cause, and we found no
-        comment from a bank regulator (as of 18 Nov). Asked about the week's failures
+        comment from a bank regulator (as of 20 Nov). Asked about the week's failures
         at a House hearing on 18 Nov, the FBI's deputy director said there was "no
         indication whatsoever" of malicious cyber activity (The Record). Chase has not
-        published a detailed account of the fault.
+        published a detailed account of the fault (as of 20 Nov). Of the supplier
+        attack it disclosed on 19 Nov, Chase said it found no connection to the
+        outage, by ABC News's account; the reports of that attack do not mention AI.
   related_advice: [ cash-sized-to-outages, spending-money-on-separate-rails ]
   sources:
     - title: Chase, Wells Fargo, Bank of America, US Bank among banks experiencing outages,
@@ -158,10 +310,13 @@
     - title: Chase transactions return to normal after outage affected thousands of
         customers, 6abc Philadelphia
       url: https://6abc.com/post/chase-transactions-return-normal-outage-affected-thousands-customers/20046578/
+    - title: JPMorganChase, Mastercard, Visa report cyberattack on third-party service
+        providers, ABC News
+      url: https://abcnews.com/US/jpmorgan-chase-reports-cyberattack-party-service-providers/story?id=138287705
     - title: Trump administration officials size-up a bad stretch for tech, The Record
       url: https://therecord.media/tech-disruptions-house-homeland-committee-testimony
   needs_research: true
-  updated: 2026-11-18
+  updated: 2026-11-20
 
 - id: barracuda-artex-2026-11
   date: 2026-11-01
@@ -251,8 +406,9 @@
     hours on 13 Nov 2026 after communications failed at its regional air traffic control
     centers. Officials traced it to a router that flooded the network with data during a
     contractor's cable upgrade, and said they found no evidence of an attack or of AI
-    involvement. Whether the router was faulty or wrongly installed was still being
-    investigated as of 18 Nov.
+    involvement. Whether the router was faulty or wrongly installed was still not
+    settled as of 20 Nov; the FAA says it expects to announce the root cause this
+    week.
   impact: >-
     Departures were halted for more than four hours, until about 8:15 p.m. Eastern on
     13 Nov 2026. About 9,159 flights were cancelled and 7,190 delayed that day
@@ -263,7 +419,9 @@
     figures reported by CBS News on 16 Nov). The FAA's chief said about 12,000 flights
     could not be completed on 13 Nov. At least 827 flights were diverted as of 7:05 p.m.
     that day (Cirium figures reported by OPB). As a precaution the FAA switched off the
-    suspect function on about 60 similar routers (FedScoop, 16 Nov).
+    suspect function on about 60 similar routers (FedScoop, 16 Nov). The FAA said
+    communications and radar feeds became unstable at 17 of its 22 regional centers,
+    and on 17 Nov it paused installing more routers of the same kind (WJLA, 17 Nov).
   ai_involvement:
     - stage: attack
       level: unlikely
@@ -276,8 +434,16 @@
         News, 15 Nov). The router is being examined at an L3Harris lab in Florida by FAA
         staff and FBI agents (FedScoop, 16 Nov). At a House hearing on 18 Nov the FBI's
         deputy director said there was "no indication whatsoever" of malicious cyber
-        activity in the week's failures (The Record). No final finding had been
-        published as of 18 Nov.
+        activity in the week's failures (The Record). The FAA and L3Harris have
+        concluded that the fault started at a site in Arkansas where a new router was
+        being installed, and a person familiar with the investigation said L3Harris
+        took several hours to find it (CBS News, 18 Nov). Why it happened is not yet
+        established. Duffy said on 17 Nov that officials did not have clarity on the
+        root cause, and FAA chief Bedford said on 19 Nov that it would be announced
+        this week (Fox 4, 20 Nov). Senate Democrats wrote to both men that
+        "Identifying the device that failed does not establish why it failed" (WJLA).
+        We found no inspector-general review. No final finding had been published as
+        of 20 Nov.
     - stage: agent_behavior
       level: unlikely
       note: The FAA had widened its use of a new AI traffic-management tool, SMART, days
@@ -310,10 +476,17 @@
       url: https://x.com/SecDuffy/status/2121351591106072679
     - title: FAA, FBI investigating router responsible for nationwide ground stop, FedScoop
       url: https://fedscoop.com/?p=92517
+    - title: FAA pauses router installations linked to nationwide ground stop, WJLA
+      url: https://wjla.com/news/nation-world/faa-federal-aviation-administration-pauses-router-installations-linked-to-nationwide-ground-stop-air-traffic-control-flights-aiport-l3harris-copper-wires-fiber-optic-lines-transportation-secretary-duffy-trump-administration
+    - title: During nationwide ground stop, L3Harris struggled to find location of system
+        outage, CBS News
+      url: https://www.cbsnews.com/news/ground-stop-l3harris-system-outage/
+    - title: FAA to announce root cause of outage that led ground stoppage, Fox 4
+      url: https://www.fox4news.com/news/faa-announce-root-cause-outage-led-ground-stoppage
     - title: Trump administration officials size-up a bad stretch for tech, The Record
       url: https://therecord.media/tech-disruptions-house-homeland-committee-testimony
   needs_research: true
-  updated: 2026-11-18
+  updated: 2026-11-20
 
 - id: microsoft-365-outage-2026-11
   date: 2026-11-12
@@ -325,8 +498,9 @@
     Copilot, were disrupted worldwide for about a day from 12 Nov 2026. Microsoft's
     first report on the cause, dated 15 Nov, blames a hidden software fault in its own
     servers, set off by extra load while some servers were out of service. Microsoft
-    says it was not a cyberattack and not related to AI. Its final report, due by 20
-    Nov, had not appeared when we checked on 18 Nov.
+    says it was not a cyberattack and not related to AI. Its final report was due by
+    20 Nov; we could find no public copy or news coverage of it when we checked that
+    day.
   impact: Worldwide email and collaboration disruption lasting about 24 hours, from 4:20
     PM UTC on 12 Nov 2026 to 4:10 PM UTC on 13 Nov, by Microsoft's preliminary report;
     delayed email took longer to clear. At the worst point more than 80% of the affected
@@ -342,8 +516,10 @@
         third-party site, not on Microsoft's own customer-only page. By
         BleepingComputer's account of that report (16 Nov), the fault came in with an
         update that began in July, and about 14% of the servers concerned were already
-        out of service when the load rose. The final report is due by 20 Nov; we found
-        no sign of it as of 18 Nov.
+        out of service when the load rose. The final report was due by 20 Nov and
+        goes to customers on a page we cannot read; we found no public copy and no
+        coverage of it as of 20 Nov, so the cause given here is still the preliminary
+        one.
   related_advice: [ offline-backups ]
   sources:
     - title: Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide,
@@ -369,7 +545,7 @@
         BleepingComputer
       url: https://bleepingcomputer.com/news/microsoft/microsoft-says-months-old-bug-caused-global-microsoft-365-outage
   needs_research: true
-  updated: 2026-11-18
+  updated: 2026-11-20
 
 - id: fbi-artex-alert-2026-11
   date: 2026-11-13
@@ -699,9 +875,12 @@
     ARTEX, was built to test defences by attacking them and carries out the steps on its
     own. Microsoft also blames the group for a break-in at ConnectWise, a software
     supplier, that reached its customers.
-  impact: Hundreds of organizations were targeted. The Microsoft statement we have seen
-    does not say how many were broken into. An FBI alert of 13 Nov 2026 says the
-    ConnectWise break-in opened a way in to more than 2,250 of its customers' accounts.
+  impact: Hundreds of organizations were targeted. Microsoft says most of the attempts
+    failed and that several gave the attackers high-level access to cloud systems; it
+    gives no total. It says the group tried to sign in to more than 2,250 customer
+    accounts after the ConnectWise break-in (Microsoft, 21 Oct 2026). An FBI alert of
+    13 Nov 2026 says that break-in opened a way in to more than 2,250 of ConnectWise's
+    customers' accounts.
   ai_involvement:
     - stage: attack
       level: confirmed
@@ -709,6 +888,9 @@
         it calls Storm-0940 used the AI tool ARTEX.
   related_advice: []
   sources:
+    - title: AI-driven, large-scale nation-state campaign using ARTEX enables supply chain
+        compromise, Microsoft
+      url: https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/
     - title: Microsoft Threat Intelligence post on X
       url: https://x.com/MsftSecIntel/status/2112975078266716390
     - title: Threat Overview of ARTEX Autonomous Penetration Testing Framework
@@ -716,7 +898,7 @@
       url: https://www.ic3.gov/CSA/2026/261113.pdf
     - title: The Hackening, Zvi
       url: https://www.lesswrong.com/posts/iqgZaJMnmyDCYfnuC/the-hackening-1
-  updated: 2026-11-15
+  updated: 2026-11-20
 
 - id: vapor-panda-artex-2026-10
   date: 2026-10-17
@@ -788,6 +970,45 @@
       url: https://www.lesswrong.com/posts/iqgZaJMnmyDCYfnuC/the-hackening-1
   updated: 2026-11-14
 
+- id: gambit-card-skimming-2026-09
+  date: 2026-09-10
+  title: Security firm finds one hacker used AI agents to break into 27 companies and
+    take 600,000 card records
+  kind: current
+  type: one-to-many
+  summary: >-
+    One hacker used AI agents to break into at least 27 companies in six days in
+    September 2026 and stole more than 600,000 payment card records from two of
+    them, the security firm Gambit reported on 22 Sept. The AI agents searched for
+    weak points and broke in largely on their own, at about $25 per target. The
+    victims have not been named.
+  impact: At least 27 companies were compromised between 10 and 15 Sept 2026.
+    Card-stealing code was confirmed on 19 websites, and a related version was found on
+    more than 100 others. About 79% of the stolen cards were issued in the US. Gambit
+    puts the cost of the whole campaign at $12,000 to $18,000, and says the activity
+    began in July and was still running when it reported (all Gambit, 22 Sept 2026).
+    The unnamed victims include a large hotel company, a major US airline and an online
+    fashion shop (BleepingComputer, 23 Sept 2026).
+  ai_involvement:
+    - stage: attack
+      level: confirmed
+      note: Gambit, a security firm, says three freely available AI agent tools did the
+        work. One searched for weaknesses, one (Cairn) broke in, and one coordinated the
+        campaign. A human typed 1,951 short instructions, in Chinese, across 260
+        sessions; Gambit names no country or group. It says "at least 27 companies were
+        compromised to varying degrees". The reports we read cite no victim's
+        confirmation. This is a different report from the 100-website Cairn campaign
+        Reuters described, which was first seen on 25 Sept; nobody has said whether the
+        same person was behind both.
+  related_advice: [ spend-on-credit-cards, alerts-and-fast-reporting ]
+  sources:
+    - title: Report on AI agents used against online retailers (22 Sept 2026), Gambit
+      url: https://gambit.security/blog-posts/autonomous-ai-agents-online-retailers-25-a-company
+    - title: Malicious AI agents steal 600K credit cards, infect 100+ sites with skimmers,
+        BleepingComputer
+      url: https://bleepingcomputer.com/news/security/malicious-ai-agents-steal-600k-credit-cards-infect-100-plus-sites-with-skimmers
+  updated: 2026-11-20
+
 - id: south-korea-banks-2026-10
   date: 2026-10-01
   title: Hacks leak about 473,000 records at 37 South Korean financial firms; AI used in
@@ -809,7 +1030,11 @@
     about 300 personal details such as names and birth dates, and details of about 350
     users of the system, and no customer credit information (Byline Network).
     Regulators ordered a thorough inspection of the institute; no result and no new
-    sector-wide tally had been published when we checked on 18 Nov 2026.
+    sector-wide tally had been published when we checked on 20 Nov 2026. Mirae Asset
+    Life Insurance has also reported a hack that exposed customers' credit
+    information, the first at an insurer in this wave, and regulators say they will
+    inspect security at 580 financial firms by the end of November (Insurance
+    Business, 18 Nov 2026).
     Instant-access deposits at the five biggest banks fell about 3%, from 675.5 to 655.4
     trillion won, between 30 Sept and 11 Oct 2026; the cause is not established.
   ai_involvement:
@@ -826,7 +1051,8 @@
         The Financial Security Institute said on 11 Nov that, given how fast the
         attempts on it came, AI was probably used, but that this was not confirmed
         (Byline Network's account, in Korean). Korean police have not published
-        findings, and nobody has said AI was used against Mirae Asset.
+        findings (as of 20 Nov), and nobody has said AI was used against Mirae Asset
+        Securities or Mirae Asset Life Insurance.
   related_advice: [ freeze-everything, act-on-early-signals ]
   sources:
     - title: 37 financial firms leaked 473,000 records and about 1 billion won was taken (in
@@ -864,8 +1090,10 @@
       url: https://www.koreajoongangdaily.com/korea/koreas-financial-cybersecurity-watchdog-hacked-just-days-after-regulators-warning/12967591
     - title: Inside a global AI-assisted hacking campaign, Zscaler
       url: https://zscaler.com/blogs/security-research/inside-global-ai-assisted-hacking-campaign
+    - title: Korea's hacking wave puts cyber cover adequacy in focus, Insurance Business
+      url: https://www.insurancebusinessmag.com/asia/news/cyber/koreas-hacking-wave-puts-cyber-cover-adequacy-in-focus-597912.aspx
   needs_research: true
-  updated: 2026-11-18
+  updated: 2026-11-20
 
 - id: hilltop-bank-2026-09
   date: 2026-09-08

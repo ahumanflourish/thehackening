@@ -114,21 +114,24 @@
   current_best_answer: >-
     Not automatically, and people who follow this disagree. Finding a flaw first isn't
     enough. Defenders found the PHP2Shell flaw on August 1, yet attackers were using it
-    by October 17, four days before a fix was released. The writer Zvi called that "an
-    update against defenders being advantaged". Grendel1209, who described
-    working in cybersecurity at a threat-intelligence company, expects freely downloadable AI models to favor attackers. Vitalik
-    Buterin predicts defense wins in the end, "but the transition will be hard".
-    CrowdStrike, a security firm, reported that in the first half of 2026, for flaws
-    with public demonstration code, 88% of the attacks it observed came within 48 hours
-    of that code's release.
+    by October 17, four days before a fix was released. The writer Zvi expects
+    attackers to have the advantage, because they can aim at whichever systems have
+    not yet installed a fix (19 November 2026). Google's security researchers reported
+    in November 2026 that attackers increasingly use AI to work out what a new fix
+    repairs and build an attack from it, with no person involved. Grendel1209, who
+    described working in cybersecurity at a threat-intelligence company, expects
+    freely downloadable AI models to favor attackers. Vitalik Buterin predicts defense
+    wins in the end, "but the transition will be hard".
   sources:
     - title: The Hackening, Zvi
       url: https://www.lesswrong.com/posts/iqgZaJMnmyDCYfnuC/the-hackening-1
+    - title: "AI #195: Opening Bell, Zvi (19 November 2026)"
+      url: https://www.lesswrong.com/posts/De5LBagrSCKd3Q9cs/ai-195-opening-bell
+    - title: "GTIG AI Threat Tracker: Agentic Threat Activity Crosses a Significant
+        Threshold (16 November 2026), Google Threat Intelligence Group"
+      url: https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold
     - title: Comment by Grendel1209
       url: https://www.lesswrong.com/posts/puv8fRDCH9jx5yhbX/johnswentworth-s-shortform/comment/NGfGhPs7zD9EbLygc
-    - title: AI Vulnerability Management 2026 Guide, NeuralTrust (reports the CrowdStrike
-        figure)
-      url: https://neuraltrust.ai/blog/ai-vulnerability-management
   related_advice: [ shrink-patch-lag ]
 
 - id: what-does-a-banking-attack-look-like
